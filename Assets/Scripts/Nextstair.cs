@@ -51,5 +51,5 @@ public class Nextstair : MonoBehaviour
                 SceneManager.LoadScene("Chest");
                 break;
         }        
-    }
+    }    
 }

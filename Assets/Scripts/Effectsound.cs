@@ -16,10 +16,6 @@ public class Effectsound : MonoBehaviour
             _instance = this;
         }
         DontDestroyOnLoad(gameObject.transform.parent);
-	}	
-	void Update () 
-	{
-		
 	}
     public void Sfxplay(AudioClip clip)
     {

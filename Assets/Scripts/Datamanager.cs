@@ -7,8 +7,14 @@ public class Datamanager : MonoBehaviour
     public int bestscore;
     public int curscore;
     public int playerhp;
+    public int shiled;
     public int gold;
+    public int str;
+    public int agi;
+    public int curmana;
+    public int maxmana;
     public int stage;
+
     static Datamanager _instance;
     public static Datamanager instance()
     {

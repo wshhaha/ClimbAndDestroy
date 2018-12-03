@@ -57,6 +57,7 @@ public class Titlecnt : MonoBehaviour
             selchar = 1;
             Datamanager.instance().playerhp = 120;
             Datamanager.instance().gold = 90;
+            Datamanager.instance().maxmana = 3;
         }       
     }
     public void Selwizard()
@@ -68,6 +69,7 @@ public class Titlecnt : MonoBehaviour
             selchar = 2;
             Datamanager.instance().playerhp = 100;
             Datamanager.instance().gold = 120;
+            Datamanager.instance().maxmana = 3;
         }        
     }
     public void Decide()
