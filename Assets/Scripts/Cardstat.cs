@@ -14,5 +14,5 @@ public class Cardstat : MonoBehaviour
     public int val2;
     public int pval2;
     public bool ex;
-    public string grade;
+    public string grade;    
 }
