@@ -7,6 +7,6 @@ public class Backtomap : MonoBehaviour
 {
 	public void Callmap()
     {
-        SceneManager.LoadScene("Map");
+        SceneManager.LoadScene("2_Map");
     }
 }

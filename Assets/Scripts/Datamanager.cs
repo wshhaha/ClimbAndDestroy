@@ -6,7 +6,8 @@ public class Datamanager : MonoBehaviour
 {
     public int bestscore;
     public int curscore;
-    public int playerhp;
+    public int curhp;
+    public int maxhp;
     public int shiled;
     public int gold;
     public int str;

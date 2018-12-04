@@ -55,7 +55,8 @@ public class Titlecnt : MonoBehaviour
         {
             wizon = false;
             selchar = 1;
-            Datamanager.instance().playerhp = 120;
+            Datamanager.instance().curhp = 120;
+            Datamanager.instance().maxhp = 120;
             Datamanager.instance().gold = 90;
             Datamanager.instance().maxmana = 3;
         }       
@@ -67,7 +68,8 @@ public class Titlecnt : MonoBehaviour
         {
             waron = false;
             selchar = 2;
-            Datamanager.instance().playerhp = 100;
+            Datamanager.instance().curhp = 100;
+            Datamanager.instance().maxhp = 100;
             Datamanager.instance().gold = 120;
             Datamanager.instance().maxmana = 3;
         }        

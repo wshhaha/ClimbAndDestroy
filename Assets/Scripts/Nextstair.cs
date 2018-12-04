@@ -10,7 +10,7 @@ public class Nextstair : MonoBehaviour
         Datamanager.instance().stage++;
         if (Datamanager.instance().stage % 10 == 5)
         {
-            SceneManager.LoadScene("Chest");
+            SceneManager.LoadScene("Treasure");
             return;
         }
         if (Datamanager.instance().stage % 10 == 9)
@@ -20,19 +20,19 @@ public class Nextstair : MonoBehaviour
         }
         int i = Random.Range(0, 100);
         int j = 0;
-        if (i >= 0 && i < 55)
+        if (i >= 0 && i < 60)
         {
             j = 0;
         }
-        if (i >= 55 && i < 70)
+        if (i >= 60 && i < 75)
         {
             j = 1;
         }
-        if (i >= 70 && i < 85)
+        if (i >= 75 && i < 90)
         {
             j = 2;
         }
-        if (i >= 85 && i < 100)
+        if (i >= 90 && i < 100)
         {
             j = 3;
         }
@@ -48,7 +48,7 @@ public class Nextstair : MonoBehaviour
                 SceneManager.LoadScene("Store");
                 break;
             case 3:
-                SceneManager.LoadScene("Chest");
+                SceneManager.LoadScene("Treasure");
                 break;
         }        
     }    

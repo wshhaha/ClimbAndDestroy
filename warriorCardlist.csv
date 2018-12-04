@@ -1,0 +1,21 @@
+index,name,mana,pmana,effect1,value1,pvalue1,effect2,value2,pvalue2,grade,extinction
+1,hit,1,1,atk,,,,,,n,FALSE
+2,smash,2,2,atk,,,,,,n,FALSE
+3,stab,1,1,atk,,,,,,n,FALSE
+4,bash,1,1,atk,,,,,,n,FALSE
+5,headbutt,1,1,atk,,,,,,n,FALSE
+6,body slam,1,0,atk,,,,,,n,FALSE
+7,taunt,2,2,def,,,,,,n,TRUE
+8,sheild up,1,1,def,,,,,,n,FALSE
+9,indure,1,1,def,,,,,,n,FALSE
+10,guard,1,1,def,,,,,,n,FALSE
+11,perfect armor,3,2,def,,,,,,u,TRUE
+12,parrying,2,2,def,,,,,,u,TRUE
+13,frenzy,,,atk,,,,,,u,FALSE
+14,berserk,1,1,atk,,,,,,u,FALSE
+15,weapon breaker,2,2,atk,,,,,,u,FALSE
+16,armor breaker,2,2,atk,,,,,,u,FALSE
+17,aura blade,3,2,atk,,,,,,l,FALSE
+18,iron skin,1,1,ad,,,,,,l,TRUE
+19,battle cry,1,1,str,,,,,,l,TRUE
+20,concentrate,-2,-3,draw,,,,,,l,TRUE
