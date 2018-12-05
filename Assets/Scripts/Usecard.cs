@@ -6,12 +6,26 @@ public class Usecard : MonoBehaviour
 {
     public GameObject gy;
     public GameObject p;
-	public void Usingcard()
+    public GameObject spawner;
+    private void Start()
+    {
+        spawner = GameObject.Find("Enemyspawner");
+    }
+    public void Usingcard()
+    {        
+        StartCoroutine(Reading());        
+    }
+    IEnumerator Reading()
     {
         p = GameObject.Find("Player");
-        if(p.GetComponent<Player>().turn==false)
+        if (p.GetComponent<Player>().turn == false)
         {
-            return;
+            yield break;
+        }
+        GetComponent<Cardstat>();
+        while (spawner.GetComponent<Enemyspawner>().target == null)
+        {
+            yield return null;
         }
         gy.GetComponent<Gyard>().gylist.Add(gameObject);
         transform.parent = gy.GetComponentInChildren<UIGrid>().transform;
@@ -21,5 +35,6 @@ public class Usecard : MonoBehaviour
         GameObject h = GameObject.Find("Hand");
         h.GetComponentInChildren<UIGrid>().enabled = true;
         h.GetComponent<Hand>().handlist.Remove(gameObject);
+        spawner.GetComponent<Enemyspawner>().target = null;
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -758,6 +758,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turn: 0
+  h: {fileID: 0}
+  gy: {fileID: 0}
+  spawner: {fileID: 0}
 --- !u!1 &119597564
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,9 +885,11 @@ MonoBehaviour:
   disabledSprite2D: {fileID: 0}
   pixelSnap: 0
   onClick:
-  - mTarget: {fileID: 119597567}
-    mMethodName: Discount
-    mParameters: []
+  - mTarget: {fileID: 664848788}
+    mMethodName: Targetlock
+    mParameters:
+    - obj: {fileID: 119597564}
+      field: 
     oneShot: 0
 --- !u!65 &119597569
 BoxCollider:
@@ -1756,7 +1761,13 @@ MonoBehaviour:
   slot1: {fileID: 805722605}
   slot2: {fileID: 888950285}
   slot3: {fileID: 119597566}
+  p: {fileID: 0}
+  d: {fileID: 0}
   e: 0
+  eturn1: 0
+  eturn2: 0
+  eturn3: 0
+  target: {fileID: 0}
 --- !u!1 &679781643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2120,9 +2131,11 @@ MonoBehaviour:
   disabledSprite2D: {fileID: 0}
   pixelSnap: 0
   onClick:
-  - mTarget: {fileID: 805722606}
-    mMethodName: Discount
-    mParameters: []
+  - mTarget: {fileID: 664848788}
+    mMethodName: Targetlock
+    mParameters:
+    - obj: {fileID: 805722603}
+      field: 
     oneShot: 0
 --- !u!65 &805722608
 BoxCollider:
@@ -2464,9 +2477,11 @@ MonoBehaviour:
   disabledSprite2D: {fileID: 0}
   pixelSnap: 0
   onClick:
-  - mTarget: {fileID: 888950286}
-    mMethodName: Discount
-    mParameters: []
+  - mTarget: {fileID: 664848788}
+    mMethodName: Targetlock
+    mParameters:
+    - obj: {fileID: 888950283}
+      field: 
     oneShot: 0
 --- !u!65 &888950288
 BoxCollider:

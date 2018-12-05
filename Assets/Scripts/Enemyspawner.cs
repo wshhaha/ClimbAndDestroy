@@ -15,6 +15,7 @@ public class Enemyspawner : MonoBehaviour
     public bool eturn1;
     public bool eturn2;
     public bool eturn3;
+    public GameObject target;
     void Start () 
 	{
         d = GameObject.Find("Deck");
@@ -77,5 +78,9 @@ public class Enemyspawner : MonoBehaviour
         }
         p.GetComponent<Player>().turn = true;
         d.GetComponent<Builddeck>().Startturn();
+    }
+    public void Targetlock(GameObject e)
+    {
+        target = e;
     }
 }
