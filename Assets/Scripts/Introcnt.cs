@@ -8,6 +8,6 @@ public class Introcnt : MonoBehaviour
 	void Start () 
 	{        
         PlayerPrefs.SetInt("character", 0);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("1_Title");
 	}		
 }

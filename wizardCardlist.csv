@@ -1,0 +1,21 @@
+index,name,mana,pmana,effect1,value1,pvalue1,effect2,value2,pvalue2,grade,extinction,up
+1,staff swing,1,1,atk,5,8,,,,n,FALSE,FALSE
+2,fire ball,2,2,atk,9,13,dot,2,3,n,FALSE,FALSE
+3,ice bolt,1,1,atk,8,11,,,,n,FALSE,FALSE
+4,lighting shock,2,1,atk,10,12,stun,1,2,n,FALSE,FALSE
+5,magic arrow,0,0,atk,3,5,,,,n,FALSE,FALSE
+6,wound heal,1,0,heal,4,6,,,,n,TRUE,FALSE
+7,charging mana,1,1,mana,2,2,def,2,4,n,TRUE,FALSE
+8,use scroll,1,1,draw,2,3,,,,n,TRUE,FALSE
+9,lock on,1,1,def,8,11,lockon,1,2,n,FALSE,FALSE
+10,mana shield,1,1,def,5,8,,,,n,FALSE,FALSE
+11,barrier,1,1,def,8,12,,,,u,FALSE,FALSE
+12,flame wall,2,2,def,13,18,reflect,3,4,u,TRUE,FALSE
+13,forked lighting,,,random,8,11,,,,u,FALSE,FALSE
+14,innervate,1,1,draw,4,5,rebound,3,2,u,FALSE,FALSE
+15,lightbomb,2,2,atk,7,11,,,,u,FALSE,FALSE
+16,metor fall,2,2,atk,20,25,dot,4,5,u,FALSE,FALSE
+17,powerword kill,3,2,atk,30,36,bringstr,1,2,l,FALSE,FALSE
+18,arcane intellect,2,1,manaup,1,1,,,,l,TRUE,FALSE
+19,growing Intelligence,1,1,str,3,4,,,,l,TRUE,FALSE
+20,meditation,0,0,mana,2,3,instant,3,3,l,TRUE,FALSE

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cardstat : MonoBehaviour 
 {
+    public int index;
     public string cname;
     public int mana;
     public int pmana;
@@ -14,5 +15,6 @@ public class Cardstat : MonoBehaviour
     public int val2;
     public int pval2;
     public bool ex;
+    public bool up;
     public string grade;    
 }

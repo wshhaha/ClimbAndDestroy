@@ -76,7 +76,8 @@ public class Titlecnt : MonoBehaviour
     }
     public void Decide()
     {
-        PlayerPrefs.SetInt("character", selchar);        
+        PlayerPrefs.SetInt("character", selchar);
+        Deckmanager.instance().Starterdeck();
         Letsclimb();
     }
 }

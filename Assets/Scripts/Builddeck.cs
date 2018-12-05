@@ -6,59 +6,69 @@ using SimpleJSON;
 public class Builddeck : MonoBehaviour 
 {
     public GameObject card;
-    public List<GameObject> deck;
-    public TextAsset warriordeck;
-    public TextAsset wizarddeck;
-    public UIGrid grid;
+    public List<GameObject> deck;   
+    public UIGrid deckgrid;
+    public GameObject hand;
+    public GameObject gy;
 
     void Start () 
 	{
-        Createdeck();
+        Copydeck();
+        Startturn();
     }
-    void Createdeck()
+    public void Copydeck()
     {
-        for (int i = 0; i < Deckmanager.instance().deck.Count; i++)
+        for (int i = 0; i < Deckmanager.instance().orideck.Count; i++)
         {
-            GameObject c = Instantiate(card);
-            c.transform.parent = grid.gameObject.transform;
-            c.transform.localPosition = Vector3.zero;
-            c.AddComponent<Cardstat>();
+            GameObject c;
+            c = Instantiate(card);
+            c.GetComponent<BoxCollider>().enabled = false;
+            c.GetComponent<Usecard>().gy = GameObject.Find("Graveyard");
+            Deckmanager.instance().Givestat(Deckmanager.instance().orideck[i].GetComponent<Cardstat>().index - 1, c);
+            c.transform.parent = deckgrid.transform;
+            c.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             deck.Add(c);
-            Givestat(i);
-            c.SetActive(false);
         }
     }
-    public void Givestat(int num)
+    public void Drawacard()
     {
-        var wa = JSON.Parse(warriordeck.text);
-        var wi = JSON.Parse(wizarddeck.text);
-        if (PlayerPrefs.GetInt("character") == 1)
+        if (deck.Count != 0)
         {
-            deck[num].GetComponent<Cardstat>().cname = wa[Deckmanager.instance().deck[num]]["name"];
-            deck[num].GetComponent<Cardstat>().mana = wa[Deckmanager.instance().deck[num]]["mana"];
-            deck[num].GetComponent<Cardstat>().pmana = wa[Deckmanager.instance().deck[num]]["pmana"];
-            deck[num].GetComponent<Cardstat>().eft1 = wa[Deckmanager.instance().deck[num]]["effect1"];
-            deck[num].GetComponent<Cardstat>().val1 = wa[Deckmanager.instance().deck[num]]["value1"];
-            deck[num].GetComponent<Cardstat>().pval1 = wa[Deckmanager.instance().deck[num]]["pvalue1"];
-            deck[num].GetComponent<Cardstat>().eft2 = wa[Deckmanager.instance().deck[num]]["effect2"];
-            deck[num].GetComponent<Cardstat>().val2 = wa[Deckmanager.instance().deck[num]]["value2"];
-            deck[num].GetComponent<Cardstat>().pval2 = wa[Deckmanager.instance().deck[num]]["pvalue2"];
-            deck[num].GetComponent<Cardstat>().ex = wa[Deckmanager.instance().deck[num]]["extinction"];
-            deck[num].GetComponent<Cardstat>().grade = wa[Deckmanager.instance().deck[num]]["grade"];
+            int i = Random.Range(0, deck.Count);
+            hand.GetComponent<Hand>().handlist.Add(deck[i]);
+            deck[i].transform.parent = hand.GetComponentInChildren<UIGrid>().transform;
+            deck[i].transform.localScale = new Vector3(1, 1, 1);
+            deck[i].transform.localPosition = Vector3.zero;
+            deck[i].GetComponent<BoxCollider>().enabled = true;
+            hand.GetComponentInChildren<UIGrid>().enabled = true;
+            deck.RemoveAt(i);
         }
-        if (PlayerPrefs.GetInt("character") == 2)
+        else
         {
-            deck[num].GetComponent<Cardstat>().cname = wi[Deckmanager.instance().deck[num]]["name"];
-            deck[num].GetComponent<Cardstat>().mana = wi[Deckmanager.instance().deck[num]]["mana"];
-            deck[num].GetComponent<Cardstat>().pmana = wi[Deckmanager.instance().deck[num]]["pmana"];
-            deck[num].GetComponent<Cardstat>().eft1 = wi[Deckmanager.instance().deck[num]]["effect1"];
-            deck[num].GetComponent<Cardstat>().val1 = wi[Deckmanager.instance().deck[num]]["value1"];
-            deck[num].GetComponent<Cardstat>().pval1 = wi[Deckmanager.instance().deck[num]]["pvalue1"];
-            deck[num].GetComponent<Cardstat>().eft2 = wi[Deckmanager.instance().deck[num]]["effect2"];
-            deck[num].GetComponent<Cardstat>().val2 = wi[Deckmanager.instance().deck[num]]["value2"];
-            deck[num].GetComponent<Cardstat>().pval2 = wi[Deckmanager.instance().deck[num]]["pvalue2"];
-            deck[num].GetComponent<Cardstat>().ex = wi[Deckmanager.instance().deck[num]]["extinction"];
-            deck[num].GetComponent<Cardstat>().grade = wi[Deckmanager.instance().deck[num]]["grade"];
+            if (gy.GetComponent<Gyard>().gylist.Count != 0)
+            {
+                gy.GetComponent<Gyard>().Backtodeck();
+                Drawacard();
+            }
+            else
+            {
+                print("no more card");
+                return;
+            }
+        }
+    }
+    public void Drawing(int num)
+    {
+        for (int i = 0; i < num; i++)
+        {
+            Drawacard();
+        }
+    }
+    public void Startturn()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            Drawacard();
         }
     }
 }
