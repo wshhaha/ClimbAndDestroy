@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
         gy = GameObject.Find("Graveyard");
         spawner = GameObject.Find("Enemyspawner");
         turn = true;
-	}
+        Datamanager.i().inmaxmana = Datamanager.i().maxmana;
+    }
 	public void Turnend()
     {
         turn = false;

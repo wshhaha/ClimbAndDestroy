@@ -12,7 +12,8 @@
    "pvalue2": null,
    "grade": "n",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 2,
@@ -27,7 +28,8 @@
    "pvalue2": 2,
    "grade": "n",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 3,
@@ -42,7 +44,8 @@
    "pvalue2": null,
    "grade": "n",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 4,
@@ -57,7 +60,8 @@
    "pvalue2": 1,
    "grade": "n",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 5,
@@ -72,7 +76,8 @@
    "pvalue2": 1,
    "grade": "n",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 6,
@@ -87,7 +92,8 @@
    "pvalue2": null,
    "grade": "n",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 7,
@@ -102,11 +108,12 @@
    "pvalue2": 2,
    "grade": "n",
    "extinction": true,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 8,
-   "name": "shield block",
+   "name": "sheild up",
    "mana": 1,
    "pmana": 1,
    "effect1": "def",
@@ -117,7 +124,8 @@
    "pvalue2": 1,
    "grade": "n",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 9,
@@ -132,7 +140,8 @@
    "pvalue2": 2,
    "grade": "n",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 10,
@@ -147,7 +156,8 @@
    "pvalue2": null,
    "grade": "n",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 11,
@@ -162,7 +172,8 @@
    "pvalue2": null,
    "grade": "u",
    "extinction": true,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 12,
@@ -177,7 +188,8 @@
    "pvalue2": 2,
    "grade": "u",
    "extinction": true,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 13,
@@ -192,7 +204,8 @@
    "pvalue2": null,
    "grade": "u",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 14,
@@ -207,7 +220,8 @@
    "pvalue2": 4,
    "grade": "u",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 15,
@@ -222,7 +236,8 @@
    "pvalue2": 3,
    "grade": "u",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 16,
@@ -237,7 +252,8 @@
    "pvalue2": 3,
    "grade": "u",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 17,
@@ -252,7 +268,8 @@
    "pvalue2": 2,
    "grade": "l",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 18,
@@ -267,7 +284,8 @@
    "pvalue2": null,
    "grade": "l",
    "extinction": true,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 19,
@@ -282,7 +300,8 @@
    "pvalue2": null,
    "grade": "l",
    "extinction": true,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 20,
@@ -297,6 +316,7 @@
    "pvalue2": 4,
    "grade": "l",
    "extinction": true,
-   "up": false
+   "up": false,
+   "target": false
  }
 ]

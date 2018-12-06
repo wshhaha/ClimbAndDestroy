@@ -10,7 +10,7 @@ public class Builddeck : MonoBehaviour
     public UIGrid deckgrid;
     public GameObject hand;
     public GameObject gy;
-
+    int d = 0;
     void Start () 
 	{
         Copydeck();
@@ -40,6 +40,8 @@ public class Builddeck : MonoBehaviour
             deck[i].transform.localScale = new Vector3(1, 1, 1);
             deck[i].transform.localPosition = Vector3.zero;
             deck[i].GetComponent<BoxCollider>().enabled = true;
+            deck[i].GetComponent<UISprite>().depth = d;
+            d++;
             hand.GetComponentInChildren<UIGrid>().enabled = true;
             deck.RemoveAt(i);
         }
@@ -70,5 +72,6 @@ public class Builddeck : MonoBehaviour
         {
             Drawacard();
         }
+        Datamanager.i().curmana = Datamanager.i().inmaxmana;
     }
 }

@@ -35,7 +35,7 @@ public class Deckmanager : MonoBehaviour
         {
             Createcard(9);
         }
-        Createcard(1);
+        Createcard(12);
     }
     public void Createcard(int num)
     {
@@ -67,6 +67,7 @@ public class Deckmanager : MonoBehaviour
             card.GetComponent<Cardstat>().pval2 = wa[num]["pvalue2"];
             card.GetComponent<Cardstat>().ex = wa[num]["extinction"];
             card.GetComponent<Cardstat>().up = wa[num]["up"];
+            card.GetComponent<Cardstat>().target = wa[num]["target"];
             card.GetComponent<Cardstat>().grade = wa[num]["grade"];
         }
         if (PlayerPrefs.GetInt("character") == 2)
@@ -84,6 +85,7 @@ public class Deckmanager : MonoBehaviour
             card.GetComponent<Cardstat>().pval2 = wi[num]["pvalue2"];
             card.GetComponent<Cardstat>().ex = wi[num]["extinction"];
             card.GetComponent<Cardstat>().up = wi[num]["up"];
+            card.GetComponent<Cardstat>().target = wi[num]["target"];
             card.GetComponent<Cardstat>().grade = wi[num]["grade"];
         }
     }

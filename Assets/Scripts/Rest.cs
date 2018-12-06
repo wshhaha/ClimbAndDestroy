@@ -11,10 +11,10 @@ public class Rest : MonoBehaviour
     }
     public void Camp()
     {
-        Datamanager.instance().curhp += (int)(Datamanager.instance().maxhp * 0.3f);
-        if(Datamanager.instance().curhp>= Datamanager.instance().maxhp)
+        Datamanager.i().curhp += (int)(Datamanager.i().maxhp * 0.3f);
+        if(Datamanager.i().curhp>= Datamanager.i().maxhp)
         {
-            Datamanager.instance().curhp = Datamanager.instance().maxhp;
+            Datamanager.i().curhp = Datamanager.i().maxhp;
         }
         gotomap.SetActive(true);
         gameObject.SetActive(false);

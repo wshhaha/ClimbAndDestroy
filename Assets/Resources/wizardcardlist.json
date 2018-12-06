@@ -12,7 +12,8 @@
    "pvalue2": null,
    "grade": "n",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 2,
@@ -27,7 +28,8 @@
    "pvalue2": 3,
    "grade": "n",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 3,
@@ -42,7 +44,8 @@
    "pvalue2": null,
    "grade": "n",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 4,
@@ -57,7 +60,8 @@
    "pvalue2": 2,
    "grade": "n",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 5,
@@ -72,7 +76,8 @@
    "pvalue2": null,
    "grade": "n",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 6,
@@ -87,7 +92,8 @@
    "pvalue2": null,
    "grade": "n",
    "extinction": true,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 7,
@@ -102,7 +108,8 @@
    "pvalue2": 4,
    "grade": "n",
    "extinction": true,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 8,
@@ -117,7 +124,8 @@
    "pvalue2": null,
    "grade": "n",
    "extinction": true,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 9,
@@ -132,7 +140,8 @@
    "pvalue2": 2,
    "grade": "n",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 10,
@@ -147,7 +156,8 @@
    "pvalue2": null,
    "grade": "n",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 11,
@@ -162,7 +172,8 @@
    "pvalue2": null,
    "grade": "u",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 12,
@@ -177,7 +188,8 @@
    "pvalue2": 4,
    "grade": "u",
    "extinction": true,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 13,
@@ -192,7 +204,8 @@
    "pvalue2": null,
    "grade": "u",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 14,
@@ -207,7 +220,8 @@
    "pvalue2": 2,
    "grade": "u",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 15,
@@ -222,7 +236,8 @@
    "pvalue2": null,
    "grade": "u",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 16,
@@ -237,22 +252,24 @@
    "pvalue2": 5,
    "grade": "u",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 17,
    "name": "powerword kill",
    "mana": 3,
-   "pmana": 2,
+   "pmana": 3,
    "effect1": "atk",
-   "value1": 30,
-   "pvalue1": 36,
+   "value1": 25,
+   "pvalue1": 31,
    "effect2": "bringstr",
    "value2": 1,
    "pvalue2": 2,
    "grade": "l",
    "extinction": false,
-   "up": false
+   "up": false,
+   "target": true
  },
  {
    "index": 18,
@@ -267,7 +284,8 @@
    "pvalue2": null,
    "grade": "l",
    "extinction": true,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 19,
@@ -282,7 +300,8 @@
    "pvalue2": null,
    "grade": "l",
    "extinction": true,
-   "up": false
+   "up": false,
+   "target": false
  },
  {
    "index": 20,
@@ -297,6 +316,7 @@
    "pvalue2": 3,
    "grade": "l",
    "extinction": true,
-   "up": false
+   "up": false,
+   "target": false
  }
 ]

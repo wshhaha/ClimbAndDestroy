@@ -16,8 +16,11 @@ public class Enemyspawner : MonoBehaviour
     public bool eturn2;
     public bool eturn3;
     public GameObject target;
+    public bool uc;
+
     void Start () 
 	{
+        uc = false;
         d = GameObject.Find("Deck");
         p = GameObject.Find("Player");
         rewards.SetActive(false);
@@ -77,10 +80,18 @@ public class Enemyspawner : MonoBehaviour
             }            
         }
         p.GetComponent<Player>().turn = true;
+        Datamanager.i().curmana = Datamanager.i().inmaxmana;
         d.GetComponent<Builddeck>().Startturn();
     }
     public void Targetlock(GameObject e)
     {
-        target = e;
+        if (uc == true)
+        {
+            target = e;
+        }
+        else
+        {
+            return;
+        }
     }
 }

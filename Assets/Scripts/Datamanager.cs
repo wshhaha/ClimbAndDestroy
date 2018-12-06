@@ -8,16 +8,23 @@ public class Datamanager : MonoBehaviour
     public int curscore;
     public int curhp;
     public int maxhp;
-    public int shiled;
+    public int shd;
     public int gold;
     public int str;
     public int agi;
     public int curmana;
     public int maxmana;
+    public int inmaxmana;
     public int stage;
+    public bool ins;
+    public int insnum;
+    public bool genamr;
+    public int gennum;
+    public bool r;
+    public int rnum;
 
     static Datamanager _instance;
-    public static Datamanager instance()
+    public static Datamanager i()
     {
         return _instance;
     }

@@ -55,10 +55,10 @@ public class Titlecnt : MonoBehaviour
         {
             wizon = false;
             selchar = 1;
-            Datamanager.instance().curhp = 120;
-            Datamanager.instance().maxhp = 120;
-            Datamanager.instance().gold = 90;
-            Datamanager.instance().maxmana = 3;
+            Datamanager.i().curhp = 120;
+            Datamanager.i().maxhp = 120;
+            Datamanager.i().gold = 90;
+            Datamanager.i().maxmana = 3;
         }       
     }
     public void Selwizard()
@@ -68,10 +68,10 @@ public class Titlecnt : MonoBehaviour
         {
             waron = false;
             selchar = 2;
-            Datamanager.instance().curhp = 100;
-            Datamanager.instance().maxhp = 100;
-            Datamanager.instance().gold = 120;
-            Datamanager.instance().maxmana = 3;
+            Datamanager.i().curhp = 100;
+            Datamanager.i().maxhp = 100;
+            Datamanager.i().gold = 120;
+            Datamanager.i().maxmana = 3;
         }        
     }
     public void Decide()

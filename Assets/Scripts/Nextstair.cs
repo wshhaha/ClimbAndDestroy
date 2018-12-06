@@ -7,18 +7,18 @@ public class Nextstair : MonoBehaviour
 {    
 	public void Next()
     {        
-        Datamanager.instance().stage++;
-        if (Datamanager.instance().stage % 10 == 1)
+        Datamanager.i().stage++;
+        if (Datamanager.i().stage % 10 == 1)
         {
             SceneManager.LoadScene("Battle");
             return;
         }
-        if (Datamanager.instance().stage % 10 == 5)
+        if (Datamanager.i().stage % 10 == 5)
         {
             SceneManager.LoadScene("Treasure");
             return;
         }
-        if (Datamanager.instance().stage % 10 == 9)
+        if (Datamanager.i().stage % 10 == 9)
         {
             SceneManager.LoadScene("Rest");
             return;

@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour 
 {
-    public GameObject spawner;    
+    public GameObject spawner;
+    public int ehp;
+    public bool l;
+    public int lnum;
+    public bool w;
+    public int wnum;
+    public bool s;
+    public bool d;
+    public int dnum;
+
+
     public void Discount()
     {
         spawner.GetComponent<Enemyspawner>().e--;
