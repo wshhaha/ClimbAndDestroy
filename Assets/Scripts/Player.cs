@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
             int i = 0;
             gy.GetComponent<Gyard>().gylist.Add(h.GetComponent<Hand>().handlist[i]);
             h.GetComponent<Hand>().handlist[i].transform.parent = gy.GetComponentInChildren<UIGrid>().transform;
+            h.GetComponent<Hand>().handlist[i].GetComponent<UISprite>().depth = 0;
             h.GetComponent<Hand>().handlist[i].transform.localScale = new Vector3(.5f, .5f, .5f);
             h.GetComponent<Hand>().handlist[i].transform.localPosition = Vector3.zero;
             h.GetComponent<Hand>().handlist[i].GetComponent<BoxCollider>().enabled = false;

@@ -25,19 +25,19 @@ public class Nextstair : MonoBehaviour
         }
         int i = Random.Range(0, 100);
         int j = 0;
-        if (i >= 0 && i < 60)
+        if (i >= 0 && i < 75)
         {
             j = 0;
         }
-        if (i >= 60 && i < 75)
+        if (i >= 75 && i < 85)
         {
             j = 1;
         }
-        if (i >= 75 && i < 90)
+        if (i >= 85 && i < 95)
         {
             j = 2;
         }
-        if (i >= 90 && i < 100)
+        if (i >= 95 && i < 100)
         {
             j = 3;
         }

@@ -46,7 +46,7 @@
    "name": "beholder",
    "hpmin": 10,
    "hpmax": 15,
-   "pat1": "def",
+   "pat1": "atk",
    "val1": 8,
    "pat2": "weak",
    "val2": 2,

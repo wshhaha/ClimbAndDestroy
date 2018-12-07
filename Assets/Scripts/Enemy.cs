@@ -13,7 +13,16 @@ public class Enemy : MonoBehaviour
     public bool s;
     public bool d;
     public int dnum;
-
+    public string ename;
+    public int maxhp;    
+    public int patnum;
+    public string pat1;
+    public int val1;
+    public string pat2;
+    public int val2;
+    public string pat3;
+    public int val3;
+    public int tier;
 
     public void Discount()
     {

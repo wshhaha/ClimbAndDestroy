@@ -27,6 +27,7 @@ public class Builddeck : MonoBehaviour
             Deckmanager.instance().Givestat(Deckmanager.instance().orideck[i].GetComponent<Cardstat>().index - 1, c);
             c.transform.parent = deckgrid.transform;
             c.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            c.GetComponent<UISprite>().depth = 0;
             deck.Add(c);
         }
     }
@@ -40,8 +41,8 @@ public class Builddeck : MonoBehaviour
             deck[i].transform.localScale = new Vector3(1, 1, 1);
             deck[i].transform.localPosition = Vector3.zero;
             deck[i].GetComponent<BoxCollider>().enabled = true;
-            deck[i].GetComponent<UISprite>().depth = d;
-            d++;
+            deck[i].GetComponent<UISprite>().depth = hand.GetComponent<Hand>().handlist.Count;
+            
             hand.GetComponentInChildren<UIGrid>().enabled = true;
             deck.RemoveAt(i);
         }

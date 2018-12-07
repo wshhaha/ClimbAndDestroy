@@ -868,6 +868,17 @@ MonoBehaviour:
   s: 0
   d: 0
   dnum: 0
+  ename: 
+  maxhp: 0
+  minhp: 0
+  patnum: 0
+  pat1: 
+  val1: 0
+  pat2: 
+  val2: 0
+  pat3: 
+  val3: 0
+  tier: 0
 --- !u!114 &119597568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1875,6 +1886,7 @@ MonoBehaviour:
   eturn3: 0
   target: {fileID: 0}
   uc: 0
+  moblist: {fileID: 4900000, guid: f6137e84faef1bd4ba03246200d2ac67, type: 3}
 --- !u!1 &679781643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,6 +2233,17 @@ MonoBehaviour:
   s: 0
   d: 0
   dnum: 0
+  ename: 
+  maxhp: 0
+  minhp: 0
+  patnum: 0
+  pat1: 
+  val1: 0
+  pat2: 
+  val2: 0
+  pat3: 
+  val3: 0
+  tier: 0
 --- !u!114 &805722607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2575,6 +2598,17 @@ MonoBehaviour:
   s: 0
   d: 0
   dnum: 0
+  ename: 
+  maxhp: 0
+  minhp: 0
+  patnum: 0
+  pat1: 
+  val1: 0
+  pat2: 
+  val2: 0
+  pat3: 
+  val3: 0
+  tier: 0
 --- !u!114 &888950287
 MonoBehaviour:
   m_ObjectHideFlags: 0

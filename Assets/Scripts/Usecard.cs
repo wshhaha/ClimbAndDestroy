@@ -366,6 +366,7 @@ public class Usecard : MonoBehaviour
         transform.localScale = new Vector3(.5f, .5f, .5f);
         transform.localPosition = Vector3.zero;
         GetComponent<BoxCollider>().enabled = false;
+        GetComponent<UISprite>().depth = 0;
         yield return new WaitForEndOfFrame();
     }
     IEnumerator Extinc()

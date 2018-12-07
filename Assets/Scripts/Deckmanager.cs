@@ -35,7 +35,7 @@ public class Deckmanager : MonoBehaviour
         {
             Createcard(9);
         }
-        Createcard(12);
+        Createcard(1);
     }
     public void Createcard(int num)
     {
