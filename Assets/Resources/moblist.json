@@ -50,7 +50,7 @@
    "val1": 8,
    "pat2": "weak",
    "val2": 2,
-   "pat3": "friend",
+   "pat3": "burnmana",
    "val3": 5,
    "patnum": 3,
    "tier": 1
@@ -202,7 +202,7 @@
    "hpmax": 35,
    "pat1": "atk",
    "val1": 11,
-   "pat2": "cham",
+   "pat2": "charm",
    "val2": 1,
    "pat3": "",
    "val3": null,

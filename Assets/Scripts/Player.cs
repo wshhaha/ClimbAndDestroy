@@ -8,16 +8,53 @@ public class Player : MonoBehaviour
     public GameObject h;
     public GameObject gy;
     public GameObject spawner;
+    public List<GameObject> elist;
 	void Start () 
-	{
+	{   
         h = GameObject.Find("Hand");
         gy = GameObject.Find("Graveyard");
         spawner = GameObject.Find("Enemyspawner");
+        elist.Add(spawner.GetComponent<Enemyspawner>().slot1.gameObject);
+        elist.Add(spawner.GetComponent<Enemyspawner>().slot2.gameObject);
+        elist.Add(spawner.GetComponent<Enemyspawner>().slot3.gameObject);
         turn = true;
         Datamanager.i().inmaxmana = Datamanager.i().maxmana;
     }
+    void Ccdown()
+    {
+        if (Datamanager.i().w == true)
+        {
+            Datamanager.i().wnum--;
+            if (Datamanager.i().wnum == 0)
+            {
+                Datamanager.i().w = false;
+            }
+        }
+        if (Datamanager.i().l == true)
+        {
+            Datamanager.i().lnum--;
+            if (Datamanager.i().lnum == 0)
+            {
+                Datamanager.i().l = false;
+            }
+        }
+        if (Datamanager.i().d == true)
+        {
+            Datamanager.i().dnum--;
+            Datamanager.i().curhp -= 2;
+            if (Datamanager.i().curhp <= 0)
+            {
+                Datamanager.i().curhp = 1;
+            }
+            if (Datamanager.i().dnum == 0)
+            {
+                Datamanager.i().w = false;
+            }
+        }
+    }
 	public void Turnend()
     {
+        Ccdown();
         turn = false;
         Throwcard();
         if (spawner.GetComponent<Enemyspawner>().slot1.gameObject.activeSelf == true)
@@ -27,6 +64,13 @@ public class Player : MonoBehaviour
         else
         {
             spawner.GetComponent<Enemyspawner>().eturn2 = true;
+        }
+        for (int i = 0; i < 3; i++)
+        {
+            if (elist[i].activeSelf == true)
+            {
+                elist[i].GetComponent<Enemy>().shd = 0;
+            }
         }
         spawner.GetComponent<Enemyspawner>().Enemyturn();
     }

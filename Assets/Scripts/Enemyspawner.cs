@@ -5,6 +5,7 @@ using SimpleJSON;
 
 public class Enemyspawner : MonoBehaviour 
 {
+    public List<GameObject> elist;
     public UISprite gomap;
     public GameObject rewards;
     public UISprite slot1;
@@ -29,9 +30,9 @@ public class Enemyspawner : MonoBehaviour
     int tier3max;
     int nowtier;
     int texttier;
-
+    
     void Start () 
-	{
+	{   
         uc = false;
         d = GameObject.Find("Deck");
         p = GameObject.Find("Player");
@@ -44,6 +45,9 @@ public class Enemyspawner : MonoBehaviour
         eturn2 = false;
         eturn3 = false;
         Givemob();
+        elist.Add(slot1.gameObject);
+        elist.Add(slot2.gameObject);
+        elist.Add(slot3.gameObject);        
     }
    
     public void Givemob()
@@ -234,6 +238,7 @@ public class Enemyspawner : MonoBehaviour
     {
         var mob = JSON.Parse(moblist.text);
         slot.GetComponent<Enemy>().ename = mob[num]["name"];
+        slot.gameObject.name = mob[num]["name"];
         slot.GetComponent<Enemy>().maxhp = Random.Range(mob[num]["hpmin"], mob[num]["hpmax"]);
         slot.GetComponent<Enemy>().ehp = slot.GetComponent<Enemy>().maxhp;
         slot.GetComponent<Enemy>().patnum = mob[num]["patnum"];
@@ -246,6 +251,10 @@ public class Enemyspawner : MonoBehaviour
     }
     public void Enemyturn()
     {
+        StartCoroutine(Epatten());
+    }
+    IEnumerator Epatten()
+    {
         if (eturn1 == true)
         {
             eturn1 = slot1.gameObject.GetComponent<Enemy>().Eaction();
@@ -255,7 +264,7 @@ public class Enemyspawner : MonoBehaviour
             eturn3 = true;
             print("2");
             eturn3 = slot3.gameObject.GetComponent<Enemy>().Eaction();
-            print("3");            
+            print("3");
         }
         if (eturn2 == true)
         {
@@ -266,11 +275,20 @@ public class Enemyspawner : MonoBehaviour
             {
                 eturn3 = slot3.gameObject.GetComponent<Enemy>().Eaction();
                 print("3");
-            }            
+            }
         }
         p.GetComponent<Player>().turn = true;
         Datamanager.i().curmana = Datamanager.i().inmaxmana;
+        Datamanager.i().shd = 0;
         d.GetComponent<Builddeck>().Startturn();
+        for (int i = 0; i < 3; i++)
+        {
+            if (elist[i].activeSelf == true)
+            {
+                elist[i].gameObject.GetComponent<Enemy>().Eccdown();
+            }
+        }
+        yield return new WaitForEndOfFrame();
     }
     public void Targetlock(GameObject e)
     {

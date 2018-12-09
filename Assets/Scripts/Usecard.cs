@@ -45,8 +45,8 @@ public class Usecard : MonoBehaviour
             }
         }
         Datamanager.i().curmana -= GetComponent<Cardstat>().mana;        
-        StartCoroutine(Cardeffect(GetComponent<Cardstat>().eft1, 1));
-        StartCoroutine(Cardeffect(GetComponent<Cardstat>().eft2, 2));
+        StartCoroutine(Cardeffect(GetComponent<Cardstat>().eft1, GetComponent<Cardstat>().val1));
+        StartCoroutine(Cardeffect(GetComponent<Cardstat>().eft2, GetComponent<Cardstat>().val2));
         if (GetComponent<Cardstat>().ex == false)
         {
             StartCoroutine(Gogy());
@@ -59,302 +59,204 @@ public class Usecard : MonoBehaviour
         h.GetComponent<Hand>().handlist.Remove(gameObject);
         spawner.GetComponent<Enemyspawner>().target = null;
         spawner.GetComponent<Enemyspawner>().uc = false;
-    }
-    IEnumerator Cardeffect(string eft,int n)
+    }   
+    void Attack(int val)
     {
-        switch (n)
+        float weakf = 1.0f;
+        if (Datamanager.i().w == true)
         {
-            case 1:
-                switch (eft)
+            weakf = .75f;
+        }
+        else
+        {
+            weakf = 1;
+        }
+        float lockonf = 1;
+        
+        int dam = (val + Datamanager.i().str);
+        if (dam < 0)
+        {
+            dam = 0;
+        }
+        if (spawner.GetComponent<Enemyspawner>().target == null)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                if (elist[i].activeSelf == true)
                 {
-                    case "atk":
-                        if (spawner.GetComponent<Enemyspawner>().target == null)
+                    if (elist[i].GetComponent<Enemy>().l == true)
+                    {
+                        lockonf = 1.25f;
+                    }
+                    else
+                    {
+                        lockonf = 1;
+                    }
+                    dam = (int)(dam * weakf * lockonf);
+                    elist[i].GetComponent<Enemy>().shd -= dam;
+                    if (elist[i].GetComponent<Enemy>().shd < 0)
+                    {
+                        elist[i].GetComponent<Enemy>().ehp += elist[i].GetComponent<Enemy>().shd;
+                        elist[i].GetComponent<Enemy>().shd = 0;
+                    }
+                    if (elist[i].GetComponent<Enemy>().ehp <= 0)
+                    {
+                        elist[i].GetComponent<Enemy>().Discount();
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (spawner.GetComponent<Enemyspawner>().target.activeSelf == true)
+            {
+                if (spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().l == true)
+                {
+                    lockonf = 1.25f;
+                }
+                else
+                {
+                    lockonf = 1;
+                }
+                dam = (int)(dam * weakf * lockonf);
+                spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().shd -= dam;
+                if (spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().shd < 0)
+                {
+                    spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp += spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().shd;
+                    spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().shd = 0;
+                }
+                if (spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp <= 0)
+                {
+                    spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().Discount();
+                }
+            }
+        }
+    }
+    void Deffence(int val)
+    {
+        int dam = val + Datamanager.i().agi;
+        if (dam < 0)
+        {
+            dam = 0;
+        }
+        Datamanager.i().shd += dam;
+    }
+    IEnumerator Cardeffect(string eft,int val)
+    {
+        switch (eft)
+        {
+            case "atk":
+                Attack(val);
+                break;
+            case "def":
+                Deffence(val);
+                break;
+            case "bringarmor":
+                Attack(Datamanager.i().shd);
+                break;
+            case "allin":
+                for (int i = 0; i < Datamanager.i().curmana; i++)
+                {
+                    Attack(val);
+                }
+                Datamanager.i().curmana = 0;
+                break;
+            case "genamr":
+                Datamanager.i().genamr = true;
+                Datamanager.i().gennum = val;
+                break;
+            case "str":
+                Datamanager.i().str += val;
+                break;
+            case "mana":
+                Datamanager.i().curmana += val;
+                break;
+            case "heal":
+                Datamanager.i().curhp += val;
+                break;
+            case "lockon":
+                if (spawner.GetComponent<Enemyspawner>().target == null)
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (elist[i].activeSelf == true)
                         {
-                            for (int i = 0; i < 3; i++)
-                            {
-                                if (elist[i].activeSelf == true)
-                                {
-                                    elist[i].GetComponent<Enemy>().ehp -= GetComponent<Cardstat>().val1;
-                                    if (elist[i].GetComponent<Enemy>().ehp <= 0)
-                                    {
-                                        elist[i].GetComponent<Enemy>().Discount();
-                                    }
-                                }
-                            }
+                            elist[i].GetComponent<Enemy>().l = true;
+                            elist[i].GetComponent<Enemy>().lnum += val;
                         }
-                        else
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp -= GetComponent<Cardstat>().val1;
-                            if (spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp <= 0)
-                            {
-                                spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().Discount();
-                            }
-                        }
-                        break;
-                    case "def":
-                        Datamanager.i().shd += GetComponent<Cardstat>().val1;
-                        break;
-                    case "bringarmor":
-                        spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp -= Datamanager.i().shd;
-                        if (spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp <= 0)
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().Discount();
-                        }
-                        break;
-                    case "allin":
-                        for (int i = 0; i < Datamanager.i().curmana; i++)
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp -= GetComponent<Cardstat>().val1;
-                        }
-                        if (spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp <= 0)
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().Discount();
-                        }
-                        Datamanager.i().curmana = 0;
-                        break;
-                    case "genamr":
-                        Datamanager.i().genamr = true;
-                        Datamanager.i().gennum = GetComponent<Cardstat>().val1;
-                        break;
-                    case "str":
-                        Datamanager.i().str += GetComponent<Cardstat>().val1;
-                        break;
-                    case "mana":
-                        Datamanager.i().curmana += GetComponent<Cardstat>().val1;
-                        break;
-                    case "heal":
-                        Datamanager.i().curhp += GetComponent<Cardstat>().val1;
-                        break;
-                    case "lockon":
-                        if (spawner.GetComponent<Enemyspawner>().target == null)
-                        {
-                            for (int i = 0; i < 3; i++)
-                            {
-                                if (elist[i].activeSelf == true)
-                                {
-                                    elist[i].GetComponent<Enemy>().l = true;
-                                    elist[i].GetComponent<Enemy>().lnum += GetComponent<Cardstat>().val1;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().l = true;
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().lnum += GetComponent<Cardstat>().val1;
-                        }
-                        break;
-                    case "stun":
-                        int j = Random.Range(0, 100);
-                        if (j >= 20 && j < 40)
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().s = true;
-                        }
-                        break;
-                    case "draw":
-                        deck.Drawing(GetComponent<Cardstat>().val1);
-                        break;
-                    case "weak":
-                        if (spawner.GetComponent<Enemyspawner>().target == null)
-                        {
-                            for (int i = 0; i < 3; i++)
-                            {
-                                if (elist[i].activeSelf == true)
-                                {
-                                    elist[i].GetComponent<Enemy>().w = true;
-                                    elist[i].GetComponent<Enemy>().wnum += GetComponent<Cardstat>().val1;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().w = true;
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().wnum += GetComponent<Cardstat>().val1;
-                        }
-                        break;
-                    case "rebound":
-                        Datamanager.i().curhp -= GetComponent<Cardstat>().val1;
-                        break;
-                    case "bringstr":
-                        for (int i = 0; i < GetComponent<Cardstat>().val1; i++)
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp -= Datamanager.i().str * 5;
-                        }
-                        if (spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp <= 0)
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().Discount();
-                        }
-                        break;
-                    case "random":
-                        for (int i = 0; i < Datamanager.i().curmana; i++)
-                        {
-                            Randomtarget();
-                        }
-                        Datamanager.i().curmana = 0;
-                        break;
-                    case "manaup":
-                        Datamanager.i().inmaxmana += GetComponent<Cardstat>().val1;
-                        break;
-                    case "dot":
-                        spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().d = true;
-                        spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().dnum += GetComponent<Cardstat>().val1;
-                        break;
-                    case "reflect":
-                        Datamanager.i().r = true;
-                        Datamanager.i().rnum = GetComponent<Cardstat>().val1;
-                        break;
-                    case "instant":
-                        Datamanager.i().ins = true;
-                        Datamanager.i().insnum = GetComponent<Cardstat>().val1;
-                        break;
-                    case null:
-                        break;
+                    }
+                }
+                else
+                {
+                    spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().l = true;
+                    spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().lnum += val;
                 }
                 break;
-            case 2:
-                switch (eft)
+            case "stun":
+                int j = Random.Range(0, 100);
+                if (j >= 20 && j < 40)
                 {
-                    case "atk":
-                        if (spawner.GetComponent<Enemyspawner>().target == null)
-                        {
-                            for (int i = 0; i < 3; i++)
-                            {
-                                if (elist[i].activeSelf == true)
-                                {
-                                    elist[i].GetComponent<Enemy>().ehp -= GetComponent<Cardstat>().val2;
-                                    if (elist[i].GetComponent<Enemy>().ehp <= 0)
-                                    {
-                                        elist[i].GetComponent<Enemy>().Discount();
-                                    }
-                                }
-                            }
-                        }
-                        else
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp -= GetComponent<Cardstat>().val2;
-                            if (spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp <= 0)
-                            {
-                                spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().Discount();
-                            }
-                        }
-                        break;
-                    case "def":
-                        Datamanager.i().shd += GetComponent<Cardstat>().val2;
-                        break;
-                    case "bringarmor":
-                        spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp -= Datamanager.i().shd;
-                        if (spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp <= 0)
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().Discount();
-                        }
-                        break;
-                    case "allin":
-                        for (int i = 0; i < Datamanager.i().curmana; i++)
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp -= GetComponent<Cardstat>().val2;
-                        }
-                        if (spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp <= 0)
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().Discount();
-                        }
-                        Datamanager.i().curmana = 0;
-                        break;
-                    case "genamr":
-                        Datamanager.i().genamr = true;
-                        Datamanager.i().gennum = GetComponent<Cardstat>().val2;
-                        break;
-                    case "str":
-                        Datamanager.i().str += GetComponent<Cardstat>().val2;
-                        break;
-                    case "mana":
-                        Datamanager.i().curmana += GetComponent<Cardstat>().val2;
-                        break;
-                    case "heal":
-                        Datamanager.i().curhp += GetComponent<Cardstat>().val2;
-                        break;
-                    case "lockon":
-                        if (spawner.GetComponent<Enemyspawner>().target == null)
-                        {
-                            for (int i = 0; i < 3; i++)
-                            {
-                                if (elist[i].activeSelf == true)
-                                {
-                                    elist[i].GetComponent<Enemy>().l = true;
-                                    elist[i].GetComponent<Enemy>().lnum += GetComponent<Cardstat>().val2;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().l = true;
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().lnum += GetComponent<Cardstat>().val2;
-                        }
-                        break;
-                    case "stun":
-                        int j = Random.Range(0, 100);
-                        if (j >= 20 && j < 40)
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().s = true;
-                        }
-                        break;
-                    case "draw":
-                        deck.Drawing(GetComponent<Cardstat>().val2);
-                        break;
-                    case "weak":
-                        if (spawner.GetComponent<Enemyspawner>().target == null)
-                        {
-                            for (int i = 0; i < 3; i++)
-                            {
-                                if (elist[i].activeSelf == true)
-                                {
-                                    elist[i].GetComponent<Enemy>().w = true;
-                                    elist[i].GetComponent<Enemy>().wnum += GetComponent<Cardstat>().val2;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().w = true;
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().wnum += GetComponent<Cardstat>().val2;
-                        }
-                        break;
-                    case "rebound":
-                        Datamanager.i().curhp -= GetComponent<Cardstat>().val2;
-                        break;
-                    case "bringstr":
-                        for (int i = 0; i < GetComponent<Cardstat>().val2; i++)
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp -= Datamanager.i().str * 5;
-                        }
-                        if (spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp <= 0)
-                        {
-                            spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().Discount();
-                        }
-                        break;
-                    case "random":
-                        for (int i = 0; i < Datamanager.i().curmana; i++)
-                        {
-                            Randomtarget();
-                        }
-                        Datamanager.i().curmana = 0;
-                        break;
-                    case "manaup":
-                        Datamanager.i().inmaxmana += GetComponent<Cardstat>().val2;
-                        break;
-                    case "dot":
-                        spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().d = true;
-                        spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().dnum += GetComponent<Cardstat>().val2;
-                        break;
-                    case "reflect":
-                        Datamanager.i().r = true;
-                        Datamanager.i().rnum = GetComponent<Cardstat>().val2;
-                        break;
-                    case "instant":
-                        Datamanager.i().ins = true;
-                        Datamanager.i().insnum = GetComponent<Cardstat>().val2;
-                        break;
-                    case null:
-                        break;
+                    spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().s = true;
+                    print("stun sucsses");
                 }
+                else
+                {
+                    print("stun fail");
+                }
+                break;
+            case "draw":
+                deck.Drawing(val);
+                break;
+            case "weak":
+                if (spawner.GetComponent<Enemyspawner>().target == null)
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (elist[i].activeSelf == true)
+                        {
+                            elist[i].GetComponent<Enemy>().w = true;
+                            elist[i].GetComponent<Enemy>().wnum += val;
+                        }
+                    }
+                }
+                else
+                {
+                    spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().w = true;
+                    spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().wnum += val;
+                }
+                break;
+            case "rebound":
+                Datamanager.i().curhp -= val;
+                break;
+            case "bringstr":
+                for (int i = 0; i < val; i++)
+                {
+                    Attack((Datamanager.i().str + 1) * 5);
+                }
+                break;
+            case "random":
+                for (int i = 0; i < Datamanager.i().curmana; i++)
+                {
+                    Randomtarget(val);
+                }
+                Datamanager.i().curmana = 0;
+                break;
+            case "manaup":
+                Datamanager.i().inmaxmana += val;
+                break;
+            case "dot":
+                spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().d = true;
+                spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().dnum += val;
+                break;
+            case "reflect":
+                Datamanager.i().r = true;
+                Datamanager.i().rnum = val;
+                break;
+            case "instant":
+                Datamanager.i().ins = true;
+                Datamanager.i().insnum = val;
+                break;
+            case null:
                 break;
         }
         yield return new WaitForEndOfFrame();
@@ -382,25 +284,14 @@ public class Usecard : MonoBehaviour
         Destroy(gameObject);
         yield return new WaitForEndOfFrame();
     }
-    void Randomtarget()
+    void Randomtarget(int num)
     {
         int k = Random.Range(0, 3);
         if (elist[k].activeSelf == false)
         {
-            Randomtarget();
+            Randomtarget(num);
             return;
         }
-        if (GetComponent<Cardstat>().eft1 == "random")
-        {
-            elist[k].GetComponent<Enemy>().ehp -= GetComponent<Cardstat>().val1;            
-        }
-        else
-        {
-            elist[k].GetComponent<Enemy>().ehp -= GetComponent<Cardstat>().val2;            
-        }
-        if (elist[k].GetComponent<Enemy>().ehp <= 0)
-        {
-            elist[k].GetComponent<Enemy>().Discount();
-        }
+        Attack(num);
     }
 }

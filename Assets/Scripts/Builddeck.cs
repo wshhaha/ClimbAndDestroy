@@ -10,7 +10,7 @@ public class Builddeck : MonoBehaviour
     public UIGrid deckgrid;
     public GameObject hand;
     public GameObject gy;
-    int d = 0;
+    
     void Start () 
 	{
         Copydeck();
@@ -74,5 +74,14 @@ public class Builddeck : MonoBehaviour
             Drawacard();
         }
         Datamanager.i().curmana = Datamanager.i().inmaxmana;
+        if (Datamanager.i().b == true)
+        {
+            Datamanager.i().curmana--;
+            Datamanager.i().bnum--;
+            if (Datamanager.i().bnum == 0)
+            {
+                Datamanager.i().b = false;
+            }
+        }
     }
 }

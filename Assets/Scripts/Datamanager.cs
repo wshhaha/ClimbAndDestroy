@@ -22,6 +22,15 @@ public class Datamanager : MonoBehaviour
     public int gennum;
     public bool r;
     public int rnum;
+    //아래 몬스터 전용
+    public bool w;
+    public int wnum;
+    public bool l;
+    public int lnum;
+    public bool b;
+    public int bnum;
+    public bool d;
+    public int dnum;
 
     static Datamanager _instance;
     public static Datamanager i()
