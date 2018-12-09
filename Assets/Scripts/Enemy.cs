@@ -57,17 +57,17 @@ public class Enemy : MonoBehaviour
                     p = 1;
                 }
                 break;
-            case "necromancer":
-                p = 0;
-                for (int i = 0; i < 3; i++)
-                {
-                    if (spawner.GetComponent<Enemyspawner>().elist[i].activeSelf == true)
-                    {
-                        continue;
-                    }
-                    p = Random.Range(0, patnum);
-                }
-                break;
+            //case "necromancer":
+            //    p = 0;
+            //    for (int i = 0; i < 3; i++)
+            //    {
+            //        if (spawner.GetComponent<Enemyspawner>().elist[i].activeSelf == true)
+            //        {
+            //            continue;
+            //        }
+            //        p = Random.Range(0, patnum);
+            //    }
+            //    break;
             default:
                 p = Random.Range(0, patnum);
                 break;
@@ -183,18 +183,18 @@ public class Enemy : MonoBehaviour
                 ehp += 3;
                 break;
             case "summon":
-                List<UISprite> elist = new List<UISprite>();
-                elist.Add(spawner.GetComponent<Enemyspawner>().slot1);
-                elist.Add(spawner.GetComponent<Enemyspawner>().slot2);
-                elist.Add(spawner.GetComponent<Enemyspawner>().slot3);
-                for (int i = 0; i < 3; i++)
-                {
-                    if (elist[i].gameObject.activeSelf == false)
-                    {
-                        spawner.GetComponent<Enemyspawner>().Givemstat(elist[i].gameObject, 4);
-                        break;
-                    }
-                }
+                //List<UISprite> elist = new List<UISprite>();
+                //elist.Add(spawner.GetComponent<Enemyspawner>().slot1);
+                //elist.Add(spawner.GetComponent<Enemyspawner>().slot2);
+                //elist.Add(spawner.GetComponent<Enemyspawner>().slot3);
+                //for (int i = 0; i < 3; i++)
+                //{
+                //    if (elist[i].gameObject.activeSelf == false)
+                //    {
+                //        spawner.GetComponent<Enemyspawner>().Givemstat(elist[i].gameObject, 4);
+                //        break;
+                //    }
+                //}
                 break;
             case "deathblade":
                 int ran = Random.Range(0, 100);
