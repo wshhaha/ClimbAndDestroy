@@ -89,4 +89,12 @@ public class Deckmanager : MonoBehaviour
             card.GetComponent<Cardstat>().grade = wi[num]["grade"];
         }
     }
+    public void Removedeck()
+    {
+        for (int i = 0; i < orideck.Count; i++)
+        {            
+            Destroy(orideck[i]);
+        }
+        orideck.RemoveRange(0, orideck.Count);
+    }
 }

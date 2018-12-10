@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Usecard : MonoBehaviour 
 {
@@ -9,17 +10,23 @@ public class Usecard : MonoBehaviour
     public GameObject spawner;
     public List<GameObject> elist;
     public Builddeck deck;
-    GameObject h;    
+    GameObject h;
+    public Rest rest;
 
     private void Start()
-    {   
-        h = GameObject.Find("Hand");
-        deck = GameObject.Find("Deck").GetComponent<Builddeck>();
-        spawner = GameObject.Find("Enemyspawner");
-        elist = new List<GameObject>();
-        elist.Add(spawner.GetComponent<Enemyspawner>().slot1.gameObject);
-        elist.Add(spawner.GetComponent<Enemyspawner>().slot2.gameObject);
-        elist.Add(spawner.GetComponent<Enemyspawner>().slot3.gameObject);
+    {
+        switch (Application.loadedLevelName)
+        {
+            case "Battle":
+                h = GameObject.Find("Hand");
+                deck = GameObject.Find("Deck").GetComponent<Builddeck>();
+                spawner = GameObject.Find("Enemyspawner");
+                elist = new List<GameObject>();
+                elist.Add(spawner.GetComponent<Enemyspawner>().slot1.gameObject);
+                elist.Add(spawner.GetComponent<Enemyspawner>().slot2.gameObject);
+                elist.Add(spawner.GetComponent<Enemyspawner>().slot3.gameObject);
+                break;
+        }
     }
     public void Usingcard()
     {        
@@ -27,6 +34,10 @@ public class Usecard : MonoBehaviour
     }
     IEnumerator Reading()
     {
+        if (Application.loadedLevelName != "Battle")
+        {
+            yield break;
+        }
         p = GameObject.Find("Player");
         if (p.GetComponent<Player>().turn == false)
         {
@@ -267,8 +278,8 @@ public class Usecard : MonoBehaviour
         transform.parent = gy.GetComponentInChildren<UIGrid>().transform;
         transform.localScale = new Vector3(.5f, .5f, .5f);
         transform.localPosition = Vector3.zero;
-        GetComponent<BoxCollider>().enabled = false;
-        GetComponent<UISprite>().depth = 0;
+        GetComponentInChildren<BoxCollider>().enabled = false;
+        GetComponent<UIPanel>().depth = 2;
         yield return new WaitForEndOfFrame();
     }
     IEnumerator Extinc()
@@ -293,5 +304,16 @@ public class Usecard : MonoBehaviour
             return;
         }
         Attack(num);
+    }
+
+    public void Upgrade(GameObject card)
+    {
+        if (Application.loadedLevelName != "Rest")
+        {
+            return;
+        }
+        rest = GameObject.Find("Rest").GetComponent<Rest>();
+        rest.yesno.SetActive(true);
+        rest.target = card;
     }
 }

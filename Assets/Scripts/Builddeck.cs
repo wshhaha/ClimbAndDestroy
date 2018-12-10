@@ -22,12 +22,12 @@ public class Builddeck : MonoBehaviour
         {
             GameObject c;
             c = Instantiate(card);
-            c.GetComponent<BoxCollider>().enabled = false;
+            c.GetComponentInChildren<BoxCollider>().enabled = false;
             c.GetComponent<Usecard>().gy = GameObject.Find("Graveyard");
             Deckmanager.instance().Givestat(Deckmanager.instance().orideck[i].GetComponent<Cardstat>().index - 1, c);
             c.transform.parent = deckgrid.transform;
             c.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-            c.GetComponent<UISprite>().depth = 0;
+            c.GetComponent<UIPanel>().depth = 2;
             deck.Add(c);
         }
     }
@@ -40,9 +40,8 @@ public class Builddeck : MonoBehaviour
             deck[i].transform.parent = hand.GetComponentInChildren<UIGrid>().transform;
             deck[i].transform.localScale = new Vector3(1, 1, 1);
             deck[i].transform.localPosition = Vector3.zero;
-            deck[i].GetComponent<BoxCollider>().enabled = true;
-            deck[i].GetComponent<UISprite>().depth = hand.GetComponent<Hand>().handlist.Count;
-            
+            deck[i].GetComponentInChildren<BoxCollider>().enabled = true;
+            deck[i].GetComponent<UIPanel>().depth = hand.GetComponent<Hand>().handlist.Count+2;
             hand.GetComponentInChildren<UIGrid>().enabled = true;
             deck.RemoveAt(i);
         }

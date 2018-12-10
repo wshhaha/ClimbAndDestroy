@@ -22,14 +22,14 @@ public class Enemyspawner : MonoBehaviour
     public TextAsset moblist;
     int min;
     int max;
-    int tier1num;
-    int tier1max;
-    int tier2num;
-    int tier2max;
-    int tier3num;
-    int tier3max;
-    int nowtier;
-    int texttier;
+    public int tier1num;
+    public int tier1max;
+    public int tier2num;
+    public int tier2max;
+    public int tier3num;
+    public int tier3max;
+    public int nowtier;
+    public int goldmin;
     
     void Start () 
 	{   
@@ -46,9 +46,9 @@ public class Enemyspawner : MonoBehaviour
         eturn3 = false;
         elist.Add(slot1.gameObject);
         elist.Add(slot2.gameObject);
-        elist.Add(slot3.gameObject);
-        Slotnum();
+        elist.Add(slot3.gameObject);        
         Givemob();
+        Slotnum();        
     }
    
     public void Givemob()
@@ -152,28 +152,22 @@ public class Enemyspawner : MonoBehaviour
     {
         switch (e)
         {
-            case 3:                
-                nowtier = Random.Range(min, max);
-                Looktier(nowtier);
+            case 3:
+                Looktier(min, max);
                 Givemstat(slot1.gameObject, nowtier);
-                nowtier = Random.Range(min, max);
-                Looktier(nowtier);
+                Looktier(min, max);
                 Givemstat(slot2.gameObject, nowtier);
-                nowtier = Random.Range(min, max);
-                Looktier(nowtier);
+                Looktier(min, max);
                 Givemstat(slot3.gameObject, nowtier);
                 break;
-            case 2:                
-                nowtier = Random.Range(min, max);
-                Looktier(nowtier);
+            case 2:
+                Looktier(min, max);
                 Givemstat(slot2.gameObject, nowtier);
-                nowtier = Random.Range(min, max);
-                Looktier(nowtier);
+                Looktier(min, max);
                 Givemstat(slot3.gameObject, nowtier);
                 break;
-            case 1:                
-                nowtier = Random.Range(min, max);
-                Looktier(nowtier);
+            case 1:
+                Looktier(min, max);
                 Givemstat(slot2.gameObject, nowtier);
                 break;
         }
@@ -199,18 +193,20 @@ public class Enemyspawner : MonoBehaviour
                 break;
         }        
     }
-    void Looktier(int t)
+    void Looktier(int min,int max)
     {
+        int t = Random.Range(min, max);
+        nowtier = t;
         int num = 0;
-        if (t < 10)
+        if (t >= 0 && t < 10)
         {
             num = 1;
         }
-        if (t < 16)
+        if (t >= 10 && t < 16)
         {
             num = 2;
         }
-        else
+        if (t >= 16 && t < 20)
         {
             num = 3;
         }
@@ -223,7 +219,7 @@ public class Enemyspawner : MonoBehaviour
                 }
                 else
                 {
-                    Slotmob(tier1max, tier2max, tier3max);
+                    Looktier(min, max);
                     return;
                 }
                 break;
@@ -234,7 +230,7 @@ public class Enemyspawner : MonoBehaviour
                 }
                 else
                 {
-                    Slotmob(tier1max, tier2max, tier3max);
+                    Looktier(min, max);
                     return;
                 }
                 break;
@@ -245,7 +241,7 @@ public class Enemyspawner : MonoBehaviour
                 }
                 else
                 {
-                    Slotmob(tier1max, tier2max, tier3max);
+                    Looktier(min, max);
                     return;
                 }
                 break;
@@ -264,7 +260,8 @@ public class Enemyspawner : MonoBehaviour
         slot.GetComponent<Enemy>().pat3 = mob1[num]["pat3"];
         slot.GetComponent<Enemy>().val1 = mob1[num]["val1"];
         slot.GetComponent<Enemy>().val2 = mob1[num]["val2"];
-        slot.GetComponent<Enemy>().val3 = mob1[num]["val3"];        
+        slot.GetComponent<Enemy>().val3 = mob1[num]["val3"];
+        slot.GetComponent<Enemy>().tier = mob1[num]["tier"];
     }
     public void Enemyturn()
     {

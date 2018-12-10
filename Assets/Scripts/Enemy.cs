@@ -24,18 +24,38 @@ public class Enemy : MonoBehaviour
     public string pat3;
     public int val3;
     public int tier;
-    public int str;
+    public int str;    
 
     public void Discount()
     {
+        switch (tier)
+        {
+            case 1:
+                Datamanager.i().curscore++;
+                spawner.GetComponent<Enemyspawner>().goldmin += 10;
+                break;
+            case 2:
+                Datamanager.i().curscore += 5;
+                spawner.GetComponent<Enemyspawner>().goldmin += 50;
+                break;
+            case 3:
+                Datamanager.i().curscore += 10;
+                spawner.GetComponent<Enemyspawner>().goldmin += 90;
+                break;
+        }
         spawner.GetComponent<Enemyspawner>().e--;
         if(spawner.GetComponent<Enemyspawner>().e <= 0)
         {
             spawner.GetComponent<Enemyspawner>().gomap.gameObject.SetActive(true);
             spawner.GetComponent<Enemyspawner>().rewards.SetActive(true);
+            int rang = Random.Range(spawner.GetComponent<Enemyspawner>().goldmin, spawner.GetComponent<Enemyspawner>().goldmin + 20);
+            spawner.GetComponent<Enemyspawner>().rewards.GetComponent<Rewards>().Addreward("gold", rang);
+            Rewardcard();
+            Rewardt();
         }
         gameObject.SetActive(false);
     }
+    
     public bool Eaction()
     {
         StartCoroutine(Readpat());
@@ -57,17 +77,17 @@ public class Enemy : MonoBehaviour
                     p = 1;
                 }
                 break;
-            //case "necromancer":
-            //    p = 0;
-            //    for (int i = 0; i < 3; i++)
-            //    {
-            //        if (spawner.GetComponent<Enemyspawner>().elist[i].activeSelf == true)
-            //        {
-            //            continue;
-            //        }
-            //        p = Random.Range(0, patnum);
-            //    }
-            //    break;
+            case "necromancer":
+                p = 0;
+                for (int i = 0; i < 3; i++)
+                {
+                    if (spawner.GetComponent<Enemyspawner>().elist[i].activeSelf == true)
+                    {
+                        continue;
+                    }
+                    p = Random.Range(0, patnum);
+                }
+                break;
             default:
                 p = Random.Range(0, patnum);
                 break;
@@ -115,6 +135,24 @@ public class Enemy : MonoBehaviour
         {
             Datamanager.i().curhp += Datamanager.i().shd;
             Datamanager.i().shd = 0;
+        }
+        if (Datamanager.i().curhp <= 0)
+        {
+            Player p = GameObject.Find("Player").GetComponent<Player>();
+            p.gameover.SetActive(true);
+        }
+        if (Datamanager.i().r == true)
+        {
+            shd -= Datamanager.i().rnum;            
+            if (shd < 0)
+            {
+                ehp += shd;
+                shd = 0;
+            }
+            if (ehp < 0)
+            {
+                Discount();
+            }
         }
     }
     IEnumerator Pateffect(string pat,int val)
@@ -183,18 +221,18 @@ public class Enemy : MonoBehaviour
                 ehp += 3;
                 break;
             case "summon":
-                //List<UISprite> elist = new List<UISprite>();
-                //elist.Add(spawner.GetComponent<Enemyspawner>().slot1);
-                //elist.Add(spawner.GetComponent<Enemyspawner>().slot2);
-                //elist.Add(spawner.GetComponent<Enemyspawner>().slot3);
-                //for (int i = 0; i < 3; i++)
-                //{
-                //    if (elist[i].gameObject.activeSelf == false)
-                //    {
-                //        spawner.GetComponent<Enemyspawner>().Givemstat(elist[i].gameObject, 4);
-                //        break;
-                //    }
-                //}
+                List<UISprite> elist = new List<UISprite>();
+                elist.Add(spawner.GetComponent<Enemyspawner>().slot1);
+                elist.Add(spawner.GetComponent<Enemyspawner>().slot2);
+                elist.Add(spawner.GetComponent<Enemyspawner>().slot3);
+                for (int i = 0; i < 3; i++)
+                {
+                    if (elist[i].gameObject.activeSelf == false)
+                    {
+                        spawner.GetComponent<Enemyspawner>().Givemstat(elist[i].gameObject, 4);
+                        break;
+                    }
+                }
                 break;
             case "deathblade":
                 int ran = Random.Range(0, 100);
@@ -251,6 +289,42 @@ public class Enemy : MonoBehaviour
             {
                 w = false;
             }
+        }
+    }
+    void Rewardcard()
+    {
+        int ranc = Random.Range(0, 100);
+        int cardnum = 0;
+        if (ranc >= 0 && ranc < 70)
+        {
+            cardnum = Random.Range(0, 10);
+        }
+        if (ranc >= 70 && ranc < 95)
+        {
+            cardnum = Random.Range(10, 16);
+        }
+        if (ranc >= 95 && ranc < 100)
+        {
+            cardnum = Random.Range(16, 20);
+        }
+        spawner.GetComponent<Enemyspawner>().rewards.GetComponent<Rewards>().Addreward("card", cardnum);
+    }
+    void Rewardt()
+    {
+        int rant = Random.Range(0, 100);
+        if (rant < 110)
+        {
+            int lotto = Random.Range(0, 100);
+            int num = 0;            
+            if (lotto >= 0 && lotto < 80)
+            {
+                num = Random.Range(0, 2);
+            }
+            if (lotto >= 80 && lotto < 100)
+            {
+                num = Random.Range(2, 4);
+            }
+            spawner.GetComponent<Enemyspawner>().rewards.GetComponent<Rewards>().Addreward("treasure", num);
         }
     }
 }

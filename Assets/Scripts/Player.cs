@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour 
 {
@@ -9,8 +10,33 @@ public class Player : MonoBehaviour
     public GameObject gy;
     public GameObject spawner;
     public List<GameObject> elist;
+    public GameObject gameover;
+
 	void Start () 
-	{   
+	{
+        if (Itemmanager.instance().inven.Count != 0)
+        {
+            for (int i = 0; i < Itemmanager.instance().inven.Count; i++)
+            {
+                string e = Itemmanager.instance().inven[i].GetComponent<Iteminfo>().eft;
+                switch (e)
+                {
+                    case "str":
+                        Datamanager.i().str++;
+                        break;
+                    case "agi":
+                        Datamanager.i().agi++;
+                        break;
+                    case "maxmana":
+                        Datamanager.i().maxmana++;
+                        break;
+                    case "maxhp":
+                        Datamanager.i().maxhp += 7;
+                        break;
+                }
+            }
+        }
+        gameover.SetActive(false);
         h = GameObject.Find("Hand");
         gy = GameObject.Find("Graveyard");
         spawner = GameObject.Find("Enemyspawner");
@@ -22,6 +48,10 @@ public class Player : MonoBehaviour
     }
     void Ccdown()
     {
+        if (Datamanager.i().r == true)
+        {
+            Datamanager.i().r = false;
+        }
         if (Datamanager.i().w == true)
         {
             Datamanager.i().wnum--;
@@ -81,11 +111,16 @@ public class Player : MonoBehaviour
             int i = 0;
             gy.GetComponent<Gyard>().gylist.Add(h.GetComponent<Hand>().handlist[i]);
             h.GetComponent<Hand>().handlist[i].transform.parent = gy.GetComponentInChildren<UIGrid>().transform;
-            h.GetComponent<Hand>().handlist[i].GetComponent<UISprite>().depth = 0;
+            h.GetComponent<Hand>().handlist[i].GetComponent<UIPanel>().depth = 2;
             h.GetComponent<Hand>().handlist[i].transform.localScale = new Vector3(.5f, .5f, .5f);
             h.GetComponent<Hand>().handlist[i].transform.localPosition = Vector3.zero;
-            h.GetComponent<Hand>().handlist[i].GetComponent<BoxCollider>().enabled = false;
+            h.GetComponent<Hand>().handlist[i].GetComponentInChildren<BoxCollider>().enabled = false;
             h.GetComponent<Hand>().handlist.Remove(h.GetComponent<Hand>().handlist[i]);            
         }
+    }
+    public void Gototitle()
+    {
+        Deckmanager.instance().Removedeck();
+        SceneManager.LoadScene("1_Title");
     }
 }

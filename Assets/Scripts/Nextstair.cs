@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class Nextstair : MonoBehaviour 
 {    
 	public void Next()
-    {        
+    {
+        Datamanager.i().curscore++;
         Datamanager.i().stage++;
         if (Datamanager.i().stage % 10 == 1)
         {

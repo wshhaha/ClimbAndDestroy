@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -140,7 +140,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &85346740
 MonoBehaviour:
@@ -346,6 +346,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1291969385}
+  - {fileID: 1663332296}
   m_Father: {fileID: 1169271664}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -554,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7dbf1cd8678074289123728f116502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 1154267419270692, guid: 4effae5c7b2919142971a2a9f1ee9eff, type: 2}
+  card: {fileID: 1156714620499180, guid: 9f414891c2d6ed446aac5b1be7357a55, type: 2}
   orideck: []
   warriordeck: {fileID: 4900000, guid: c4ed30c850bfb2d4d8f9b74131be5292, type: 3}
   wizarddeck: {fileID: 4900000, guid: 0bd4c00f791e53d49bd551d58453aec0, type: 3}
@@ -767,7 +768,7 @@ Transform:
   m_LocalScale: {x: 30, y: 30, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1507319069
 GameObject:
@@ -831,12 +832,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1663332295}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1035531137}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1663332297
 MonoBehaviour:
@@ -849,6 +850,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4aab2bcc177e7046b09f59fe85f6faa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 1674924107868598, guid: 673b88b10853ebb4685f22b7b0e9f066, type: 2}
+  inven: []
+  itemlist: {fileID: 4900000, guid: 543b16a2356512840b18b9b645b52552, type: 3}
 --- !u!1 &1712799359
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,13 +897,28 @@ MonoBehaviour:
   curscore: 0
   curhp: 0
   maxhp: 0
-  shiled: 0
+  shd: 0
   gold: 0
   str: 0
   agi: 0
   curmana: 0
   maxmana: 0
+  inmaxmana: 0
   stage: 0
+  ins: 0
+  insnum: 0
+  genamr: 0
+  gennum: 0
+  r: 0
+  rnum: 0
+  w: 0
+  wnum: 0
+  l: 0
+  lnum: 0
+  b: 0
+  bnum: 0
+  d: 0
+  dnum: 0
 --- !u!1 &1833811827
 GameObject:
   m_ObjectHideFlags: 0
