@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     public GameObject spawner;
     public List<GameObject> elist;
     public GameObject gameover;
+    public UILabel hplabel;
+    public UISlider hpbar;
 
 	void Start () 
 	{
@@ -120,7 +122,31 @@ public class Player : MonoBehaviour
     }
     public void Gototitle()
     {
+        Datamanager.i().stage = 0;
+        Datamanager.i().shd = 0;
+        Datamanager.i().str = 0;
+        Datamanager.i().agi = 0;
+        Datamanager.i().maxmana = 3;
+        Datamanager.i().insnum = 0;
+        Datamanager.i().ins = false;
+        Datamanager.i().genamr = false;
+        Datamanager.i().gennum = 0;
+        Datamanager.i().r = false;
+        Datamanager.i().rnum = 0;
+        Datamanager.i().w = false;
+        Datamanager.i().wnum = 0;
+        Datamanager.i().l = false;
+        Datamanager.i().lnum = 0;
+        Datamanager.i().d = false;
+        Datamanager.i().dnum = 0;
+        Datamanager.i().b = false;
+        Datamanager.i().bnum = 0;
         Deckmanager.instance().Removedeck();
         SceneManager.LoadScene("1_Title");
+    }
+    private void Update()
+    {
+        hplabel.text = Datamanager.i().curhp + "/" + Datamanager.i().maxhp;
+        hpbar.value = ((float)Datamanager.i().curhp / (float)Datamanager.i().maxhp);
     }
 }

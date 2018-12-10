@@ -48,7 +48,8 @@ public class Enemyspawner : MonoBehaviour
         elist.Add(slot2.gameObject);
         elist.Add(slot3.gameObject);        
         Givemob();
-        Slotnum();        
+        Slotnum();
+        Selepat();
     }
    
     public void Givemob()
@@ -295,13 +296,7 @@ public class Enemyspawner : MonoBehaviour
         Datamanager.i().curmana = Datamanager.i().inmaxmana;
         Datamanager.i().shd = 0;
         d.GetComponent<Builddeck>().Startturn();
-        for (int i = 0; i < 3; i++)
-        {
-            if (elist[i].activeSelf == true)
-            {
-                elist[i].gameObject.GetComponent<Enemy>().Eccdown();
-            }
-        }
+        Selepat();
         yield return new WaitForEndOfFrame();
     }
     public void Targetlock(GameObject e)
@@ -313,6 +308,56 @@ public class Enemyspawner : MonoBehaviour
         else
         {
             return;
+        }
+    }
+    void Selepat()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (elist[i].activeSelf == true)
+            {
+                elist[i].gameObject.GetComponent<Enemy>().Eccdown();
+                switch (elist[i].gameObject.GetComponent<Enemy>().ename)
+                {
+                    case "ogre":
+                        int ran = Random.Range(0, 3);
+                        if (ran == 2)
+                        {
+                            elist[i].gameObject.GetComponent<Enemy>().p = 0;
+                        }
+                        else
+                        {
+                            elist[i].gameObject.GetComponent<Enemy>().p = 1;
+                        }
+                        break;
+                    case "necromancer":
+                        elist[i].gameObject.GetComponent<Enemy>().p = 0;
+                        for (int k = 0; k < 3; k++)
+                        {
+                            if (elist[k].activeSelf == true)
+                            {
+                                continue;
+                            }
+                            elist[k].gameObject.GetComponent<Enemy>().p = Random.Range(0, elist[k].gameObject.GetComponent<Enemy>().patnum);
+                        }
+                        break;
+                    default:
+                        elist[i].gameObject.GetComponent<Enemy>().p = Random.Range(0, elist[i].gameObject.GetComponent<Enemy>().patnum);
+                        break;
+                }
+                switch (elist[i].gameObject.GetComponent<Enemy>().p)
+                {
+                    case 0:
+                        elist[i].gameObject.GetComponent<Enemy>().patstat.text = elist[i].gameObject.GetComponent<Enemy>().pat1;
+                        break;
+                    case 1:
+                        elist[i].gameObject.GetComponent<Enemy>().patstat.text = elist[i].gameObject.GetComponent<Enemy>().pat2;
+                        break;
+                    case 2:
+                        elist[i].gameObject.GetComponent<Enemy>().patstat.text = elist[i].gameObject.GetComponent<Enemy>().pat3;
+                        break;
+                }
+            }
         }
     }
 }

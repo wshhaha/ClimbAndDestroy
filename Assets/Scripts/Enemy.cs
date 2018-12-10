@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour 
-{   
+{
+    public UILabel hplabel;
+    public UISlider hpbar;
+    public UILabel patstat;
     public GameObject spawner;
     public int ehp;
     public bool l;
@@ -24,8 +27,8 @@ public class Enemy : MonoBehaviour
     public string pat3;
     public int val3;
     public int tier;
-    public int str;    
-
+    public int str;
+    public int p;
     public void Discount()
     {
         switch (tier)
@@ -63,35 +66,6 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator Readpat()
     {
-        int p = 0;
-        switch (ename)
-        {
-            case "ogre":
-                int ran = Random.Range(0, 3);
-                if (ran == 2)
-                {
-                    p = 0;
-                }
-                else
-                {
-                    p = 1;
-                }
-                break;
-            case "necromancer":
-                p = 0;
-                for (int i = 0; i < 3; i++)
-                {
-                    if (spawner.GetComponent<Enemyspawner>().elist[i].activeSelf == true)
-                    {
-                        continue;
-                    }
-                    p = Random.Range(0, patnum);
-                }
-                break;
-            default:
-                p = Random.Range(0, patnum);
-                break;
-        }        
         switch (p)
         {
             case 0:
@@ -326,5 +300,10 @@ public class Enemy : MonoBehaviour
             }
             spawner.GetComponent<Enemyspawner>().rewards.GetComponent<Rewards>().Addreward("treasure", num);
         }
+    }
+    private void Update()
+    {
+        hplabel.text = ehp + "/" + maxhp;
+        hpbar.value = (float)ehp / (float)maxhp;
     }
 }
