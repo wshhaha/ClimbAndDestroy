@@ -47,6 +47,21 @@ public class Deckmanager : MonoBehaviour
         orideck.Add(c);
         c.SetActive(false);        
     }
+    public string Returnname(int num)
+    {
+        string cardname = null;
+        var wa = JSON.Parse(warriordeck.text);
+        var wi = JSON.Parse(wizarddeck.text);
+        if (PlayerPrefs.GetInt("character") == 1)
+        {
+            cardname = wa[num]["name"];
+        }
+        if (PlayerPrefs.GetInt("character") == 2)
+        {
+            cardname = wi[num]["name"];            
+        }
+        return cardname;
+    }
     public void Givestat(int num,GameObject card)
     {
         card.AddComponent<Cardstat>();

@@ -12,9 +12,12 @@ public class Usecard : MonoBehaviour
     public Builddeck deck;
     GameObject h;
     public Rest rest;
+    public UILabel namelabel;
+    public UILabel goldlabel;
 
     private void Start()
     {
+        namelabel.text = GetComponent<Cardstat>().cname;
         switch (Application.loadedLevelName)
         {
             case "Battle":
@@ -315,5 +318,24 @@ public class Usecard : MonoBehaviour
         rest = GameObject.Find("Rest").GetComponent<Rest>();
         rest.yesno.SetActive(true);
         rest.target = card;
+    }
+
+    public void Buycard(GameObject card)
+    {
+        if (Application.loadedLevelName != "Store")
+        {
+            return;
+        }
+        if (card.GetComponent<Cardstat>().gold > Datamanager.i().gold)
+        {
+            return;
+        }
+        card.transform.parent = Deckmanager.instance().gameObject.transform;
+        Deckmanager.instance().orideck.Add(card);
+        card.transform.localScale = new Vector3(1, 1, 1);
+        card.transform.localPosition = Vector3.zero;
+        Datamanager.i().gold -= card.GetComponent<Cardstat>().gold;
+        goldlabel.enabled = false;
+        card.SetActive(false);
     }
 }

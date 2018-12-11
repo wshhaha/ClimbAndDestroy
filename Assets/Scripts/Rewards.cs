@@ -35,6 +35,18 @@ public class Rewards : MonoBehaviour
         GameObject b = Instantiate(btn);
         b.name = btnname;
         b.GetComponent<Rewardbtninfo>().val = val;
+        switch (btnname)
+        {
+            case "gold":
+                b.GetComponentInChildren<UILabel>().text = val + "gold";
+                break;
+            case "card":
+                b.GetComponentInChildren<UILabel>().text = Deckmanager.instance().Returnname(val);
+                break;
+            case "treasure":
+                b.GetComponentInChildren<UILabel>().text = Itemmanager.instance().Returnname(val);
+                break;
+        }
         b.transform.parent = g.gameObject.transform;
         b.transform.localScale = new Vector3(1, 1, 1);
         g.enabled = true;
