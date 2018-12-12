@@ -38,8 +38,7 @@ public class Rest : MonoBehaviour
         yield return new WaitForEndOfFrame();
     }
     void Classcard()
-    {
-        print(Deckmanager.instance().orideck.Count);
+    {   
         for (int i = Deckmanager.instance().orideck.Count-1; i > -1; i--)
         {
             if (Deckmanager.instance().orideck[i].GetComponent<Cardstat>().up == false)

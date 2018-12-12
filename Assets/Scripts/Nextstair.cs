@@ -4,9 +4,43 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Nextstair : MonoBehaviour 
-{    
-	public void Next()
+{
+    public GameObject cardlist;
+    public List<GameObject> viewlist;
+    
+    void Start()
     {
+        Copydeck();
+        Closelist();
+    }
+    void Copydeck()
+    {
+        for (int i = Deckmanager.instance().orideck.Count - 1; i > -1; i--)
+        {
+            viewlist.Add(Deckmanager.instance().orideck[i]);
+            Deckmanager.instance().orideck[i].transform.parent = cardlist.GetComponentInChildren<UIGrid>().gameObject.transform;
+            Deckmanager.instance().orideck[i].transform.localPosition = Vector3.zero;
+            Deckmanager.instance().orideck[i].transform.localScale = new Vector3(1, 1, 1);
+            Deckmanager.instance().orideck[i].SetActive(true);
+            Deckmanager.instance().orideck.Remove(Deckmanager.instance().orideck[i]);
+            cardlist.GetComponentInChildren<UIGrid>().enabled = true;
+        }
+    }
+    void Returndeck()
+    {
+        for (int i = viewlist.Count - 1; i > -1; i--)
+        {
+            Deckmanager.instance().orideck.Add(viewlist[i]);
+            viewlist[i].transform.parent = Deckmanager.instance().gameObject.transform;
+            viewlist[i].transform.localScale = new Vector3(1, 1, 1);
+            viewlist[i].transform.localPosition = Vector3.zero;
+            viewlist[i].SetActive(false);
+            viewlist.Remove(viewlist[i]);
+        }
+    }
+    public void Next()
+    {
+        Returndeck();
         Datamanager.i().curscore++;
         Datamanager.i().stage++;
         if (Datamanager.i().stage % 10 == 1)
@@ -58,4 +92,12 @@ public class Nextstair : MonoBehaviour
                 break;
         }        
     }    
+    public void Viewcard()
+    {
+        cardlist.SetActive(true);
+    }
+    public void Closelist()
+    {
+        cardlist.SetActive(false);
+    }
 }

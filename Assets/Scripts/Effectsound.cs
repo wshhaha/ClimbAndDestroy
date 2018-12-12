@@ -5,6 +5,9 @@ using UnityEngine;
 public class Effectsound : MonoBehaviour 
 {
     static Effectsound _instance;
+    public AudioSource bgm;
+    public AudioSource sound;
+
     public static Effectsound instance()
     {
         return _instance;
@@ -15,10 +18,10 @@ public class Effectsound : MonoBehaviour
         {
             _instance = this;
         }
-        DontDestroyOnLoad(gameObject.transform.parent);
+        DontDestroyOnLoad(gameObject);
 	}
     public void Sfxplay(AudioClip clip)
     {
-        GetComponent<AudioSource>().PlayOneShot(clip);
+        sound.PlayOneShot(clip);
     }
 }

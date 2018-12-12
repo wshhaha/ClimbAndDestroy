@@ -271,7 +271,7 @@ public class Enemy : MonoBehaviour
         int cardnum = 0;
         if (ranc >= 0 && ranc < 80)
         {
-            cardnum = Random.Range(0, 10);
+            cardnum = Random.Range(1, 9);
         }
         if (ranc >= 80 && ranc < 95)
         {

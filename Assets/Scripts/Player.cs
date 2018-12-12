@@ -121,7 +121,7 @@ public class Player : MonoBehaviour
         }
     }
     public void Gototitle()
-    {
+    {   
         Datamanager.i().stage = 0;
         Datamanager.i().shd = 0;
         Datamanager.i().str = 0;
@@ -143,10 +143,12 @@ public class Player : MonoBehaviour
         Datamanager.i().bnum = 0;
         Deckmanager.instance().Removedeck();
         SceneManager.LoadScene("1_Title");
+        Datamanager.i().curscore = 0;
     }
     private void Update()
     {
         hplabel.text = Datamanager.i().curhp + "/" + Datamanager.i().maxhp;
         hpbar.value = ((float)Datamanager.i().curhp / (float)Datamanager.i().maxhp);
+        gameover.GetComponentInChildren<UILabel>().text = "YOU DIED\nYOUR SCORE\n" + Datamanager.i().curscore;
     }
 }

@@ -48,4 +48,16 @@ public class Itemmanager : MonoBehaviour
         itemname = tem[num]["name"];
         return itemname;
     }
+    public int Returnstack(string item)
+    {
+        int stack = 0;
+        for (int i = 0; i < inven.Count; i++)
+        {
+            if (inven[i].GetComponent<Iteminfo>().itemname == item)
+            {
+                stack++;
+            }
+        }
+        return stack;
+    }
 }

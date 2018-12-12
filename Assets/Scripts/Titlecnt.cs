@@ -11,6 +11,8 @@ public class Titlecnt : MonoBehaviour
     public bool waron;
     public bool wizon;
     public int selchar;
+    public UISprite warrior;
+    public UISprite wizard;
 
     void Start()
     {
@@ -18,6 +20,25 @@ public class Titlecnt : MonoBehaviour
         blind.SetActive(false);
         waron = false;
         wizon = false;
+    }
+    private void Update()
+    {
+        if (waron == true)
+        {
+            warrior.spriteName = "Checkmark";
+        }
+        else
+        {
+            warrior.spriteName = "Window";
+        }
+        if (wizon == true)
+        {
+            wizard.spriteName = "Checkmark";
+        }
+        else
+        {
+            wizard.spriteName = "Window";
+        }
     }
     public void Selcharbtn()
     {
