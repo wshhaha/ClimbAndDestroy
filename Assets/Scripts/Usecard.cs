@@ -14,6 +14,7 @@ public class Usecard : MonoBehaviour
     public Rest rest;
     public UILabel namelabel;
     public UILabel goldlabel;
+    public UISprite psprite;
 
     private void Start()
     {
@@ -74,8 +75,15 @@ public class Usecard : MonoBehaviour
         spawner.GetComponent<Enemyspawner>().target = null;
         spawner.GetComponent<Enemyspawner>().uc = false;
     }   
-    void Attack(int val)
+    IEnumerator Attack(int val)
     {
+        Vector3 ori = psprite.transform.localPosition;
+        for (int i = 1; i < 6; i++)
+        {
+            psprite.transform.localPosition = ori - new Vector3(i * 10, 0, 0);
+            yield return new WaitForEndOfFrame();
+        }
+        psprite.transform.localPosition = ori;
         float weakf = 1.0f;
         if (Datamanager.i().w == true)
         {
@@ -160,18 +168,18 @@ public class Usecard : MonoBehaviour
         switch (eft)
         {
             case "atk":
-                Attack(val);
+                StartCoroutine(Attack(val));
                 break;
             case "def":
                 Deffence(val);
                 break;
             case "bringarmor":
-                Attack(Datamanager.i().shd);
+                StartCoroutine(Attack(Datamanager.i().shd));
                 break;
             case "allin":
                 for (int i = 0; i < Datamanager.i().curmana; i++)
                 {
-                    Attack(val);
+                    StartCoroutine(Attack(val));
                 }
                 Datamanager.i().curmana = 0;
                 break;
@@ -245,7 +253,7 @@ public class Usecard : MonoBehaviour
             case "bringstr":
                 for (int i = 0; i < val; i++)
                 {
-                    Attack((Datamanager.i().str + 1) * 5);
+                    StartCoroutine(Attack((Datamanager.i().str + 1) * 5));
                 }
                 break;
             case "random":
@@ -306,7 +314,7 @@ public class Usecard : MonoBehaviour
             Randomtarget(num);
             return;
         }
-        Attack(num);
+        StartCoroutine(Attack(num));
     }
 
     public void Upgrade(GameObject card)
