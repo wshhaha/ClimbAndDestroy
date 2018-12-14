@@ -53,115 +53,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 1c7e2ac561648b04eaed80abe03d15fa, type: 2}
   mSprites:
-  - name: Button_15
+  - name: btn_common_d
+    x: 212
+    y: 128
+    width: 210
+    height: 155
+    borderLeft: 60
+    borderRight: 60
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: -100
+    paddingRight: -100
+    paddingTop: 20
+    paddingBottom: 20
+  - name: btn_common_d - 2
     x: 0
-    y: 322
-    width: 427
-    height: 190
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: Button_23
-    x: 552
-    y: 129
-    width: 182
-    height: 190
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: Button_31
-    x: 613
-    y: 322
-    width: 182
-    height: 190
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: Button_35
-    x: 368
-    y: 129
-    width: 182
-    height: 190
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: Button_44
-    x: 429
-    y: 321
-    width: 182
-    height: 191
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: Button_48
-    x: 0
-    y: 129
-    width: 182
-    height: 191
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: Button_64
-    x: 184
-    y: 129
-    width: 182
-    height: 191
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: Floor
-    x: 736
-    y: 178
-    width: 159
-    height: 142
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: gold
-    x: 897
-    y: 280
-    width: 98
-    height: 98
+    y: 128
+    width: 210
+    height: 155
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -170,15 +79,158 @@ MonoBehaviour:
     paddingRight: 1
     paddingTop: 1
     paddingBottom: 1
-  - name: Window_70
-    x: 797
-    y: 380
-    width: 125
-    height: 132
+  - name: control_bar
+    x: 566
+    y: 36
+    width: 86
+    height: 44
+    borderLeft: 20
+    borderRight: 20
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: -150
+    paddingRight: -150
+    paddingTop: -2
+    paddingBottom: -1
+  - name: control_bar_bg
+    x: 224
+    y: 298
+    width: 182
+    height: 64
+    borderLeft: 70
+    borderRight: 70
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: -150
+    paddingRight: -150
+    paddingTop: 0
+    paddingBottom: 0
+  - name: item_coin
+    x: 424
+    y: 78
+    width: 140
+    height: 140
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
+    paddingLeft: 16
+    paddingRight: 16
+    paddingTop: 20
+    paddingBottom: 12
+  - name: item_life
+    x: 513
+    y: 377
+    width: 148
+    height: 135
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 12
+    paddingRight: 12
+    paddingTop: 28
+    paddingBottom: 9
+  - name: item_ring_mana
+    x: 566
+    y: 82
+    width: 124
+    height: 136
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 25
+    paddingRight: 23
+    paddingTop: 24
+    paddingBottom: 12
+  - name: item_ring_soul
+    x: 569
+    y: 245
+    width: 126
+    height: 130
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 23
+    paddingTop: 27
+    paddingBottom: 15
+  - name: item_shield
+    x: 224
+    y: 364
+    width: 142
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 18
+    paddingRight: 12
+    paddingTop: 19
+    paddingBottom: 5
+  - name: item_stick_mana
+    x: 424
+    y: 220
+    width: 143
+    height: 144
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 15
+    paddingTop: 20
+    paddingBottom: 8
+  - name: item_sword_long
+    x: 368
+    y: 366
+    width: 143
+    height: 146
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 15
+    paddingTop: 21
+    paddingBottom: 5
+  - name: mission_progress_bar
+    x: 654
+    y: 54
+    width: 34
+    height: 26
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 2
+    paddingBottom: 0
+  - name: mission_progress_bar_color
+    x: 569
+    y: 225
+    width: 28
+    height: 18
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 4
+    paddingTop: 5
+    paddingBottom: 5
+  - name: stage_frame_default
+    x: 0
+    y: 285
+    width: 222
+    height: 227
+    borderLeft: 65
+    borderRight: 65
+    borderTop: 65
+    borderBottom: 65
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0

@@ -11,8 +11,7 @@ public class Titlecnt : MonoBehaviour
     public bool waron;
     public bool wizon;
     public int selchar;
-    public UISprite warrior;
-    public UISprite wizard;
+    public UISprite character;
 
     void Start()
     {
@@ -25,19 +24,11 @@ public class Titlecnt : MonoBehaviour
     {
         if (waron == true)
         {
-            warrior.spriteName = "Checkmark";
+            character.spriteName = "warrior";
         }
         else
         {
-            warrior.spriteName = "Window";
-        }
-        if (wizon == true)
-        {
-            wizard.spriteName = "Checkmark";
-        }
-        else
-        {
-            wizard.spriteName = "Window";
+            character.spriteName = "wizard";
         }
     }
     public void Selcharbtn()
