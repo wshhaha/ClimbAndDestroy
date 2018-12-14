@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour 
 {
     public bool turn;
+    public bool uc;
     public GameObject h;
     public GameObject gy;
     public GameObject spawner;
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
 
 	void Start () 
 	{
+        uc = false;
         if (Itemmanager.instance().inven.Count != 0)
         {
             for (int i = 0; i < Itemmanager.instance().inven.Count; i++)

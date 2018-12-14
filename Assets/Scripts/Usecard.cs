@@ -17,7 +17,7 @@ public class Usecard : MonoBehaviour
     public UISprite psprite;
 
     private void Start()
-    {
+    {   
         namelabel.text = GetComponent<Cardstat>().cname;
         switch (Application.loadedLevelName)
         {
@@ -29,6 +29,7 @@ public class Usecard : MonoBehaviour
                 elist.Add(spawner.GetComponent<Enemyspawner>().slot1.gameObject);
                 elist.Add(spawner.GetComponent<Enemyspawner>().slot2.gameObject);
                 elist.Add(spawner.GetComponent<Enemyspawner>().slot3.gameObject);
+                psprite = GameObject.Find("Character").GetComponent<UISprite>();
                 break;
         }
     }
@@ -47,21 +48,26 @@ public class Usecard : MonoBehaviour
         {
             yield break;
         }
+        if (p.GetComponent<Player>().uc == true)
+        {
+            yield break;
+        }
         if (Datamanager.i().curmana < GetComponent<Cardstat>().mana)
         {
             yield break;
-        }        
+        }
+        p.GetComponent<Player>().uc = true;
         if (GetComponent<Cardstat>().target == true)
-        {
-            spawner.GetComponent<Enemyspawner>().uc = true;
+        {   
             while (spawner.GetComponent<Enemyspawner>().target == null)
             {
                 yield return null;
             }
         }
-        Datamanager.i().curmana -= GetComponent<Cardstat>().mana;        
-        StartCoroutine(Cardeffect(GetComponent<Cardstat>().eft1, GetComponent<Cardstat>().val1));
-        StartCoroutine(Cardeffect(GetComponent<Cardstat>().eft2, GetComponent<Cardstat>().val2));
+        Datamanager.i().curmana -= GetComponent<Cardstat>().mana;
+        yield return StartCoroutine(Cardeffect(GetComponent<Cardstat>().eft1, GetComponent<Cardstat>().val1));
+        yield return StartCoroutine(Cardeffect(GetComponent<Cardstat>().eft2, GetComponent<Cardstat>().val2));
+        spawner.GetComponent<Enemyspawner>().Targetunlock();
         if (GetComponent<Cardstat>().ex == false)
         {
             StartCoroutine(Gogy());
@@ -72,18 +78,21 @@ public class Usecard : MonoBehaviour
         }
         h.GetComponentInChildren<UIGrid>().enabled = true;
         h.GetComponent<Hand>().handlist.Remove(gameObject);
-        spawner.GetComponent<Enemyspawner>().target = null;
-        spawner.GetComponent<Enemyspawner>().uc = false;
-    }   
-    IEnumerator Attack(int val)
+        p.GetComponent<Player>().uc = false;
+    }
+    IEnumerator Attackmove()
     {
         Vector3 ori = psprite.transform.localPosition;
         for (int i = 1; i < 6; i++)
         {
-            psprite.transform.localPosition = ori - new Vector3(i * 10, 0, 0);
+            psprite.transform.localPosition = ori + new Vector3(i * 10, 0, 0);
             yield return new WaitForEndOfFrame();
         }
         psprite.transform.localPosition = ori;
+    }
+    void Attack(int val)
+    {
+        StartCoroutine(Attackmove());
         float weakf = 1.0f;
         if (Datamanager.i().w == true)
         {
@@ -100,7 +109,7 @@ public class Usecard : MonoBehaviour
         {
             dam = 0;
         }
-        if (spawner.GetComponent<Enemyspawner>().target == null)
+        if (GetComponent<Cardstat>().target == false)
         {
             for (int i = 0; i < 3; i++)
             {
@@ -168,18 +177,18 @@ public class Usecard : MonoBehaviour
         switch (eft)
         {
             case "atk":
-                StartCoroutine(Attack(val));
+                Attack(val);
                 break;
             case "def":
                 Deffence(val);
                 break;
             case "bringarmor":
-                StartCoroutine(Attack(Datamanager.i().shd));
+                Attack(Datamanager.i().shd);
                 break;
             case "allin":
                 for (int i = 0; i < Datamanager.i().curmana; i++)
                 {
-                    StartCoroutine(Attack(val));
+                    Attack(val);
                 }
                 Datamanager.i().curmana = 0;
                 break;
@@ -253,7 +262,7 @@ public class Usecard : MonoBehaviour
             case "bringstr":
                 for (int i = 0; i < val; i++)
                 {
-                    StartCoroutine(Attack((Datamanager.i().str + 1) * 5));
+                   Attack((Datamanager.i().str + 1) * 5);
                 }
                 break;
             case "random":
@@ -291,6 +300,7 @@ public class Usecard : MonoBehaviour
         transform.localPosition = Vector3.zero;
         GetComponentInChildren<BoxCollider>().enabled = false;
         GetComponent<UIPanel>().depth = 2;
+        spawner.GetComponent<Enemyspawner>().target = null;
         yield return new WaitForEndOfFrame();
     }
     IEnumerator Extinc()
@@ -302,7 +312,6 @@ public class Usecard : MonoBehaviour
         h.GetComponentInChildren<UIGrid>().enabled = true;
         h.GetComponent<Hand>().handlist.Remove(gameObject);
         gy.GetComponent<Gyard>().gylist.Remove(gameObject);
-        spawner.GetComponent<Enemyspawner>().target = null;
         Destroy(gameObject);
         yield return new WaitForEndOfFrame();
     }
@@ -314,7 +323,7 @@ public class Usecard : MonoBehaviour
             Randomtarget(num);
             return;
         }
-        StartCoroutine(Attack(num));
+        Attack(num);
     }
 
     public void Upgrade(GameObject card)

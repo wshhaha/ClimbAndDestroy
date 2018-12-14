@@ -15,7 +15,6 @@ public class Rest : MonoBehaviour
         cardlist.SetActive(false);
         yesno.SetActive(false);
         gotomap.SetActive(false); 
-        Classcard();
     }
     public void Camp()
     {
@@ -33,6 +32,7 @@ public class Rest : MonoBehaviour
     }
     IEnumerator Reinforcecrad()
     {
+        Classcard();
         cardlist.SetActive(true);
         gotomap.SetActive(true);        
         yield return new WaitForEndOfFrame();

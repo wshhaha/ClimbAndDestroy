@@ -301,14 +301,16 @@ public class Enemyspawner : MonoBehaviour
     }
     public void Targetlock(GameObject e)
     {
-        if (uc == true)
-        {
-            target = e;
-        }
-        else
-        {
-            return;
-        }
+        target = e;
+    }
+    public void Targetunlock()
+    {
+        StartCoroutine(unlock());
+    }
+    IEnumerator unlock()
+    {
+        target = null;
+        yield return new WaitForEndOfFrame();
     }
     void Selepat()
     {
