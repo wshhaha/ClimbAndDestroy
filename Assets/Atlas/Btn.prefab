@@ -53,9 +53,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 1c7e2ac561648b04eaed80abe03d15fa, type: 2}
   mSprites:
-  - name: btn_common_d
-    x: 212
+  - name: btn_check_n
+    x: 938
     y: 128
+    width: 141
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 1
+    paddingBottom: 1
+  - name: btn_close_n
+    x: 845
+    y: 278
+    width: 141
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 1
+    paddingBottom: 1
+  - name: btn_common_d
+    x: 436
+    y: 86
     width: 210
     height: 155
     borderLeft: 60
@@ -67,8 +93,8 @@ MonoBehaviour:
     paddingTop: 20
     paddingBottom: 20
   - name: btn_common_d - 2
-    x: 0
-    y: 128
+    x: 224
+    y: 86
     width: 210
     height: 155
     borderLeft: 0
@@ -79,9 +105,113 @@ MonoBehaviour:
     paddingRight: 1
     paddingTop: 1
     paddingBottom: 1
-  - name: control_bar
-    x: 566
+  - name: btn_home_n
+    x: 845
+    y: 428
+    width: 141
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 1
+    paddingBottom: 1
+  - name: btn_left_n
+    x: 988
+    y: 278
+    width: 141
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 1
+    paddingBottom: 1
+  - name: btn_list_n
+    x: 988
+    y: 578
+    width: 141
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 1
+    paddingBottom: 1
+  - name: btn_pause_n
+    x: 988
+    y: 428
+    width: 141
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 1
+    paddingBottom: 1
+  - name: btn_play_n
+    x: 845
+    y: 578
+    width: 141
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 1
+    paddingBottom: 1
+  - name: btn_right_n
+    x: 989
+    y: 876
+    width: 141
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 1
+    paddingBottom: 1
+  - name: btn_setting_n
+    x: 794
+    y: 93
+    width: 142
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 1
+    paddingTop: 1
+    paddingBottom: 1
+  - name: check_off
+    x: 938
     y: 36
+    width: 90
+    height: 90
+    borderLeft: 20
+    borderRight: 20
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: -200
+    paddingRight: -200
+    paddingTop: 0
+    paddingBottom: 0
+  - name: control_bar
+    x: 832
+    y: 47
     width: 86
     height: 44
     borderLeft: 20
@@ -93,8 +223,8 @@ MonoBehaviour:
     paddingTop: -2
     paddingBottom: -1
   - name: control_bar_bg
-    x: 224
-    y: 298
+    x: 648
+    y: 27
     width: 182
     height: 64
     borderLeft: 70
@@ -105,9 +235,22 @@ MonoBehaviour:
     paddingRight: -150
     paddingTop: 0
     paddingBottom: 0
+  - name: Floor
+    x: 0
+    y: 243
+    width: 843
+    height: 781
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 93
+    paddingRight: 93
+    paddingTop: 85
+    paddingBottom: 85
   - name: item_coin
-    x: 424
-    y: 78
+    x: 1081
+    y: 136
     width: 140
     height: 140
     borderLeft: 0
@@ -118,9 +261,22 @@ MonoBehaviour:
     paddingRight: 16
     paddingTop: 20
     paddingBottom: 12
+  - name: item_helmet
+    x: 648
+    y: 97
+    width: 144
+    height: 144
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 17
+    paddingRight: 11
+    paddingTop: 19
+    paddingBottom: 9
   - name: item_life
-    x: 513
-    y: 377
+    x: 1132
+    y: 889
     width: 148
     height: 135
     borderLeft: 0
@@ -132,8 +288,8 @@ MonoBehaviour:
     paddingTop: 28
     paddingBottom: 9
   - name: item_ring_mana
-    x: 566
-    y: 82
+    x: 1131
+    y: 592
     width: 124
     height: 136
     borderLeft: 0
@@ -145,8 +301,8 @@ MonoBehaviour:
     paddingTop: 24
     paddingBottom: 12
   - name: item_ring_soul
-    x: 569
-    y: 245
+    x: 1081
+    y: 4
     width: 126
     height: 130
     borderLeft: 0
@@ -158,8 +314,8 @@ MonoBehaviour:
     paddingTop: 27
     paddingBottom: 15
   - name: item_shield
-    x: 224
-    y: 364
+    x: 845
+    y: 876
     width: 142
     height: 148
     borderLeft: 0
@@ -171,8 +327,8 @@ MonoBehaviour:
     paddingTop: 19
     paddingBottom: 5
   - name: item_stick_mana
-    x: 424
-    y: 220
+    x: 990
+    y: 730
     width: 143
     height: 144
     borderLeft: 0
@@ -184,8 +340,8 @@ MonoBehaviour:
     paddingTop: 20
     paddingBottom: 8
   - name: item_sword_long
-    x: 368
-    y: 366
+    x: 845
+    y: 728
     width: 143
     height: 146
     borderLeft: 0
@@ -197,34 +353,34 @@ MonoBehaviour:
     paddingTop: 21
     paddingBottom: 5
   - name: mission_progress_bar
-    x: 654
-    y: 54
+    x: 845
+    y: 250
     width: 34
     height: 26
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 1
-    paddingRight: 1
-    paddingTop: 2
-    paddingBottom: 0
+    borderLeft: 12
+    borderRight: 12
+    borderTop: 10
+    borderBottom: 10
+    paddingLeft: -85
+    paddingRight: -85
+    paddingTop: -3
+    paddingBottom: -4
   - name: mission_progress_bar_color
-    x: 569
-    y: 225
+    x: 881
+    y: 258
     width: 28
     height: 18
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 4
-    paddingRight: 4
-    paddingTop: 5
-    paddingBottom: 5
+    borderLeft: 10
+    borderRight: 10
+    borderTop: 5
+    borderBottom: 5
+    paddingLeft: -90
+    paddingRight: -90
+    paddingTop: -5
+    paddingBottom: -5
   - name: stage_frame_default
     x: 0
-    y: 285
+    y: 14
     width: 222
     height: 227
     borderLeft: 65

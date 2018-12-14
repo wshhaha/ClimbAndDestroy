@@ -53,9 +53,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 652bc29e609796b40bba0dd8c37df9fb, type: 2}
   mSprites:
+  - name: mapbg
+    x: 0
+    y: 968
+    width: 1920
+    height: 1080
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: Title
-    x: 531
-    y: 151
+    x: 3004
+    y: 1755
     width: 527
     height: 293
     borderLeft: 0
@@ -67,8 +80,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 1
   - name: Title-1
-    x: 0
-    y: 166
+    x: 3533
+    y: 1770
     width: 529
     height: 278
     borderLeft: 0
@@ -80,8 +93,8 @@ MonoBehaviour:
     paddingTop: 7
     paddingBottom: 10
   - name: Titlebg
-    x: 0
-    y: 1248
+    x: 1502
+    y: 166
     width: 1500
     height: 800
     borderLeft: 0
@@ -94,7 +107,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: Titlepsd-1
     x: 0
-    y: 446
+    y: 166
     width: 1500
     height: 800
     borderLeft: 0

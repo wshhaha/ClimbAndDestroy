@@ -53,9 +53,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 6de04c03f9bb600458c9ef149bc20375, type: 2}
   mSprites:
+  - name: bg_top
+    x: 0
+    y: 761
+    width: 436
+    height: 205
+    borderLeft: 200
+    borderRight: 200
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: -420
+    paddingRight: -420
+    paddingTop: 0
+    paddingBottom: 0
+  - name: common_bg
+    x: 0
+    y: 968
+    width: 1920
+    height: 1080
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: mission_progress_bar_complete
-    x: 470
-    y: 254
+    x: 2004
+    y: 1816
     width: 36
     height: 26
     borderLeft: 10
@@ -67,8 +93,8 @@ MonoBehaviour:
     paddingTop: 10
     paddingBottom: 0
   - name: mission_progress_bg
-    x: 470
-    y: 282
+    x: 2004
+    y: 1844
     width: 40
     height: 30
     borderLeft: 15
@@ -81,7 +107,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: popup_bg_common
     x: 0
-    y: 265
+    y: 512
     width: 356
     height: 247
     borderLeft: 0
@@ -93,8 +119,8 @@ MonoBehaviour:
     paddingTop: 7
     paddingBottom: 0
   - name: popup_title_01
-    x: 358
-    y: 396
+    x: 1922
+    y: 1932
     width: 124
     height: 116
     borderLeft: 50
@@ -106,8 +132,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: status_gage_bar_bg
-    x: 358
-    y: 314
+    x: 0
+    y: 430
     width: 147
     height: 80
     borderLeft: 38
@@ -119,8 +145,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: status_gage_bar_gray
-    x: 440
-    y: 258
+    x: 2004
+    y: 1876
     width: 28
     height: 54
     borderLeft: 0
@@ -132,8 +158,8 @@ MonoBehaviour:
     paddingTop: -10
     paddingBottom: 0
   - name: txt_input_n
-    x: 358
-    y: 192
+    x: 1922
+    y: 1810
     width: 80
     height: 120
     borderLeft: 0
