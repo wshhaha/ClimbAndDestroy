@@ -303,7 +303,7 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
-        hplabel.text = ehp + "/" + maxhp;
+        hplabel.text = ehp + " / " + maxhp;
         hpbar.value = (float)ehp / (float)maxhp;
     }
 }

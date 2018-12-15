@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public GameObject gameover;
     public UILabel hplabel;
     public UISlider hpbar;
+    public UILabel manalabel;
 
 	void Start () 
 	{
@@ -149,8 +150,9 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        hplabel.text = Datamanager.i().curhp + "/" + Datamanager.i().maxhp;
+        hplabel.text = Datamanager.i().curhp + " / " + Datamanager.i().maxhp;
         hpbar.value = ((float)Datamanager.i().curhp / (float)Datamanager.i().maxhp);
         gameover.GetComponentInChildren<UILabel>().text = "YOU DIED\nYOUR SCORE\n" + Datamanager.i().curscore;
+        manalabel.text= Datamanager.i().curmana + "  /  " + Datamanager.i().inmaxmana;
     }
 }
