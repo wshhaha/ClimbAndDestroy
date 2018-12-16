@@ -53,6 +53,10 @@ public class Player : MonoBehaviour
     }
     void Ccdown()
     {
+        if (Datamanager.i().genamr == true)
+        {
+            Datamanager.i().shd += Datamanager.i().gennum;
+        }
         if (Datamanager.i().r == true)
         {
             Datamanager.i().r = false;

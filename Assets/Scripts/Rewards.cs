@@ -27,7 +27,7 @@ public class Rewards : MonoBehaviour
         Datamanager.i().dnum = 0;
         Datamanager.i().b = false;
         Datamanager.i().bnum = 0;
-        gameObject.SetActive(false);
+        GameObject.Find("Gotomap").GetComponent<Backtomap>().Callmap();
     }
     public void Addreward(string btnname,int val)
     {

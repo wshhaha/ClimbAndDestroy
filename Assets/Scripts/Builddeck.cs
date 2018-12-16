@@ -14,7 +14,6 @@ public class Builddeck : MonoBehaviour
     void Start () 
 	{
         Copydeck();
-        Startturn();
     }
     public void Copydeck()
     {
@@ -30,8 +29,9 @@ public class Builddeck : MonoBehaviour
             c.GetComponent<UIPanel>().depth = 2;
             deck.Add(c);
         }
+        StartCoroutine(Startturn());
     }
-    public void Drawacard()
+    IEnumerator Drawmotion()
     {
         if (deck.Count != 0)
         {
@@ -41,7 +41,7 @@ public class Builddeck : MonoBehaviour
             deck[i].transform.localScale = new Vector3(1, 1, 1);
             deck[i].transform.localPosition = Vector3.zero;
             deck[i].GetComponentInChildren<BoxCollider>().enabled = true;
-            deck[i].GetComponent<UIPanel>().depth = hand.GetComponent<Hand>().handlist.Count+2;
+            deck[i].GetComponent<UIPanel>().depth = hand.GetComponent<Hand>().handlist.Count + 2;
             hand.GetComponentInChildren<UIGrid>().enabled = true;
             deck.RemoveAt(i);
         }
@@ -50,27 +50,42 @@ public class Builddeck : MonoBehaviour
             if (gy.GetComponent<Gyard>().gylist.Count != 0)
             {
                 gy.GetComponent<Gyard>().Backtodeck();
-                Drawacard();
+                StartCoroutine(Drawmotion());
             }
             else
             {
                 print("no more card");
-                return;
+                yield break;
             }
+        }
+    }
+    IEnumerator Cardm(int i)
+    {
+        Vector3 ori = deck[i].transform.position;
+        float factor = 1;
+        while (factor > 0)
+        {
+            deck[i].transform.localPosition = ori * factor;
+            factor -= 0.01f;
+            yield return new WaitForEndOfFrame();
         }
     }
     public void Drawing(int num)
     {
         for (int i = 0; i < num; i++)
         {
-            Drawacard();
+            StartCoroutine(Drawmotion());
         }
     }
-    public void Startturn()
+    public void St()
+    {
+        StartCoroutine(Startturn());
+    }
+    IEnumerator Startturn()
     {
         for (int i = 0; i < 5; i++)
-        {
-            Drawacard();
+        {   
+            yield return StartCoroutine(Drawmotion());
         }
         Datamanager.i().curmana = Datamanager.i().inmaxmana;
         if (Datamanager.i().b == true)

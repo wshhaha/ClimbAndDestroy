@@ -82,6 +82,10 @@ public class Usecard : MonoBehaviour
     }
     IEnumerator Attackmove()
     {
+        if(GetComponent<Cardstat>().cname== "forked lighting")
+        {
+            yield break;
+        }
         Vector3 ori = psprite.transform.localPosition;
         for (int i = 1; i < 6; i++)
         {
@@ -109,7 +113,7 @@ public class Usecard : MonoBehaviour
         {
             dam = 0;
         }
-        if (GetComponent<Cardstat>().target == false)
+        if (spawner.GetComponent<Enemyspawner>().target == null)
         {
             for (int i = 0; i < 3; i++)
             {
@@ -117,13 +121,14 @@ public class Usecard : MonoBehaviour
                 {
                     if (elist[i].GetComponent<Enemy>().l == true)
                     {
-                        lockonf = 1.25f;
+                        lockonf = 1.5f;
                     }
                     else
                     {
                         lockonf = 1;
                     }
                     dam = (int)(dam * weakf * lockonf);
+                    print(dam);
                     elist[i].GetComponent<Enemy>().shd -= dam;
                     if (elist[i].GetComponent<Enemy>().shd < 0)
                     {
@@ -143,7 +148,7 @@ public class Usecard : MonoBehaviour
             {
                 if (spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().l == true)
                 {
-                    lockonf = 1.25f;
+                    lockonf = 1.5f;
                 }
                 else
                 {
@@ -228,6 +233,8 @@ public class Usecard : MonoBehaviour
                 if (j >= 20 && j < 40)
                 {
                     spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().s = true;
+                    spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().patstat.text = "stun";
+                    spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().p = 3;
                     print("stun sucsses");
                 }
                 else
@@ -317,13 +324,18 @@ public class Usecard : MonoBehaviour
     }
     void Randomtarget(int num)
     {
-        int k = Random.Range(0, 3);
+        int k = Random.Range(0, elist.Count);
         if (elist[k].activeSelf == false)
         {
             Randomtarget(num);
             return;
         }
+        else
+        {
+            spawner.GetComponent<Enemyspawner>().target = elist[k];
+        }
         Attack(num);
+        spawner.GetComponent<Enemyspawner>().target = null;
     }
 
     public void Upgrade(GameObject card)

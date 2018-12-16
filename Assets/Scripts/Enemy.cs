@@ -48,8 +48,7 @@ public class Enemy : MonoBehaviour
         }
         spawner.GetComponent<Enemyspawner>().e--;
         if(spawner.GetComponent<Enemyspawner>().e <= 0)
-        {
-            spawner.GetComponent<Enemyspawner>().gomap.gameObject.SetActive(true);
+        {   
             spawner.GetComponent<Enemyspawner>().rewards.SetActive(true);
             int rang = Random.Range(spawner.GetComponent<Enemyspawner>().goldmin, spawner.GetComponent<Enemyspawner>().goldmin + 20);
             spawner.GetComponent<Enemyspawner>().rewards.GetComponent<Rewards>().Addreward("gold", rang);
@@ -80,8 +79,36 @@ public class Enemy : MonoBehaviour
                 StartCoroutine(Pateffect(pat3, val3));
                 print(pat3);
                 break;
+            case 3:
+                StartCoroutine(Pateffect("stun", 0));
+                print("stun");
+                break;
         }
         yield return new WaitForEndOfFrame();
+    }
+    public int Returnval(string p,int num)
+    {
+        switch (p)
+        {
+            default:
+                return 0;
+                break;
+            case "atk":
+                return (num + str);
+                break;
+            case "carboom":
+                return (num + str);
+                break;
+            case "lifedrain":
+                return (num + str);
+                break;
+            case "deathblade":
+                return (num + str);
+                break;
+            case "def":
+                return (num);
+                break;
+        }
     }
     void Attack(int val)
     {
@@ -97,7 +124,7 @@ public class Enemy : MonoBehaviour
         float lockonf = 1;
         if (Datamanager.i().l == true)
         {
-            lockonf = 1.25f;
+            lockonf = 1.5f;
         }
         else
         {
@@ -156,7 +183,6 @@ public class Enemy : MonoBehaviour
                 break;
             case "carboom":
                 int c = Random.Range(0, 100);
-                print(c + "     !@#");
                 if (c < 34)
                 {
                     Attack(val);
@@ -229,6 +255,9 @@ public class Enemy : MonoBehaviour
                 break;
             case "stay":
                 print("stay");
+                break;
+            case "stun":
+                s = false;
                 break;
         }
         yield return new WaitForEndOfFrame();

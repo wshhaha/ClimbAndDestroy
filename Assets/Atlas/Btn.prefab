@@ -54,8 +54,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1c7e2ac561648b04eaed80abe03d15fa, type: 2}
   mSprites:
   - name: btn_check_n
-    x: 938
-    y: 128
+    x: 988
+    y: 728
     width: 141
     height: 148
     borderLeft: 0
@@ -67,8 +67,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 1
   - name: btn_close_n
-    x: 845
-    y: 278
+    x: 936
+    y: 128
     width: 141
     height: 148
     borderLeft: 0
@@ -105,9 +105,22 @@ MonoBehaviour:
     paddingRight: 1
     paddingTop: 1
     paddingBottom: 1
+  - name: btn_energy_f
+    x: 1131
+    y: 429
+    width: 139
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 2
+    paddingTop: 1
+    paddingBottom: 1
   - name: btn_home_n
-    x: 845
-    y: 428
+    x: 988
+    y: 578
     width: 141
     height: 148
     borderLeft: 0
@@ -120,7 +133,7 @@ MonoBehaviour:
     paddingBottom: 1
   - name: btn_left_n
     x: 988
-    y: 278
+    y: 428
     width: 141
     height: 148
     borderLeft: 0
@@ -133,7 +146,7 @@ MonoBehaviour:
     paddingBottom: 1
   - name: btn_list_n
     x: 988
-    y: 578
+    y: 278
     width: 141
     height: 148
     borderLeft: 0
@@ -145,8 +158,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 1
   - name: btn_pause_n
-    x: 988
-    y: 428
+    x: 1131
+    y: 876
     width: 141
     height: 148
     borderLeft: 0
@@ -158,6 +171,71 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 1
   - name: btn_play_n
+    x: 1079
+    y: 128
+    width: 141
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 1
+    paddingBottom: 1
+  - name: btn_right_n
+    x: 845
+    y: 278
+    width: 141
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 1
+    paddingBottom: 1
+  - name: btn_search_f
+    x: 1131
+    y: 725
+    width: 140
+    height: 149
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 2
+    paddingTop: 1
+    paddingBottom: 0
+  - name: btn_setting_n
+    x: 792
+    y: 93
+    width: 142
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 1
+    paddingTop: 1
+    paddingBottom: 1
+  - name: btn_shield_f
+    x: 1273
+    y: 726
+    width: 140
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 2
+    paddingTop: 1
+    paddingBottom: 1
+  - name: btn_skull_f
     x: 845
     y: 578
     width: 141
@@ -170,9 +248,9 @@ MonoBehaviour:
     paddingRight: 1
     paddingTop: 1
     paddingBottom: 1
-  - name: btn_right_n
-    x: 989
-    y: 876
+  - name: btn_strength_f
+    x: 845
+    y: 428
     width: 141
     height: 148
     borderLeft: 0
@@ -183,22 +261,22 @@ MonoBehaviour:
     paddingRight: 1
     paddingTop: 1
     paddingBottom: 1
-  - name: btn_setting_n
-    x: 794
-    y: 93
-    width: 142
+  - name: btn_waterdrop_f
+    x: 1131
+    y: 279
+    width: 139
     height: 148
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 1
+    paddingLeft: 2
+    paddingRight: 2
     paddingTop: 1
     paddingBottom: 1
   - name: check_off
-    x: 938
-    y: 36
+    x: 1415
+    y: 788
     width: 90
     height: 90
     borderLeft: 20
@@ -210,8 +288,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: control_bar
-    x: 832
-    y: 47
+    x: 1415
+    y: 742
     width: 86
     height: 44
     borderLeft: 20
@@ -223,8 +301,8 @@ MonoBehaviour:
     paddingTop: -2
     paddingBottom: -1
   - name: control_bar_bg
-    x: 648
-    y: 27
+    x: 1405
+    y: 660
     width: 182
     height: 64
     borderLeft: 70
@@ -249,8 +327,8 @@ MonoBehaviour:
     paddingTop: 85
     paddingBottom: 85
   - name: item_coin
-    x: 1081
-    y: 136
+    x: 1272
+    y: 437
     width: 140
     height: 140
     borderLeft: 0
@@ -262,8 +340,8 @@ MonoBehaviour:
     paddingTop: 20
     paddingBottom: 12
   - name: item_helmet
-    x: 648
-    y: 97
+    x: 1131
+    y: 579
     width: 144
     height: 144
     borderLeft: 0
@@ -275,8 +353,8 @@ MonoBehaviour:
     paddingTop: 19
     paddingBottom: 9
   - name: item_life
-    x: 1132
-    y: 889
+    x: 1222
+    y: 142
     width: 148
     height: 135
     borderLeft: 0
@@ -288,8 +366,8 @@ MonoBehaviour:
     paddingTop: 28
     paddingBottom: 9
   - name: item_ring_mana
-    x: 1131
-    y: 592
+    x: 990
+    y: 888
     width: 124
     height: 136
     borderLeft: 0
@@ -301,8 +379,8 @@ MonoBehaviour:
     paddingTop: 24
     paddingBottom: 12
   - name: item_ring_soul
-    x: 1081
-    y: 4
+    x: 1277
+    y: 594
     width: 126
     height: 130
     borderLeft: 0
@@ -314,8 +392,8 @@ MonoBehaviour:
     paddingTop: 27
     paddingBottom: 15
   - name: item_shield
-    x: 845
-    y: 876
+    x: 648
+    y: 93
     width: 142
     height: 148
     borderLeft: 0
@@ -327,8 +405,8 @@ MonoBehaviour:
     paddingTop: 19
     paddingBottom: 5
   - name: item_stick_mana
-    x: 990
-    y: 730
+    x: 1274
+    y: 880
     width: 143
     height: 144
     borderLeft: 0
@@ -341,7 +419,7 @@ MonoBehaviour:
     paddingBottom: 8
   - name: item_sword_long
     x: 845
-    y: 728
+    y: 878
     width: 143
     height: 146
     borderLeft: 0
@@ -378,6 +456,32 @@ MonoBehaviour:
     paddingRight: -90
     paddingTop: -5
     paddingBottom: -5
+  - name: refl
+    x: 845
+    y: 728
+    width: 141
+    height: 148
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 1
+    paddingBottom: 1
+  - name: shd
+    x: 224
+    y: 17
+    width: 59
+    height: 67
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 42
+    paddingRight: 42
+    paddingTop: 42
+    paddingBottom: 41
   - name: stage_frame_default
     x: 0
     y: 14
