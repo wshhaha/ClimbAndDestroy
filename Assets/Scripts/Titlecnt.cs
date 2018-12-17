@@ -15,21 +15,11 @@ public class Titlecnt : MonoBehaviour
 
     void Start()
     {
+        character.spriteName = null;
         charwindow.SetActive(false);
         blind.SetActive(false);
         waron = false;
         wizon = false;
-    }
-    private void Update()
-    {
-        if (waron == true)
-        {
-            character.spriteName = "warrior";
-        }
-        else
-        {
-            character.spriteName = "wizard";
-        }
     }
     public void Selcharbtn()
     {
@@ -43,6 +33,7 @@ public class Titlecnt : MonoBehaviour
         {
             charwindow.SetActive(false);
             blind.SetActive(false);
+            character.spriteName = null;
         }
     }
     public void Letsclimb()
@@ -71,6 +62,7 @@ public class Titlecnt : MonoBehaviour
             Datamanager.i().maxhp = 120;
             Datamanager.i().gold = 90;
             Datamanager.i().maxmana = 3;
+            character.spriteName = "warrior";
         }       
     }
     public void Selwizard()
@@ -84,6 +76,7 @@ public class Titlecnt : MonoBehaviour
             Datamanager.i().maxhp = 100;
             Datamanager.i().gold = 120;
             Datamanager.i().maxmana = 3;
+            character.spriteName = "wizard";
         }        
     }
     public void Decide()

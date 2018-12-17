@@ -36,14 +36,15 @@ public class Builddeck : MonoBehaviour
         if (deck.Count != 0)
         {
             int i = Random.Range(0, deck.Count);
-            hand.GetComponent<Hand>().handlist.Add(deck[i]);
-            deck[i].transform.parent = hand.GetComponentInChildren<UIGrid>().transform;
-            deck[i].transform.localScale = new Vector3(1, 1, 1);
-            deck[i].transform.localPosition = Vector3.zero;
-            deck[i].GetComponentInChildren<BoxCollider>().enabled = true;
-            deck[i].GetComponent<UIPanel>().depth = hand.GetComponent<Hand>().handlist.Count + 2;
+            GameObject target = deck[i];
+            hand.GetComponent<Hand>().handlist.Add(target);
+            deck.Remove(target);
+            target.GetComponent<UIPanel>().depth = hand.GetComponent<Hand>().handlist.Count + 2;
+            target.GetComponentInChildren<BoxCollider>().enabled = true;
+            target.transform.parent = hand.GetComponentInChildren<UIGrid>().transform;
+            target.transform.localScale = new Vector3(1, 1, 1);
+            yield return StartCoroutine(Cardm(target));
             hand.GetComponentInChildren<UIGrid>().enabled = true;
-            deck.RemoveAt(i);
         }
         else
         {
@@ -59,16 +60,18 @@ public class Builddeck : MonoBehaviour
             }
         }
     }
-    IEnumerator Cardm(int i)
+    IEnumerator Cardm(GameObject card)
     {
-        Vector3 ori = deck[i].transform.position;
+        card.transform.Rotate(0, 0, -90);
+        Vector3 ori = new Vector3(-1.5f, -0.7f, 0);
         float factor = 1;
         while (factor > 0)
         {
-            deck[i].transform.localPosition = ori * factor;
-            factor -= 0.01f;
+            card.transform.position = new Vector3(ori.x * factor,ori.y,ori.z);
+            factor -= 0.2f;
             yield return new WaitForEndOfFrame();
         }
+        card.transform.Rotate(0, 0, 90);
     }
     public void Drawing(int num)
     {
@@ -97,5 +100,7 @@ public class Builddeck : MonoBehaviour
                 Datamanager.i().b = false;
             }
         }
+        Player p = GameObject.Find("Player").GetComponent<Player>();
+        p.te = false;
     }
 }

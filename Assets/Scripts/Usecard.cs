@@ -68,6 +68,8 @@ public class Usecard : MonoBehaviour
         yield return StartCoroutine(Cardeffect(GetComponent<Cardstat>().eft1, GetComponent<Cardstat>().val1));
         yield return StartCoroutine(Cardeffect(GetComponent<Cardstat>().eft2, GetComponent<Cardstat>().val2));
         spawner.GetComponent<Enemyspawner>().Targetunlock();
+        gy.GetComponent<Gyard>().gylist.Add(gameObject);
+        transform.parent = gy.GetComponentInChildren<UIGrid>().transform;
         if (GetComponent<Cardstat>().ex == false)
         {
             StartCoroutine(Gogy());
@@ -299,23 +301,29 @@ public class Usecard : MonoBehaviour
         }
         yield return new WaitForEndOfFrame();
     }
+    public void Gymoving()
+    {
+        StartCoroutine(Gogy());
+    }
     IEnumerator Gogy()
     {
-        gy.GetComponent<Gyard>().gylist.Add(gameObject);
-        transform.parent = gy.GetComponentInChildren<UIGrid>().transform;
         transform.localScale = new Vector3(.5f, .5f, .5f);
-        transform.localPosition = Vector3.zero;
+        transform.Rotate(0, 0, -90);
+        Vector3 ori = new Vector3(1.5f, -0.7f, 0);
+        float factor = 0;
+        while (factor < 1)
+        {
+            transform.position = new Vector3(ori.x * factor, ori.y, ori.z);
+            factor += 0.2f;
+            yield return new WaitForEndOfFrame();
+        }
+        transform.Rotate(0, 0, 90);
         GetComponentInChildren<BoxCollider>().enabled = false;
         GetComponent<UIPanel>().depth = 2;
         spawner.GetComponent<Enemyspawner>().target = null;
-        yield return new WaitForEndOfFrame();
     }
     IEnumerator Extinc()
-    {
-        gy.GetComponent<Gyard>().gylist.Add(gameObject);
-        transform.parent = gy.GetComponentInChildren<UIGrid>().transform;
-        transform.localScale = new Vector3(.5f, .5f, .5f);
-        transform.localPosition = Vector3.zero;
+    {   
         h.GetComponentInChildren<UIGrid>().enabled = true;
         h.GetComponent<Hand>().handlist.Remove(gameObject);
         gy.GetComponent<Gyard>().gylist.Remove(gameObject);

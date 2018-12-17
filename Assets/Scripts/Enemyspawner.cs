@@ -29,7 +29,8 @@ public class Enemyspawner : MonoBehaviour
     public int tier3max;
     public int nowtier;
     public int goldmin;
-    
+    public GameObject nextturn;
+
     void Start () 
 	{   
         uc = false;
@@ -289,8 +290,12 @@ public class Enemyspawner : MonoBehaviour
         Datamanager.i().curmana = Datamanager.i().inmaxmana;
         Datamanager.i().shd = 0;
         d.GetComponent<Builddeck>().St();
+        yield return new WaitForSecondsRealtime(0.5f);
         Selepat();
-        yield return new WaitForEndOfFrame();
+        nextturn.SetActive(true);
+        yield return new WaitForSecondsRealtime(1);
+        nextturn.SetActive(false);
+        //yield return new WaitForEndOfFrame();
     }
     public void Targetlock(GameObject e)
     {

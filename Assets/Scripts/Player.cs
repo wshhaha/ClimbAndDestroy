@@ -15,9 +15,11 @@ public class Player : MonoBehaviour
     public UILabel hplabel;
     public UISlider hpbar;
     public UILabel manalabel;
+    public bool te;
 
 	void Start () 
 	{
+        te = false;
         uc = false;
         if (Itemmanager.instance().inven.Count != 0)
         {
@@ -93,6 +95,11 @@ public class Player : MonoBehaviour
     }
 	public void Turnend()
     {
+        if (te == true)
+        {
+            return;
+        }
+        te = true;
         Ccdown();
         turn = false;
         Throwcard();
@@ -115,17 +122,16 @@ public class Player : MonoBehaviour
     }
     void Throwcard()
     {
-        while (h.GetComponent<Hand>().handlist.Count!=0)
+        int j = h.GetComponent<Hand>().handlist.Count;
+        for (int i = 0; i < j; i++)
         {
-            int i = 0;
             gy.GetComponent<Gyard>().gylist.Add(h.GetComponent<Hand>().handlist[i]);
             h.GetComponent<Hand>().handlist[i].transform.parent = gy.GetComponentInChildren<UIGrid>().transform;
             h.GetComponent<Hand>().handlist[i].GetComponent<UIPanel>().depth = 2;
-            h.GetComponent<Hand>().handlist[i].transform.localScale = new Vector3(.5f, .5f, .5f);
-            h.GetComponent<Hand>().handlist[i].transform.localPosition = Vector3.zero;
-            h.GetComponent<Hand>().handlist[i].GetComponentInChildren<BoxCollider>().enabled = false;
-            h.GetComponent<Hand>().handlist.Remove(h.GetComponent<Hand>().handlist[i]);            
+            h.GetComponent<Hand>().handlist[i].GetComponent<Usecard>().Gymoving();
+            //h.GetComponent<Hand>().handlist.Remove(h.GetComponent<Hand>().handlist[i]);
         }
+        h.GetComponent<Hand>().handlist.RemoveRange(0, j);
     }
     public void Gototitle()
     {   
