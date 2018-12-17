@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2347,7 +2347,7 @@ Transform:
   m_GameObject: {fileID: 781522647}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 4, z: 1}
   m_Children:
   - {fileID: 703517738}
   m_Father: {fileID: 1226443110}
@@ -3738,6 +3738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardlist: {fileID: 1226443109}
   viewlist: []
+  blind: {fileID: 781522647}
 --- !u!1 &1186995996
 GameObject:
   m_ObjectHideFlags: 0
@@ -4127,13 +4128,14 @@ GameObject:
   - component: {fileID: 1226443110}
   - component: {fileID: 1226443112}
   - component: {fileID: 1226443111}
+  - component: {fileID: 1226443113}
   m_Layer: 5
   m_Name: List
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1226443110
 Transform:
   m_ObjectHideFlags: 0
@@ -4141,7 +4143,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1226443109}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -800, z: 0}
   m_LocalScale: {x: 1.0008, y: 1.0008, z: 1.0008}
   m_Children:
   - {fileID: 378193922}
@@ -4214,6 +4216,55 @@ MonoBehaviour:
   mSortingLayerName: 
   mClipOffset: {x: 0, y: 0}
   useSortingOrder: 0
+--- !u!114 &1226443113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1226443109}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d166255cacf07b4292b8402b3ddefc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  method: 0
+  style: 0
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.0023345947
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.50061035
+      value: 0.9976654
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  ignoreTimeScale: 1
+  delay: 0
+  duration: 0.25
+  steeperCurves: 0
+  tweenGroup: 0
+  useFixedUpdate: 0
+  onFinished: []
+  eventReceiver: {fileID: 0}
+  callWhenFinished: 
+  from: {x: 0, y: -800, z: 0}
+  to: {x: 0, y: 0, z: 0}
+  worldSpace: 0
 --- !u!1 &1348044813
 GameObject:
   m_ObjectHideFlags: 0

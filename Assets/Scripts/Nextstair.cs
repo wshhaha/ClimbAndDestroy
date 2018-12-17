@@ -7,7 +7,8 @@ public class Nextstair : MonoBehaviour
 {
     public GameObject cardlist;
     public List<GameObject> viewlist;
-    
+    public GameObject blind;
+
     void Start()
     {
         Copydeck();
@@ -94,10 +95,12 @@ public class Nextstair : MonoBehaviour
     }    
     public void Viewcard()
     {
-        cardlist.SetActive(true);
+        blind.SetActive(true);
+        cardlist.GetComponent<UITweener>().PlayForward();
     }
     public void Closelist()
     {
-        cardlist.SetActive(false);
+        cardlist.GetComponent<UITweener>().PlayReverse();
+        blind.SetActive(false);
     }
 }

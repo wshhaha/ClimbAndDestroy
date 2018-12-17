@@ -1537,6 +1537,7 @@ GameObject:
   - component: {fileID: 119597567}
   - component: {fileID: 119597569}
   - component: {fileID: 119597568}
+  - component: {fileID: 119597571}
   m_Layer: 5
   m_Name: slot3
   m_TagString: Untagged
@@ -1716,6 +1717,55 @@ MonoBehaviour:
   dot: {fileID: 963036912}
   shd: {fileID: 557761760}
   shdl: {fileID: 834909036}
+--- !u!114 &119597571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 119597564}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d166255cacf07b4292b8402b3ddefc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  method: 0
+  style: 0
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.14994049
+      value: 0
+      inSlope: 1.1763883
+      outSlope: 1.1763883
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.1763883
+      outSlope: 1.1763883
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  ignoreTimeScale: 1
+  delay: 0
+  duration: 0.1
+  steeperCurves: 0
+  tweenGroup: 0
+  useFixedUpdate: 0
+  onFinished: []
+  eventReceiver: {fileID: 0}
+  callWhenFinished: 
+  from: {x: 250, y: -0, z: 0}
+  to: {x: 270, y: -0, z: 0}
+  worldSpace: 0
 --- !u!1 &125602332
 GameObject:
   m_ObjectHideFlags: 0
@@ -6215,6 +6265,7 @@ GameObject:
   - component: {fileID: 805722606}
   - component: {fileID: 805722608}
   - component: {fileID: 805722607}
+  - component: {fileID: 805722610}
   m_Layer: 5
   m_Name: slot1
   m_TagString: Untagged
@@ -6394,6 +6445,55 @@ MonoBehaviour:
   dot: {fileID: 745808659}
   shd: {fileID: 1464881709}
   shdl: {fileID: 10391324}
+--- !u!114 &805722610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 805722603}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d166255cacf07b4292b8402b3ddefc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  method: 0
+  style: 0
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.14994095
+      value: 0
+      inSlope: 1.1763889
+      outSlope: 1.1763889
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.1763889
+      outSlope: 1.1763889
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  ignoreTimeScale: 1
+  delay: 0
+  duration: 0.1
+  steeperCurves: 0
+  tweenGroup: 0
+  useFixedUpdate: 0
+  onFinished: []
+  eventReceiver: {fileID: 0}
+  callWhenFinished: 
+  from: {x: -250, y: -0, z: 0}
+  to: {x: -230, y: -0, z: 0}
+  worldSpace: 0
 --- !u!1 &812540192
 GameObject:
   m_ObjectHideFlags: 0
@@ -7271,6 +7371,7 @@ GameObject:
   - component: {fileID: 888950286}
   - component: {fileID: 888950288}
   - component: {fileID: 888950287}
+  - component: {fileID: 888950290}
   m_Layer: 5
   m_Name: slot2
   m_TagString: Untagged
@@ -7450,6 +7551,55 @@ MonoBehaviour:
   dot: {fileID: 1845122724}
   shd: {fileID: 753545486}
   shdl: {fileID: 1257784309}
+--- !u!114 &888950290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 888950283}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d166255cacf07b4292b8402b3ddefc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  method: 0
+  style: 0
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.14994049
+      value: 0
+      inSlope: 1.1763883
+      outSlope: 1.1763883
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.1763883
+      outSlope: 1.1763883
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  ignoreTimeScale: 1
+  delay: 0
+  duration: 0.1
+  steeperCurves: 0
+  tweenGroup: 0
+  useFixedUpdate: 0
+  onFinished: []
+  eventReceiver: {fileID: 0}
+  callWhenFinished: 
+  from: {x: 0, y: -0, z: 0}
+  to: {x: 20, y: -0, z: 0}
+  worldSpace: 0
 --- !u!1 &906252364
 GameObject:
   m_ObjectHideFlags: 0

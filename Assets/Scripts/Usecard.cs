@@ -137,6 +137,7 @@ public class Usecard : MonoBehaviour
                         elist[i].GetComponent<Enemy>().ehp += elist[i].GetComponent<Enemy>().shd;
                         elist[i].GetComponent<Enemy>().shd = 0;
                     }
+                    elist[i].GetComponent<Enemy>().Hitmove();
                     if (elist[i].GetComponent<Enemy>().ehp <= 0)
                     {
                         elist[i].GetComponent<Enemy>().Discount();
@@ -163,6 +164,7 @@ public class Usecard : MonoBehaviour
                     spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp += spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().shd;
                     spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().shd = 0;
                 }
+                spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().Hitmove();
                 if (spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().ehp <= 0)
                 {
                     spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().Discount();

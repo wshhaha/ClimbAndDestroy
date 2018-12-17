@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
     public int tier;
     public int str;
     public int p;
+    Vector3 ori;
     public void Discount()
     {
         switch (tier)
@@ -57,11 +58,18 @@ public class Enemy : MonoBehaviour
         }
         gameObject.SetActive(false);
     }
-    
+    private void Start()
+    {
+        ori = transform.localPosition;
+    }
     public bool Eaction()
     {
         StartCoroutine(Readpat());
         return false;
+    }
+    public void Hitmove()
+    {   
+        GetComponent<UITweener>().PlayForward();
     }
     IEnumerator Readpat()
     {
@@ -334,5 +342,9 @@ public class Enemy : MonoBehaviour
     {
         hplabel.text = ehp + " / " + maxhp;
         hpbar.value = (float)ehp / (float)maxhp;
+        if (GetComponent<UITweener>().enabled == false)
+        {
+            transform.localPosition = ori;
+        }
     }
 }
