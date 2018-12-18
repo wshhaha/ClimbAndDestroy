@@ -18,6 +18,10 @@ public class Iteminfo : MonoBehaviour
         }
         transform.parent = Itemmanager.instance().gameObject.transform;
         Itemmanager.instance().inven.Add(gameObject);
+        if (eft == "maxhp")
+        {
+            Datamanager.i().maxhp += 7;
+        }
         transform.localScale = new Vector3(1, 1, 1);
         transform.localPosition = Vector3.zero;
         Datamanager.i().gold -= gold;

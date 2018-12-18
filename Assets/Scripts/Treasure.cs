@@ -10,13 +10,18 @@ public class Treasure : MonoBehaviour
         rewards.SetActive(false);
     }
     public void Openbox()
-    {        
+    {
+        UISprite box = GameObject.Find("box").GetComponent<UISprite>();
         GetComponentInChildren<UIButton>().enabled = false;
         Rewardt();
         rewards.SetActive(true);
+        box.spriteName = "open";
+        box.MakePixelPerfect();
     }
     void Rewardt()
     {
+        int rang = Random.Range(50, 80);
+        rewards.GetComponent<Rewards>().Addreward("gold", rang);
         int lotto = Random.Range(0, 100);
         int num = 0;
         if (lotto >= 0 && lotto < 90)

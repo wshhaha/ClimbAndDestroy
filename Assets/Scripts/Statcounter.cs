@@ -20,8 +20,8 @@ public class Statcounter : MonoBehaviour
         hp.text = Datamanager.i().curhp + "/" + Datamanager.i().maxhp;
         floor.text = "" + Datamanager.i().stage;
         gold.text = "" + Datamanager.i().gold;
-        power.text = "" + Itemmanager.instance().Returnstack("power ring");
-        armor.text = "" + Itemmanager.instance().Returnstack("agility ring");
-        mana.text = "" + Itemmanager.instance().Returnstack("mana ring");
+        power.text = "" + Itemmanager.instance().Returnstack("Power ring");
+        armor.text = "" + Itemmanager.instance().Returnstack("Orichalcon");
+        mana.text = "" + Itemmanager.instance().Returnstack("Mana ring");
     }
 }

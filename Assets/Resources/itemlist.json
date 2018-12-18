@@ -1,28 +1,28 @@
 [
  {
    "index": 1,
-   "name": "power ring",
+   "name": "Power ring",
    "eft": "str",
    "val": 1,
    "tier": 1
  },
  {
    "index": 2,
-   "name": "agility ring",
+   "name": "Orichalcon",
    "eft": "agi",
    "val": 1,
    "tier": 1
  },
  {
    "index": 3,
-   "name": "mana ring",
+   "name": "Mana ring",
    "eft": "maxmana",
    "val": 1,
    "tier": 2
  },
  {
    "index": 4,
-   "name": "hp ring",
+   "name": "Maxhp potion",
    "eft": "maxhp",
    "val": 1,
    "tier": 2

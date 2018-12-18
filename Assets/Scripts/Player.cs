@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
                         Datamanager.i().maxmana++;
                         break;
                     case "maxhp":
-                        Datamanager.i().maxhp += 7;
                         break;
                 }
             }

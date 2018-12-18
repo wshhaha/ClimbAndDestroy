@@ -24,13 +24,16 @@ public class Itemmanager : MonoBehaviour
     }
     public void Itemcreate(int num)
     {
-        
         GameObject i = Instantiate(item);
         i.transform.parent = transform;
         i.transform.localPosition = Vector3.zero;
         i.transform.localScale = new Vector3(1, 1, 1);
         inven.Add(i);
         Itemstat(num, i);
+        if (i.GetComponent<Iteminfo>().eft == "maxhp")
+        {
+            Datamanager.i().maxhp += 7;
+        }
     }
     public void Itemstat(int num,GameObject i)
     {

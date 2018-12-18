@@ -54,22 +54,22 @@ public class Nextstair : MonoBehaviour
             SceneManager.LoadScene("Treasure");
             return;
         }
-        if (Datamanager.i().stage % 10 == 9)
+        if (Datamanager.i().stage % 10 == 10)
         {
             SceneManager.LoadScene("Rest");
             return;
         }
         int i = Random.Range(0, 100);
         int j = 0;
-        if (i >= 0 && i < 75)
+        if (i >= 0 && i < 70)
         {
             j = 0;
         }
-        if (i >= 75 && i < 85)
+        if (i >= 70 && i < 80)
         {
             j = 1;
         }
-        if (i >= 85 && i < 95)
+        if (i >= 80 && i < 95)
         {
             j = 2;
         }

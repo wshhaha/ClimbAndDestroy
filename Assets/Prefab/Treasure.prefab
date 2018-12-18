@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tweenTarget: {fileID: 1674924107868598}
-  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
+  hover: {r: 1, g: 1, b: 1, a: 1}
   pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
   disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   duration: 0.2
@@ -182,7 +182,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 114678169896769080, guid: 12ee0cb32186e1d4baeea48820e36a54, type: 2}
-  mSpriteName: item_ring_mana
+  mSpriteName: item_ring_soul
   mFillCenter: 1
 --- !u!114 &114990211666006736
 MonoBehaviour:

@@ -322,6 +322,7 @@ MonoBehaviour:
   rest: {fileID: 0}
   namelabel: {fileID: 114948561959491126}
   goldlabel: {fileID: 114966682333831664}
+  psprite: {fileID: 0}
 --- !u!114 &114948561959491126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -418,7 +419,7 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 0, g: 0, b: 0, a: 1}
+  mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mWidth: 196
   mHeight: 40
@@ -442,7 +443,7 @@ MonoBehaviour:
   mSymbols: 1
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 0
-  mApplyGradient: 0
+  mApplyGradient: 1
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
   mSpacingX: 0

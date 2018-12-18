@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -884,6 +884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btn: {fileID: 1718883109823800, guid: adc005ce42977f74e8fca16facf2bcd3, type: 2}
   rewardlist: []
+  trea: {fileID: 1674924107868598, guid: 673b88b10853ebb4685f22b7b0e9f066, type: 2}
 --- !u!1 &73268762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,7 +1765,7 @@ MonoBehaviour:
   eventReceiver: {fileID: 0}
   callWhenFinished: 
   from: {x: 250, y: -0, z: 0}
-  to: {x: 270, y: -0, z: 0}
+  to: {x: 260, y: -0, z: 0}
   worldSpace: 0
 --- !u!1 &125602332
 GameObject:
@@ -6492,7 +6493,7 @@ MonoBehaviour:
   eventReceiver: {fileID: 0}
   callWhenFinished: 
   from: {x: -250, y: -0, z: 0}
-  to: {x: -230, y: -0, z: 0}
+  to: {x: -240, y: -0, z: 0}
   worldSpace: 0
 --- !u!1 &812540192
 GameObject:
@@ -7598,7 +7599,7 @@ MonoBehaviour:
   eventReceiver: {fileID: 0}
   callWhenFinished: 
   from: {x: 0, y: -0, z: 0}
-  to: {x: 20, y: -0, z: 0}
+  to: {x: 10, y: -0, z: 0}
   worldSpace: 0
 --- !u!1 &906252364
 GameObject:
@@ -11582,7 +11583,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 114331966317856416, guid: e39615525279c2e49bc2c2a0c22f5f00, type: 2}
-  mSpriteName: mapbg
+  mSpriteName: battlebg
   mFillCenter: 1
 --- !u!1 &1645021609
 GameObject:

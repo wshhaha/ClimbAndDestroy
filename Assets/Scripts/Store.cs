@@ -7,6 +7,7 @@ public class Store : MonoBehaviour
     public GameObject menulist;
     public GameObject card;
     public GameObject item;
+    public GameObject blind;
     public UIGrid cardg;
     public UIGrid itemg;
 
@@ -17,11 +18,13 @@ public class Store : MonoBehaviour
     }
     public void Openstore()
     {
-        menulist.SetActive(true);
+        blind.SetActive(true);
+        menulist.GetComponent<UITweener>().PlayForward();
     }
     public void Closestore()
     {
-        menulist.SetActive(false);
+        menulist.GetComponent<UITweener>().PlayReverse();
+        blind.SetActive(false);
     }
     void Createshop()
     {
@@ -72,6 +75,8 @@ public class Store : MonoBehaviour
             t.GetComponent<Iteminfo>().gold = Random.Range(100, 150);
             t.GetComponentInChildren<UILabel>().enabled = true;
             t.GetComponentInChildren<UILabel>().text = "" + t.GetComponent<Iteminfo>().gold;
+            print(j);
+            Seticon(t, j);
             itemg.enabled = true;
         }
         for (int i = 0; i < 1; i++)
@@ -85,7 +90,31 @@ public class Store : MonoBehaviour
             t.GetComponent<Iteminfo>().gold = Random.Range(220, 300);
             t.GetComponentInChildren<UILabel>().enabled = true;
             t.GetComponentInChildren<UILabel>().text = "" + t.GetComponent<Iteminfo>().gold;
+            print(j);
+            Seticon(t, j);
             itemg.enabled = true;
+        }
+    }
+    void Seticon(GameObject trea,int num)
+    {
+        switch (num)
+        {
+            case 0:
+                trea.GetComponent<UISprite>().spriteName = "item_ring_soul";
+                trea.GetComponent<UIButton>().normalSprite = "item_ring_soul";
+                break;
+            case 1:
+                trea.GetComponent<UISprite>().spriteName = "item_shield";
+                trea.GetComponent<UIButton>().normalSprite = "item_shield";
+                break;
+            case 2:
+                trea.GetComponent<UISprite>().spriteName = "item_ring_mana";
+                trea.GetComponent<UIButton>().normalSprite = "item_ring_mana";
+                break;
+            case 3:
+                trea.GetComponent<UISprite>().spriteName = "item_potion_red";
+                trea.GetComponent<UIButton>().normalSprite = "item_potion_red";
+                break;
         }
     }
 }
