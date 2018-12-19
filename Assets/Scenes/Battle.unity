@@ -344,7 +344,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 12426497}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23, y: 0, z: 0}
+  m_LocalPosition: {x: 262, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1528058914}
@@ -604,7 +604,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 40579875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23, y: 0, z: 0}
+  m_LocalPosition: {x: 262, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 100768844}
@@ -860,7 +860,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3018
+  startingRenderQueue: 3020
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -1130,7 +1130,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3017
+  startingRenderQueue: 3019
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -1411,7 +1411,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 370, y: 70, z: 0}
+  m_Size: {x: 380, y: 70, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &100768844
 Transform:
@@ -1514,13 +1514,13 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3008
+  startingRenderQueue: 3020
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
   mClipSoftness: {x: 4, y: 4}
-  mDepth: 5
+  mDepth: 7
   mSortingOrder: 0
   mSortingLayerName: 
   mClipOffset: {x: 0, y: 0}
@@ -2269,7 +2269,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 150, y: 153, z: 0}
+  m_Size: {x: 130, y: 130, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &195919466
 MonoBehaviour:
@@ -2301,14 +2301,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 150
-  mHeight: 153
+  mWidth: 130
+  mHeight: 130
   mDepth: -1
   mMat: {fileID: 0}
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
-  keepAspectRatio: 1
-  aspectRatio: 0.9779736
+  keepAspectRatio: 0
+  aspectRatio: 1
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -2323,7 +2323,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 114678169896769080, guid: 12ee0cb32186e1d4baeea48820e36a54, type: 2}
-  mSpriteName: stage_frame_default
+  mSpriteName: check_off
   mFillCenter: 1
 --- !u!1 &208596472
 GameObject:
@@ -2652,30 +2652,30 @@ MonoBehaviour:
   leftAnchor:
     target: {fileID: 100768844}
     relative: 0
-    absolute: 49
+    absolute: -98
   rightAnchor:
     target: {fileID: 100768844}
     relative: 1
-    absolute: -49
+    absolute: 98
   bottomAnchor:
     target: {fileID: 100768844}
     relative: 0
-    absolute: 10
+    absolute: 11
   topAnchor:
     target: {fileID: 100768844}
     relative: 1
-    absolute: -10
+    absolute: -11
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 86
-  mHeight: 46
+  mWidth: 380
+  mHeight: 44
   mDepth: 5
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.8695652
+  aspectRatio: 8.636364
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -11083,7 +11083,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 370, y: 70, z: 0}
+  m_Size: {x: 380, y: 70, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1528058914
 Transform:
@@ -11173,7 +11173,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 144, y: 147, z: 0}
+  m_Size: {x: 150, y: 150, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1544045124
 MonoBehaviour:
@@ -11205,14 +11205,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 144
-  mHeight: 147
+  mWidth: 150
+  mHeight: 150
   mDepth: 6
   mMat: {fileID: 0}
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
-  keepAspectRatio: 1
-  aspectRatio: 0.9779736
+  keepAspectRatio: 0
+  aspectRatio: 1
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -11227,7 +11227,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 114678169896769080, guid: 12ee0cb32186e1d4baeea48820e36a54, type: 2}
-  mSpriteName: stage_frame_default
+  mSpriteName: check_off
   mFillCenter: 1
 --- !u!1 &1564183568
 GameObject:
@@ -11447,30 +11447,30 @@ MonoBehaviour:
   leftAnchor:
     target: {fileID: 1528058914}
     relative: 0
-    absolute: 49
+    absolute: -98
   rightAnchor:
     target: {fileID: 1528058914}
     relative: 1
-    absolute: -49
+    absolute: 98
   bottomAnchor:
     target: {fileID: 1528058914}
     relative: 0
-    absolute: 10
+    absolute: 11
   topAnchor:
     target: {fileID: 1528058914}
     relative: 1
-    absolute: -10
+    absolute: -11
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 86
-  mHeight: 46
+  mWidth: 380
+  mHeight: 44
   mDepth: 5
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.8695652
+  aspectRatio: 8.636364
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -12788,13 +12788,13 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3007
+  startingRenderQueue: 3019
   mClipTexture: {fileID: 0}
   mAlpha: 0.5
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
   mClipSoftness: {x: 4, y: 4}
-  mDepth: 4
+  mDepth: 6
   mSortingOrder: 0
   mSortingLayerName: 
   mClipOffset: {x: 0, y: 0}

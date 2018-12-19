@@ -719,7 +719,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 114678169896769080, guid: 12ee0cb32186e1d4baeea48820e36a54, type: 2}
-  mSpriteName: btn_common_d - 2
+  mSpriteName: check_off
   mFillCenter: 1
 --- !u!114 &263521232
 MonoBehaviour:
@@ -873,7 +873,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 352897861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23, y: 0, z: 0}
+  m_LocalPosition: {x: 170, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1310033302}
@@ -941,14 +941,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 210
-  mHeight: 155
+  mWidth: 450
+  mHeight: 100
   mDepth: 1
   mMat: {fileID: 0}
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.3548387
+  aspectRatio: 4.5
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -963,7 +963,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 114678169896769080, guid: 12ee0cb32186e1d4baeea48820e36a54, type: 2}
-  mSpriteName: btn_common_d
+  mSpriteName: check_off
   mFillCenter: 1
 --- !u!114 &393937843
 MonoBehaviour:
@@ -1004,7 +1004,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 210, y: 155, z: 0}
+  m_Size: {x: 450, y: 100, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &476048110
 GameObject:
@@ -1174,7 +1174,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 110, y: 113, z: 0}
+  m_Size: {x: 120, y: 120, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &493370139
 MonoBehaviour:
@@ -1206,14 +1206,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 110
-  mHeight: 113
+  mWidth: 120
+  mHeight: 120
   mDepth: 6
   mMat: {fileID: 0}
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
-  keepAspectRatio: 1
-  aspectRatio: 0.9736842
+  keepAspectRatio: 0
+  aspectRatio: 1
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -1228,7 +1228,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 114678169896769080, guid: 12ee0cb32186e1d4baeea48820e36a54, type: 2}
-  mSpriteName: stage_frame_default
+  mSpriteName: check_off
   mFillCenter: 1
 --- !u!1 &534669902
 GameObject:
@@ -1648,30 +1648,30 @@ MonoBehaviour:
   leftAnchor:
     target: {fileID: 1705301597}
     relative: 0
-    absolute: 49
+    absolute: -98
   rightAnchor:
     target: {fileID: 1705301597}
     relative: 1
-    absolute: -49
+    absolute: 98
   bottomAnchor:
     target: {fileID: 1705301597}
     relative: 0
-    absolute: 10
+    absolute: 11
   topAnchor:
     target: {fileID: 1705301597}
     relative: 1
-    absolute: -10
+    absolute: -11
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 86
-  mHeight: 46
+  mWidth: 380
+  mHeight: 44
   mDepth: 5
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.8695652
+  aspectRatio: 8.636364
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -2011,7 +2011,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 110, y: 113, z: 0}
+  m_Size: {x: 120, y: 120, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1029078273
 MonoBehaviour:
@@ -2043,14 +2043,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 110
-  mHeight: 113
+  mWidth: 120
+  mHeight: 120
   mDepth: 8
   mMat: {fileID: 0}
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
-  keepAspectRatio: 1
-  aspectRatio: 0.9736842
+  keepAspectRatio: 0
+  aspectRatio: 1
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -2065,7 +2065,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 114678169896769080, guid: 12ee0cb32186e1d4baeea48820e36a54, type: 2}
-  mSpriteName: stage_frame_default
+  mSpriteName: check_off
   mFillCenter: 1
 --- !u!1 &1066836673
 GameObject:
@@ -2309,14 +2309,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 210
-  mHeight: 155
+  mWidth: 450
+  mHeight: 100
   mDepth: 1
   mMat: {fileID: 0}
-  autoResizeBoxCollider: 0
+  autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.3548387
+  aspectRatio: 4.5
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -2331,7 +2331,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 114678169896769080, guid: 12ee0cb32186e1d4baeea48820e36a54, type: 2}
-  mSpriteName: btn_common_d
+  mSpriteName: check_off
   mFillCenter: 1
 --- !u!114 &1117307785
 MonoBehaviour:
@@ -2372,7 +2372,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 400, y: 100, z: 0}
+  m_Size: {x: 450, y: 100, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1180723742
 GameObject:
@@ -2458,7 +2458,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 114678169896769080, guid: 12ee0cb32186e1d4baeea48820e36a54, type: 2}
-  mSpriteName: btn_common_d - 2
+  mSpriteName: check_off
   mFillCenter: 1
 --- !u!114 &1180723745
 MonoBehaviour:
@@ -2586,7 +2586,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 114331966317856416, guid: e39615525279c2e49bc2c2a0c22f5f00, type: 2}
-  mSpriteName: Titlepsd-1
+  mSpriteName: mainbg
   mFillCenter: 1
 --- !u!1 &1287775178
 GameObject:
@@ -2731,7 +2731,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 370, y: 70, z: 0}
+  m_Size: {x: 380, y: 70, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1310033304
 MonoBehaviour:
@@ -2877,14 +2877,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 210
-  mHeight: 155
+  mWidth: 450
+  mHeight: 100
   mDepth: 1
   mMat: {fileID: 0}
-  autoResizeBoxCollider: 0
+  autoResizeBoxCollider: 1
   hideIfOffScreen: 0
-  keepAspectRatio: 1
-  aspectRatio: 1.3548387
+  keepAspectRatio: 0
+  aspectRatio: 4.5
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -2899,7 +2899,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 114678169896769080, guid: 12ee0cb32186e1d4baeea48820e36a54, type: 2}
-  mSpriteName: btn_common_d
+  mSpriteName: check_off
   mFillCenter: 1
 --- !u!114 &1348931794
 MonoBehaviour:
@@ -2940,7 +2940,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 400, y: 100, z: 0}
+  m_Size: {x: 450, y: 100, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1363284124
 GameObject:
@@ -3578,7 +3578,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 370, y: 70, z: 0}
+  m_Size: {x: 380, y: 70, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1705301599
 MonoBehaviour:
@@ -3686,7 +3686,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1764188281}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23, y: 0, z: 0}
+  m_LocalPosition: {x: 170, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1705301597}
@@ -3995,30 +3995,30 @@ MonoBehaviour:
   leftAnchor:
     target: {fileID: 1310033302}
     relative: 0
-    absolute: 49
+    absolute: -98
   rightAnchor:
     target: {fileID: 1310033302}
     relative: 1
-    absolute: -49
+    absolute: 98
   bottomAnchor:
     target: {fileID: 1310033302}
     relative: 0
-    absolute: 10
+    absolute: 11
   topAnchor:
     target: {fileID: 1310033302}
     relative: 1
-    absolute: -10
+    absolute: -11
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 86
-  mHeight: 46
+  mWidth: 380
+  mHeight: 44
   mDepth: 5
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.8695652
+  aspectRatio: 8.636364
   mType: 1
   mFillDirection: 4
   mFillAmount: 1

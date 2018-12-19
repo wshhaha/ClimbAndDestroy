@@ -307,6 +307,10 @@ public class Enemyspawner : MonoBehaviour
         {
             target = null;
         }
+        if (p.GetComponent<Player>().readycard != null)
+        {   
+            p.GetComponent<Player>().readycard.GetComponent<Usecard>().Startread();
+        }
     }
     public void Targetunlock()
     {

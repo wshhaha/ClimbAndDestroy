@@ -46,7 +46,7 @@ public class Eccprinter : MonoBehaviour
         if (e.l == true)
         {
             lockonl.gameObject.SetActive(true);
-            lockonl.text = "Receives 150% damage during " + e.wnum + "turn";
+            lockonl.text = "Receives 150% damage during " + e.lnum + "turn";
         }
         else
         {

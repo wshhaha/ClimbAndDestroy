@@ -7,15 +7,13 @@ public class Gyard : MonoBehaviour
     public List<GameObject> gylist;
     public GameObject deck;
     public void Backtodeck()
-    {        
-        while (gylist.Count!=0)
+    {
+        for (int i = 0; i < gylist.Count; i++)
         {
-            int i = 0;
             gylist[i].transform.parent = deck.GetComponentInChildren<UIGrid>().transform;
-            gylist[i].transform.localPosition = Vector3.zero;
             deck.GetComponent<Builddeck>().deck.Add(gylist[i]);
-            gylist.RemoveAt(i);
-            i++;
+            //gylist[i].transform.localPosition = Vector3.zero;
         }
+        gylist.RemoveRange(0, gylist.Count);
     }
 }

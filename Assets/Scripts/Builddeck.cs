@@ -27,6 +27,7 @@ public class Builddeck : MonoBehaviour
             c.transform.parent = deckgrid.transform;
             c.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             c.GetComponent<UIPanel>().depth = 2;
+            c.GetComponent<Usecard>().back.enabled = true;
             deck.Add(c);
         }
         StartCoroutine(Startturn());
@@ -39,6 +40,7 @@ public class Builddeck : MonoBehaviour
             GameObject target = deck[i];
             hand.GetComponent<Hand>().handlist.Add(target);
             deck.Remove(target);
+            target.GetComponent<Usecard>().back.enabled = false;
             target.GetComponent<UIPanel>().depth = hand.GetComponent<Hand>().handlist.Count + 2;
             target.GetComponentInChildren<BoxCollider>().enabled = true;
             target.transform.parent = hand.GetComponentInChildren<UIGrid>().transform;
@@ -51,6 +53,11 @@ public class Builddeck : MonoBehaviour
             if (gy.GetComponent<Gyard>().gylist.Count != 0)
             {
                 gy.GetComponent<Gyard>().Backtodeck();
+                for (int i = 0; i < deck.Count; i++)
+                {
+                    deck[i].transform.localPosition = Vector3.zero;
+                    yield return new WaitForEndOfFrame();
+                }
                 StartCoroutine(Drawmotion());
             }
             else

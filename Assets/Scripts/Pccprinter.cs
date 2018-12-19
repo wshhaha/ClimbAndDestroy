@@ -56,7 +56,7 @@ public class Pccprinter : MonoBehaviour
         if (Datamanager.i().l == true)
         {
             lockonl.gameObject.SetActive(true);
-            lockonl.text = "Receives 150% damage during " + Datamanager.i().wnum + "turn";
+            lockonl.text = "Receives 150% damage during " + Datamanager.i().lnum + "turn";
         }
         else
         {

@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public UILabel hplabel;
     public UISlider hpbar;
     public UILabel manalabel;
+    public GameObject readycard;
     public bool te;
 
 	void Start () 
@@ -128,7 +129,6 @@ public class Player : MonoBehaviour
             h.GetComponent<Hand>().handlist[i].transform.parent = gy.GetComponentInChildren<UIGrid>().transform;
             h.GetComponent<Hand>().handlist[i].GetComponent<UIPanel>().depth = 2;
             h.GetComponent<Hand>().handlist[i].GetComponent<Usecard>().Gymoving();
-            //h.GetComponent<Hand>().handlist.Remove(h.GetComponent<Hand>().handlist[i]);
         }
         h.GetComponent<Hand>().handlist.RemoveRange(0, j);
     }

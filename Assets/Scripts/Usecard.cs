@@ -12,13 +12,15 @@ public class Usecard : MonoBehaviour
     public Builddeck deck;
     GameObject h;
     public Rest rest;
+    public UISprite back;
     public UILabel namelabel;
     public UILabel goldlabel;
     public UISprite psprite;
 
     private void Start()
-    {   
-        namelabel.text = GetComponent<Cardstat>().cname;
+    {
+        p = GameObject.Find("Player");
+        Changevertical(GetComponent<Cardstat>().cname);
         switch (Application.loadedLevelName)
         {
             case "Battle":
@@ -34,21 +36,29 @@ public class Usecard : MonoBehaviour
         }
     }
     public void Usingcard()
-    {        
-        StartCoroutine(Reading());        
+    {
+        p.GetComponent<Player>().uc = true;
+        if (GetComponent<Cardstat>().target == true)
+        {
+            p.GetComponent<Player>().readycard = gameObject;
+        }
+        else
+        {
+            p.GetComponent<Player>().readycard = null;
+            Startread();
+        }
+    }
+    public void Startread()
+    {
+        StartCoroutine(Reading());
     }
     IEnumerator Reading()
-    {
+    {   
         if (Application.loadedLevelName != "Battle")
         {
             yield break;
         }
-        p = GameObject.Find("Player");
         if (p.GetComponent<Player>().turn == false)
-        {
-            yield break;
-        }
-        if (p.GetComponent<Player>().uc == true)
         {
             yield break;
         }
@@ -56,7 +66,6 @@ public class Usecard : MonoBehaviour
         {
             yield break;
         }
-        p.GetComponent<Player>().uc = true;
         if (GetComponent<Cardstat>().target == true)
         {   
             while (spawner.GetComponent<Enemyspawner>().target == null)
@@ -309,6 +318,7 @@ public class Usecard : MonoBehaviour
     }
     IEnumerator Gogy()
     {
+        back.enabled = true;
         transform.localScale = new Vector3(.5f, .5f, .5f);
         transform.Rotate(0, 0, -90);
         Vector3 ori = new Vector3(1.5f, -0.7f, 0);
@@ -319,6 +329,7 @@ public class Usecard : MonoBehaviour
             factor += 0.2f;
             yield return new WaitForEndOfFrame();
         }
+        transform.localPosition = Vector3.zero;
         transform.Rotate(0, 0, 90);
         GetComponentInChildren<BoxCollider>().enabled = false;
         GetComponent<UIPanel>().depth = 2;
@@ -376,5 +387,38 @@ public class Usecard : MonoBehaviour
         Datamanager.i().gold -= card.GetComponent<Cardstat>().gold;
         goldlabel.enabled = false;
         card.SetActive(false);
+    }
+
+    void Changevertical(string cardname)
+    {
+        string temp = null;
+        string newname = null;
+        for (int i = 0; i < cardname.Length; i++)
+        {
+            char c = cardname[i];
+            c = (char)(c - 32);
+            if (i < cardname.Length - 1)
+            {
+                temp = c + "\n";
+            }
+            else
+            {
+                temp = c + "";
+            }
+            newname += temp;
+        }
+        namelabel.text = newname;
+        switch (GetComponent<Cardstat>().grade)
+        {
+            case "n":
+                namelabel.color = Color.white;
+                break;
+            case "u":
+                namelabel.color = Color.blue;
+                break;
+            case "l":
+                namelabel.color = Color.magenta;
+                break;
+        }
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -145,30 +145,30 @@ MonoBehaviour:
   leftAnchor:
     target: {fileID: 482283454}
     relative: 0
-    absolute: 49
+    absolute: -98
   rightAnchor:
     target: {fileID: 482283454}
     relative: 1
-    absolute: -49
+    absolute: 98
   bottomAnchor:
     target: {fileID: 482283454}
     relative: 0
-    absolute: 10
+    absolute: 11
   topAnchor:
     target: {fileID: 482283454}
     relative: 1
-    absolute: -10
+    absolute: -11
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 86
-  mHeight: 46
+  mWidth: 380
+  mHeight: 44
   mDepth: 5
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.8695652
+  aspectRatio: 8.636364
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -709,7 +709,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 265836124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23, y: 0, z: 0}
+  m_LocalPosition: {x: 170, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 859019078}
@@ -1364,7 +1364,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 370, y: 70, z: 0}
+  m_Size: {x: 380, y: 70, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &482283454
 Transform:
@@ -2944,7 +2944,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 370, y: 70, z: 0}
+  m_Size: {x: 380, y: 70, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &859019078
 Transform:
@@ -4401,7 +4401,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1368967523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23, y: 0, z: 0}
+  m_LocalPosition: {x: 170, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 482283454}
@@ -5389,30 +5389,30 @@ MonoBehaviour:
   leftAnchor:
     target: {fileID: 859019078}
     relative: 0
-    absolute: 49
+    absolute: -98
   rightAnchor:
     target: {fileID: 859019078}
     relative: 1
-    absolute: -49
+    absolute: 98
   bottomAnchor:
     target: {fileID: 859019078}
     relative: 0
-    absolute: 10
+    absolute: 11
   topAnchor:
     target: {fileID: 859019078}
     relative: 1
-    absolute: -10
+    absolute: -11
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 86
-  mHeight: 46
+  mWidth: 380
+  mHeight: 44
   mDepth: 5
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.8695652
+  aspectRatio: 8.636364
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -5527,7 +5527,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3008
+  startingRenderQueue: 3009
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -5797,7 +5797,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3007
+  startingRenderQueue: 3008
   mClipTexture: {fileID: 0}
   mAlpha: 0.5
   mClipping: 0
