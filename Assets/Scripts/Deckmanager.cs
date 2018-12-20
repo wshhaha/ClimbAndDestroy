@@ -35,7 +35,7 @@ public class Deckmanager : MonoBehaviour
         {
             Createcard(9);
         }
-        Createcard(1);
+        Createcard(5);
     }
     public void Createcard(int num)
     {
@@ -84,6 +84,9 @@ public class Deckmanager : MonoBehaviour
             card.GetComponent<Cardstat>().up = wa[num]["up"];
             card.GetComponent<Cardstat>().target = wa[num]["target"];
             card.GetComponent<Cardstat>().grade = wa[num]["grade"];
+            card.GetComponent<Cardstat>().sort = wa[num]["sort"];
+            card.GetComponent<Cardstat>().des1 = wa[num]["des1"];
+            card.GetComponent<Cardstat>().des2 = wa[num]["des2"];
         }
         if (PlayerPrefs.GetInt("character") == 2)
         {
@@ -102,6 +105,9 @@ public class Deckmanager : MonoBehaviour
             card.GetComponent<Cardstat>().up = wi[num]["up"];
             card.GetComponent<Cardstat>().target = wi[num]["target"];
             card.GetComponent<Cardstat>().grade = wi[num]["grade"];
+            card.GetComponent<Cardstat>().sort = wi[num]["sort"];
+            card.GetComponent<Cardstat>().des1 = wi[num]["des1"];
+            card.GetComponent<Cardstat>().des2 = wi[num]["des2"];
         }
     }
     public void Removedeck()

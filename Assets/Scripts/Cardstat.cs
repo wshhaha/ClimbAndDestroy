@@ -19,4 +19,7 @@ public class Cardstat : MonoBehaviour
     public bool target;
     public string grade;
     public int gold;
+    public int sort;
+    public string des1;
+    public string des2;
 }

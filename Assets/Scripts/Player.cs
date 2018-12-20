@@ -92,6 +92,11 @@ public class Player : MonoBehaviour
                 Datamanager.i().w = false;
             }
         }
+        if (Datamanager.i().ins == true)
+        {
+            Datamanager.i().ins = false;
+            Datamanager.i().str -= Datamanager.i().insnum;
+        }
     }
 	public void Turnend()
     {

@@ -13,7 +13,10 @@
    "grade": "n",
    "extinction": false,
    "up": false,
-   "target": true
+   "target": true,
+   "sort": 1,
+   "des1": "Deal val1 damage",
+   "des2": ""
  },
  {
    "index": 2,
@@ -29,7 +32,10 @@
    "grade": "n",
    "extinction": false,
    "up": false,
-   "target": true
+   "target": true,
+   "sort": 1,
+   "des1": "Deal val1 damage and analyzes weakpoint during val2 turn",
+   "des2": ""
  },
  {
    "index": 3,
@@ -45,7 +51,10 @@
    "grade": "n",
    "extinction": false,
    "up": false,
-   "target": true
+   "target": true,
+   "sort": 1,
+   "des1": "Deal val1 damage",
+   "des2": ""
  },
  {
    "index": 4,
@@ -61,7 +70,10 @@
    "grade": "n",
    "extinction": false,
    "up": false,
-   "target": true
+   "target": true,
+   "sort": 1,
+   "des1": "Deal val1 damage",
+   "des2": "Deal val1 damage and stuns it with a 20% chance"
  },
  {
    "index": 5,
@@ -77,7 +89,10 @@
    "grade": "n",
    "extinction": false,
    "up": false,
-   "target": true
+   "target": true,
+   "sort": 1,
+   "des1": "Deal val1 damage",
+   "des2": "Deal val1 damage and draws val2 card"
  },
  {
    "index": 6,
@@ -93,7 +108,10 @@
    "grade": "n",
    "extinction": false,
    "up": false,
-   "target": true
+   "target": true,
+   "sort": 1,
+   "des1": "Deal damage as much as your armor",
+   "des2": ""
  },
  {
    "index": 7,
@@ -109,11 +127,14 @@
    "grade": "n",
    "extinction": true,
    "up": false,
-   "target": false
+   "target": false,
+   "sort": 2,
+   "des1": "Gain val1 armor and analyze the enemies weakpoint during val2 turn\nextinction",
+   "des2": ""
  },
  {
    "index": 8,
-   "name": "sheild up",
+   "name": "shield up",
    "mana": 1,
    "pmana": 1,
    "effect1": "def",
@@ -125,7 +146,10 @@
    "grade": "n",
    "extinction": false,
    "up": false,
-   "target": false
+   "target": false,
+   "sort": 2,
+   "des1": "Gain val1 armor",
+   "des2": "Gain val1 armor and draws val2 card"
  },
  {
    "index": 9,
@@ -141,7 +165,10 @@
    "grade": "n",
    "extinction": false,
    "up": false,
-   "target": false
+   "target": false,
+   "sort": 2,
+   "des1": "Gain val1 armor and draws val2 card",
+   "des2": ""
  },
  {
    "index": 10,
@@ -157,7 +184,10 @@
    "grade": "n",
    "extinction": false,
    "up": false,
-   "target": false
+   "target": false,
+   "sort": 2,
+   "des1": "Gain val1 armor",
+   "des2": ""
  },
  {
    "index": 11,
@@ -173,7 +203,10 @@
    "grade": "u",
    "extinction": true,
    "up": false,
-   "target": false
+   "target": false,
+   "sort": 2,
+   "des1": "Gain val1 armor\nextinction",
+   "des2": ""
  },
  {
    "index": 12,
@@ -189,7 +222,10 @@
    "grade": "u",
    "extinction": true,
    "up": false,
-   "target": true
+   "target": true,
+   "sort": 2,
+   "des1": "Gain val1 armor and weaken during val2 turn\nextinction",
+   "des2": ""
  },
  {
    "index": 13,
@@ -205,7 +241,10 @@
    "grade": "u",
    "extinction": false,
    "up": false,
-   "target": true
+   "target": true,
+   "sort": 1,
+   "des1": "Deal val1 damage as much as remain of mana",
+   "des2": ""
  },
  {
    "index": 14,
@@ -221,7 +260,10 @@
    "grade": "u",
    "extinction": false,
    "up": false,
-   "target": true
+   "target": true,
+   "sort": 1,
+   "des1": "Deal val1 damage and rebound val2",
+   "des2": ""
  },
  {
    "index": 15,
@@ -237,7 +279,10 @@
    "grade": "u",
    "extinction": false,
    "up": false,
-   "target": true
+   "target": true,
+   "sort": 1,
+   "des1": "Deal val1 damage and weaken during val2 turn",
+   "des2": ""
  },
  {
    "index": 16,
@@ -253,7 +298,10 @@
    "grade": "u",
    "extinction": false,
    "up": false,
-   "target": true
+   "target": true,
+   "sort": 1,
+   "des1": "Deal val1 damage and analyzes weakpoint during val2 turn",
+   "des2": ""
  },
  {
    "index": 17,
@@ -269,7 +317,10 @@
    "grade": "l",
    "extinction": false,
    "up": false,
-   "target": true
+   "target": true,
+   "sort": 1,
+   "des1": "Deal val1 damage and Deal power x 5 damage at val2 time",
+   "des2": ""
  },
  {
    "index": 18,
@@ -285,7 +336,10 @@
    "grade": "l",
    "extinction": true,
    "up": false,
-   "target": false
+   "target": false,
+   "sort": 3,
+   "des1": "Gain val1 auto armor\nextinction",
+   "des2": ""
  },
  {
    "index": 19,
@@ -301,7 +355,10 @@
    "grade": "l",
    "extinction": true,
    "up": false,
-   "target": false
+   "target": false,
+   "sort": 3,
+   "des1": "Gain val1 power\nextinction",
+   "des2": ""
  },
  {
    "index": 20,
@@ -317,6 +374,9 @@
    "grade": "l",
    "extinction": true,
    "up": false,
-   "target": false
+   "target": false,
+   "sort": 3,
+   "des1": "Gain val1 mana and draws val2 card\nextinction",
+   "des2": ""
  }
 ]

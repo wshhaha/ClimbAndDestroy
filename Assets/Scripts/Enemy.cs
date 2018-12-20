@@ -100,26 +100,21 @@ public class Enemy : MonoBehaviour
         {
             default:
                 return 0;
-                break;
             case "atk":
                 return (num + str);
-                break;
             case "carboom":
                 return (num + str);
-                break;
             case "lifedrain":
                 return (num + str);
-                break;
             case "deathblade":
                 return (num + str);
-                break;
             case "def":
                 return (num);
-                break;
         }
     }
     void Attack(int val)
     {
+        Camerashake.instance().Startshake();
         float weakf = 1.0f;
         if (w == true)
         {

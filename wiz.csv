@@ -1,0 +1,28 @@
+index,name,mana,pmana,effect1,value1,pvalue1,effect2,value2,pvalue2,grade,extinction,up,target,sort,des1,des2
+1,staff swing,1,1,atk,5,8,,,,n,FALSE,FALSE,TRUE,1,Deal val1 damage,
+2,wind cutter,2,2,atk,9,13,dot,2,3,n,FALSE,FALSE,TRUE,1,Deal val1 damage and bleed during val2 turn,
+3,ice bolt,1,1,atk,8,11,,,,n,FALSE,FALSE,TRUE,1,Deal val1 damage,
+4,lighting shock,2,1,atk,10,12,stun,1,1,n,FALSE,FALSE,TRUE,1,Deal val1 damage and stuns it with a 20% chance,
+5,magic arrow,0,0,atk,3,5,,,,n,FALSE,FALSE,TRUE,1,Deal val1 damage,
+6,wound heal,1,0,heal,4,6,,,,n,TRUE,FALSE,FALSE,3,"Heal val1 hp
+extinction",
+7,charging mana,1,1,mana,2,2,def,2,4,n,TRUE,FALSE,FALSE,3,"Gain val mana and gain val2 armor
+extinction",
+8,use scroll,1,1,draw,2,3,,,,n,TRUE,FALSE,FALSE,3,"Draw val1 card
+extinction",
+9,lock on,1,1,def,8,11,lockon,1,2,n,FALSE,FALSE,TRUE,2,Gain val1 armor and analyzes weakpoint during val2 turn,
+10,mana shield,1,1,def,5,8,,,,n,FALSE,FALSE,FALSE,2,Gain val1 armor,
+11,barrier,1,1,def,8,12,,,,u,FALSE,FALSE,FALSE,2,Gain val1 armor,
+12,flame wall,2,2,def,13,18,reflect,3,4,u,TRUE,FALSE,FALSE,2,"Gain val1 armor and gain val2 reflect damage
+extinction",
+13,forked lighting,,,random,8,11,,,,u,FALSE,FALSE,FALSE,1,Deal val1 damage to random enemy as much as remain of mana,
+14,innervate,1,1,draw,4,5,rebound,3,2,u,FALSE,FALSE,FALSE,3,Draw val card and rebound val2,
+15,lightbomb,2,2,atk,7,11,,,,u,FALSE,FALSE,FALSE,1,Deal val1 damage to all,
+16,metor fall,2,2,atk,20,25,dot,4,5,u,FALSE,FALSE,TRUE,1,Deal val1 damage and bleed during val2 turn,
+17,powerword kill,3,3,atk,25,31,bringstr,1,2,l,FALSE,FALSE,TRUE,1,Deal val1 damage and Deal power x 5 damage at val2 time,
+18,arcane intellect,2,1,manaup,1,1,,,,l,TRUE,FALSE,FALSE,3,"Gain val1 maxmana
+extinction",
+19,growing Intelligence,1,1,str,3,4,,,,l,TRUE,FALSE,FALSE,3,"Gain val1 power
+extinction",
+20,meditation,0,0,mana,2,3,instant,2,3,l,TRUE,FALSE,FALSE,3,"Gain val1 mama and gain val2 power during this turn
+extinction",

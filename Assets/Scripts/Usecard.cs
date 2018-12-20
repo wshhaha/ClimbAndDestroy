@@ -16,11 +16,15 @@ public class Usecard : MonoBehaviour
     public UILabel namelabel;
     public UILabel goldlabel;
     public UISprite psprite;
+    public UISprite image;
+    public UILabel des;
+    public UILabel manalabel;
 
     private void Start()
     {
         p = GameObject.Find("Player");
         Changevertical(GetComponent<Cardstat>().cname);
+        Writedes(GetComponent<Cardstat>().des1);
         switch (Application.loadedLevelName)
         {
             case "Battle":
@@ -108,6 +112,7 @@ public class Usecard : MonoBehaviour
     void Attack(int val)
     {
         StartCoroutine(Attackmove());
+        Camerashake.instance().Startshake();
         float weakf = 1.0f;
         if (Datamanager.i().w == true)
         {
@@ -242,19 +247,26 @@ public class Usecard : MonoBehaviour
                 }
                 break;
             case "stun":
-                int j = Random.Range(0, 100);
-                if (j >= 20 && j < 40)
+                if(GetComponent<Cardstat>().val1==0)
                 {
-                    spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().s = true;
-                    spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().patstat.text = "stun";
-                    spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().p = 3;
-                    print("stun sucsses");
+                    break;
                 }
                 else
                 {
-                    print("stun fail");
+                    int j = Random.Range(0, 100);
+                    if (j >= 20 && j < 40)
+                    {
+                        spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().s = true;
+                        spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().patstat.text = "stun";
+                        spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().p = 3;
+                        print("stun sucsses");
+                    }
+                    else
+                    {
+                        print("stun fail");
+                    }
+                    break;
                 }
-                break;
             case "draw":
                 deck.Drawing(val);
                 break;
@@ -306,6 +318,7 @@ public class Usecard : MonoBehaviour
             case "instant":
                 Datamanager.i().ins = true;
                 Datamanager.i().insnum = val;
+                Datamanager.i().str += Datamanager.i().insnum;
                 break;
             case null:
                 break;
@@ -396,7 +409,10 @@ public class Usecard : MonoBehaviour
         for (int i = 0; i < cardname.Length; i++)
         {
             char c = cardname[i];
-            c = (char)(c - 32);
+            if (c >= 97 && c <= 122)
+            {
+                c = (char)(c - 32);
+            }
             if (i < cardname.Length - 1)
             {
                 temp = c + "\n";
@@ -420,5 +436,66 @@ public class Usecard : MonoBehaviour
                 namelabel.color = Color.magenta;
                 break;
         }
+    }
+
+    public void Writedes(string descript)
+    {
+        manalabel.text = GetComponent<Cardstat>().mana + "";
+        des.text = Changestring(descript);
+        switch (GetComponent<Cardstat>().sort)
+        {
+            case 1:
+                image.spriteName = "efta";
+                break;
+            case 2:
+                image.spriteName = "eftb";
+                break;
+            case 3:
+                image.spriteName = "eftc";
+                break;
+        }
+    }
+    string Changestring(string a)
+    {
+        List<string> temp = new List<string>();
+        List<int> space = new List<int>();
+        int s = 0;
+        string t = null;
+        for (int i = 0; i < a.Length; i++)
+        {
+            char c = a[i];
+            if (c == ' ')
+            {
+                space.Add(i);
+            }
+        }
+        space.Add(a.Length);
+        for (int i = 0; i < space.Count; i++)
+        {
+            for (int j = s; j < space[i]; j++)
+            {
+                t += a[j];
+            }
+            temp.Add(t);
+            t = null;
+            s = space[i];
+        }
+        for (int i = 0; i < temp.Count; i++)
+        {
+            if (temp[i] == " val1")
+            {
+                temp[i] = " " + GetComponent<Cardstat>().val1;
+            }
+            if (temp[i] == " val2")
+            {
+                temp[i] = " " + GetComponent<Cardstat>().val2;
+            }
+        }
+        a = null;
+        for (int i = 0; i < temp.Count; i++)
+        {
+            a += temp[i];
+        }
+        return a;
     }
 }

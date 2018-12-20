@@ -54,7 +54,7 @@ public class Nextstair : MonoBehaviour
             SceneManager.LoadScene("Treasure");
             return;
         }
-        if (Datamanager.i().stage % 10 == 10)
+        if (Datamanager.i().stage % 10 == 0)
         {
             SceneManager.LoadScene("Rest");
             return;

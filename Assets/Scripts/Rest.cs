@@ -54,12 +54,19 @@ public class Rest : MonoBehaviour
         }
     }   
     public void Acceptbtn()
-    {
-        print("강화");
+    {   
         target.GetComponent<Cardstat>().up = true;
         target.GetComponent<Cardstat>().mana = target.GetComponent<Cardstat>().pmana;
         target.GetComponent<Cardstat>().val1 = target.GetComponent<Cardstat>().pval1;
         target.GetComponent<Cardstat>().val2 = target.GetComponent<Cardstat>().pval2;
+        if (GetComponent<Cardstat>().des2 == null)
+        {
+            target.GetComponent<Usecard>().Writedes(GetComponent<Cardstat>().des1);
+        }
+        else
+        {
+            target.GetComponent<Usecard>().Writedes(GetComponent<Cardstat>().des2);
+        }
         for (int i = reinlist.Count-1; i > -1; i--)
         {
             Deckmanager.instance().orideck.Add(reinlist[i]);

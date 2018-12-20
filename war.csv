@@ -1,0 +1,27 @@
+index,name,mana,pmana,effect1,value1,pvalue1,effect2,value2,pvalue2,grade,extinction,up,target,sort,des1,des2
+1,hit,1,1,atk,5,8,,,,n,FALSE,FALSE,TRUE,1,Deal val1 damage,
+2,smash,2,2,atk,8,12,lockon,1,2,n,FALSE,FALSE,TRUE,1,Deal val1 damage and analyzes weakpoint during val2 turn,
+3,stab,1,1,atk,8,11,,,,n,FALSE,FALSE,TRUE,1,Deal val1 damage,
+4,bash,1,1,atk,6,9,stun,0,1,n,FALSE,FALSE,TRUE,1,Deal val1 damage,Deal val1 damage and stuns it with a 20% chance
+5,headbutt,1,1,atk,7,10,draw,0,1,n,FALSE,FALSE,TRUE,1,Deal val1 damage,Deal val1 damage and draws val2 card
+6,body slam,1,0,bringarmor,,,,,,n,FALSE,FALSE,TRUE,1,Deal damage as much as your armor,
+7,taunt,2,2,def,12,16,lockon,1,2,n,TRUE,FALSE,FALSE,2,"Gain val1 armor and analyze the enemies weakpoint during val2 turn
+extinction",
+8,sheild up,1,1,def,8,11,draw,0,1,n,FALSE,FALSE,FALSE,2,Gain val1 armor,Gain val1 armor and draws val2 card
+9,indure,1,1,def,3,5,draw,1,2,n,FALSE,FALSE,FALSE,2,Gain val1 armor and draws val2 card,
+10,guard,1,1,def,5,8,,,,n,FALSE,FALSE,FALSE,2,Gain val1 armor,
+11,perfect armor,3,2,def,30,40,,,,u,TRUE,FALSE,FALSE,2,"Gain val1 armor
+extinction",
+12,parrying,2,2,def,14,16,weak,1,2,u,TRUE,FALSE,TRUE,2,"Gain val1 armor and weaken during val2 turn
+extinction",
+13,frenzy,,,allin,6,9,,,,u,FALSE,FALSE,TRUE,1,Deal val1 damage as much as remain of mana,
+14,berserk,1,1,atk,13,18,rebound,3,4,u,FALSE,FALSE,TRUE,1,Deal val1 damage and rebound val2,
+15,weapon breaker,2,2,atk,10,14,weak,2,3,u,FALSE,FALSE,TRUE,1,Deal val1 damage and weaken during val2 turn,
+16,armor breaker,2,2,atk,10,14,lockon,2,3,u,FALSE,FALSE,TRUE,1,Deal val1 damage and analyzes weakpoint during val2 turn,
+17,aura blade,3,2,atk,20,25,bringstr,1,2,l,FALSE,FALSE,TRUE,1,Deal val1 damage and Deal power x 5 damage at val2 time,
+18,iron skin,1,1,genamr,3,4,,,,l,TRUE,FALSE,FALSE,3,"Gain val1 auto armor
+extinction",
+19,battle cry,1,1,str,2,3,,,,l,TRUE,FALSE,FALSE,3,"Gain val1 power
+extinction",
+20,concentrate,0,0,mana,2,3,draw,3,4,l,TRUE,FALSE,FALSE,3,"Gain val1 mana and draws val2 card
+extinction",
