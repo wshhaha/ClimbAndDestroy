@@ -607,7 +607,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3007
+  startingRenderQueue: 3006
   mClipTexture: {fileID: 0}
   mAlpha: 0.5
   mClipping: 0
@@ -822,7 +822,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3008
+  startingRenderQueue: 3007
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -1767,7 +1767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tweenTarget: {fileID: 442871935}
   hover: {r: 1, g: 1, b: 1, a: 1}
-  pressed: {r: 0.8980393, g: 0.25490198, b: 0.28627452, a: 1}
+  pressed: {r: 0.24313727, g: 0.21960786, b: 0.19215688, a: 1}
   disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   duration: 0.2
   dragHighlight: 0
@@ -1793,7 +1793,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 210, y: 155, z: 0}
+  m_Size: {x: 420, y: 120, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &442871939
 MonoBehaviour:
@@ -1825,14 +1825,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 210
-  mHeight: 155
+  mWidth: 420
+  mHeight: 120
   mDepth: 2
   mMat: {fileID: 0}
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.3548387
+  aspectRatio: 3.5
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -1847,7 +1847,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 114678169896769080, guid: 12ee0cb32186e1d4baeea48820e36a54, type: 2}
-  mSpriteName: btn_common_d
+  mSpriteName: check_off
   mFillCenter: 1
 --- !u!1 &494628796
 GameObject:
@@ -4920,7 +4920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tweenTarget: {fileID: 1646670045}
   hover: {r: 1, g: 1, b: 1, a: 1}
-  pressed: {r: 0.8980393, g: 0.25490198, b: 0.28627452, a: 1}
+  pressed: {r: 0.24313727, g: 0.21960786, b: 0.19215688, a: 1}
   disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   duration: 0.2
   dragHighlight: 0
@@ -4946,7 +4946,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 210, y: 155, z: 0}
+  m_Size: {x: 420, y: 120, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1646670049
 MonoBehaviour:
@@ -4978,14 +4978,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 210
-  mHeight: 155
+  mWidth: 420
+  mHeight: 120
   mDepth: 2
   mMat: {fileID: 0}
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
-  keepAspectRatio: 1
-  aspectRatio: 1.3548387
+  keepAspectRatio: 0
+  aspectRatio: 3.5
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -5000,7 +5000,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 114678169896769080, guid: 12ee0cb32186e1d4baeea48820e36a54, type: 2}
-  mSpriteName: btn_common_d
+  mSpriteName: check_off
   mFillCenter: 1
 --- !u!1 &1678357078
 GameObject:
@@ -5524,7 +5524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tweenTarget: {fileID: 2107620758}
   hover: {r: 1, g: 1, b: 1, a: 1}
-  pressed: {r: 0.8980393, g: 0.25490198, b: 0.28627452, a: 1}
+  pressed: {r: 0.24313727, g: 0.21960786, b: 0.19215688, a: 1}
   disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   duration: 0.2
   dragHighlight: 0
@@ -5550,7 +5550,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 210, y: 155, z: 0}
+  m_Size: {x: 420, y: 120, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2107620762
 MonoBehaviour:
@@ -5582,14 +5582,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 210
-  mHeight: 155
+  mWidth: 420
+  mHeight: 120
   mDepth: 2
   mMat: {fileID: 0}
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
-  keepAspectRatio: 1
-  aspectRatio: 1.3548387
+  keepAspectRatio: 0
+  aspectRatio: 3.5
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -5604,7 +5604,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 114678169896769080, guid: 12ee0cb32186e1d4baeea48820e36a54, type: 2}
-  mSpriteName: btn_common_d
+  mSpriteName: check_off
   mFillCenter: 1
 --- !u!1 &2146713879
 GameObject:

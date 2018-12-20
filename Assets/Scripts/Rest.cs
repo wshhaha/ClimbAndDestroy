@@ -59,13 +59,14 @@ public class Rest : MonoBehaviour
         target.GetComponent<Cardstat>().mana = target.GetComponent<Cardstat>().pmana;
         target.GetComponent<Cardstat>().val1 = target.GetComponent<Cardstat>().pval1;
         target.GetComponent<Cardstat>().val2 = target.GetComponent<Cardstat>().pval2;
-        if (GetComponent<Cardstat>().des2 == null)
+        if (target.GetComponent<Cardstat>().des2 == "")
         {
-            target.GetComponent<Usecard>().Writedes(GetComponent<Cardstat>().des1);
+            target.GetComponent<Usecard>().Writedes(target.GetComponent<Cardstat>().des1);
         }
         else
         {
-            target.GetComponent<Usecard>().Writedes(GetComponent<Cardstat>().des2);
+            target.GetComponent<Cardstat>().des1 = target.GetComponent<Cardstat>().des2;
+            target.GetComponent<Usecard>().Writedes(target.GetComponent<Cardstat>().des1);
         }
         for (int i = reinlist.Count-1; i > -1; i--)
         {

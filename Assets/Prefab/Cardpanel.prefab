@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4174159076057712}
   - component: {fileID: 114368517118161820}
   m_Layer: 5
-  m_Name: Sprite
+  m_Name: mana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1629599215259588
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
@@ -182,7 +182,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -90, y: 140, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4409164410482334}
   m_Father: {fileID: 4846576149313442}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -219,11 +220,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1629599215259588}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -90, y: 140, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4846576149313442}
-  m_RootOrder: 7
+  m_Father: {fileID: 4174159076057712}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4548760188867224
 Transform:
@@ -268,7 +269,6 @@ Transform:
   - {fileID: 4287173474734024}
   - {fileID: 4295432679750526}
   - {fileID: 4174159076057712}
-  - {fileID: 4409164410482334}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -580,7 +580,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3009
+  startingRenderQueue: 3000
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -614,6 +614,7 @@ MonoBehaviour:
   psprite: {fileID: 0}
   image: {fileID: 114877934626688990}
   des: {fileID: 114907808476473292}
+  mana: {fileID: 1292537503056960}
   manalabel: {fileID: 114505805346893122}
 --- !u!114 &114877934626688990
 MonoBehaviour:

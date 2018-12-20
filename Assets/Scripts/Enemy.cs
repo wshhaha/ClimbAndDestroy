@@ -68,7 +68,17 @@ public class Enemy : MonoBehaviour
         return false;
     }
     public void Hitmove()
-    {   
+    {
+        GetComponent<TweenPosition>().ResetToBeginning();
+        GetComponent<TweenPosition>().to = ori + new Vector3(50, 0, 0);
+        GetComponent<UITweener>().delay = 0.05f;
+        GetComponent<UITweener>().PlayForward();
+    }
+    public void Atkmove()
+    {
+        GetComponent<TweenPosition>().ResetToBeginning();
+        GetComponent<TweenPosition>().to = ori + new Vector3(-50, 0, 0);
+        GetComponent<UITweener>().delay = 0;
         GetComponent<UITweener>().PlayForward();
     }
     IEnumerator Readpat()
@@ -96,24 +106,45 @@ public class Enemy : MonoBehaviour
     }
     public int Returnval(string p,int num)
     {
+        float weakf = 1.0f;
+        if (w == true)
+        {
+            weakf = .75f;
+        }
+        else
+        {
+            weakf = 1;
+        }
+        float lockonf = 1;
+        if (Datamanager.i().l == true)
+        {
+            lockonf = 1.5f;
+        }
+        else
+        {
+            lockonf = 1;
+        }
+        int dam = (int)((num + str) * weakf * lockonf);
         switch (p)
         {
             default:
                 return 0;
             case "atk":
-                return (num + str);
+                return dam;
             case "carboom":
-                return (num + str);
+                return dam;
             case "lifedrain":
-                return (num + str);
+                return dam;
             case "deathblade":
-                return (num + str);
+                return dam;
             case "def":
                 return (num);
         }
     }
     void Attack(int val)
     {
+        Player p = GameObject.Find("Player").GetComponent<Player>();
+        Atkmove();
         Camerashake.instance().Startshake();
         float weakf = 1.0f;
         if (w == true)
@@ -135,14 +166,14 @@ public class Enemy : MonoBehaviour
         }
         int dam= (int)((val + str) * weakf * lockonf);
         Datamanager.i().shd -= dam;
+        p.Hitmove();
         if (Datamanager.i().shd < 0)
         {
             Datamanager.i().curhp += Datamanager.i().shd;
             Datamanager.i().shd = 0;
         }
         if (Datamanager.i().curhp <= 0)
-        {
-            Player p = GameObject.Find("Player").GetComponent<Player>();
+        {   
             p.gameover.SetActive(true);
         }
         if (Datamanager.i().r == true)
@@ -337,9 +368,9 @@ public class Enemy : MonoBehaviour
     {
         hplabel.text = ehp + " / " + maxhp;
         hpbar.value = (float)ehp / (float)maxhp;
-        if (GetComponent<UITweener>().enabled == false)
-        {
-            transform.localPosition = ori;
-        }
+        //if (GetComponent<UITweener>().isActiveAndEnabled == false)
+        //{
+        //    transform.localPosition = ori;
+        //}
     }
 }

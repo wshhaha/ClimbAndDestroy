@@ -321,6 +321,48 @@ public class Enemyspawner : MonoBehaviour
         target = null;
         yield return new WaitForEndOfFrame();
     }
+    private void Update()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (elist[i].activeSelf == true)
+            {  
+                switch (elist[i].gameObject.GetComponent<Enemy>().p)
+                {
+                    case 0:
+                        if (elist[i].gameObject.GetComponent<Enemy>().Returnval(elist[i].gameObject.GetComponent<Enemy>().pat1, elist[i].gameObject.GetComponent<Enemy>().val1) == 0)
+                        {
+                            elist[i].gameObject.GetComponent<Enemy>().patstat.text = elist[i].gameObject.GetComponent<Enemy>().pat1;
+                        }
+                        else
+                        {
+                            elist[i].gameObject.GetComponent<Enemy>().patstat.text = elist[i].gameObject.GetComponent<Enemy>().pat1 + elist[i].gameObject.GetComponent<Enemy>().Returnval(elist[i].gameObject.GetComponent<Enemy>().pat1, elist[i].gameObject.GetComponent<Enemy>().val1);
+                        }
+                        break;
+                    case 1:
+                        if (elist[i].gameObject.GetComponent<Enemy>().Returnval(elist[i].gameObject.GetComponent<Enemy>().pat2, elist[i].gameObject.GetComponent<Enemy>().val2) == 0)
+                        {
+                            elist[i].gameObject.GetComponent<Enemy>().patstat.text = elist[i].gameObject.GetComponent<Enemy>().pat2;
+                        }
+                        else
+                        {
+                            elist[i].gameObject.GetComponent<Enemy>().patstat.text = elist[i].gameObject.GetComponent<Enemy>().pat2 + elist[i].gameObject.GetComponent<Enemy>().Returnval(elist[i].gameObject.GetComponent<Enemy>().pat2, elist[i].gameObject.GetComponent<Enemy>().val2);
+                        }
+                        break;
+                    case 2:
+                        if (elist[i].gameObject.GetComponent<Enemy>().Returnval(elist[i].gameObject.GetComponent<Enemy>().pat3, elist[i].gameObject.GetComponent<Enemy>().val3) == 0)
+                        {
+                            elist[i].gameObject.GetComponent<Enemy>().patstat.text = elist[i].gameObject.GetComponent<Enemy>().pat3;
+                        }
+                        else
+                        {
+                            elist[i].gameObject.GetComponent<Enemy>().patstat.text = elist[i].gameObject.GetComponent<Enemy>().pat3 + elist[i].gameObject.GetComponent<Enemy>().Returnval(elist[i].gameObject.GetComponent<Enemy>().pat3, elist[i].gameObject.GetComponent<Enemy>().val3);
+                        }
+                        break;
+                }
+            }
+        }
+    }
     void Selepat()
     {
         for (int i = 0; i < 3; i++)
@@ -354,39 +396,6 @@ public class Enemyspawner : MonoBehaviour
                         break;
                     default:
                         elist[i].gameObject.GetComponent<Enemy>().p = Random.Range(0, elist[i].gameObject.GetComponent<Enemy>().patnum);
-                        break;
-                }
-                switch (elist[i].gameObject.GetComponent<Enemy>().p)
-                {
-                    case 0:
-                        if (elist[i].gameObject.GetComponent<Enemy>().Returnval(elist[i].gameObject.GetComponent<Enemy>().pat1 , elist[i].gameObject.GetComponent<Enemy>().val1) == 0)
-                        {
-                            elist[i].gameObject.GetComponent<Enemy>().patstat.text = elist[i].gameObject.GetComponent<Enemy>().pat1;
-                        }
-                        else
-                        {
-                            elist[i].gameObject.GetComponent<Enemy>().patstat.text = elist[i].gameObject.GetComponent<Enemy>().pat1 + elist[i].gameObject.GetComponent<Enemy>().Returnval(elist[i].gameObject.GetComponent<Enemy>().pat1, elist[i].gameObject.GetComponent<Enemy>().val1);
-                        }
-                        break;
-                    case 1:
-                        if (elist[i].gameObject.GetComponent<Enemy>().Returnval(elist[i].gameObject.GetComponent<Enemy>().pat2, elist[i].gameObject.GetComponent<Enemy>().val2) == 0)
-                        {
-                            elist[i].gameObject.GetComponent<Enemy>().patstat.text = elist[i].gameObject.GetComponent<Enemy>().pat2;
-                        }
-                        else
-                        {
-                            elist[i].gameObject.GetComponent<Enemy>().patstat.text = elist[i].gameObject.GetComponent<Enemy>().pat2 + elist[i].gameObject.GetComponent<Enemy>().Returnval(elist[i].gameObject.GetComponent<Enemy>().pat2, elist[i].gameObject.GetComponent<Enemy>().val2);
-                        }
-                        break;
-                    case 2:
-                        if (elist[i].gameObject.GetComponent<Enemy>().Returnval(elist[i].gameObject.GetComponent<Enemy>().pat3, elist[i].gameObject.GetComponent<Enemy>().val3) == 0)
-                        {
-                            elist[i].gameObject.GetComponent<Enemy>().patstat.text = elist[i].gameObject.GetComponent<Enemy>().pat3;
-                        }
-                        else
-                        {
-                            elist[i].gameObject.GetComponent<Enemy>().patstat.text = elist[i].gameObject.GetComponent<Enemy>().pat3 + elist[i].gameObject.GetComponent<Enemy>().Returnval(elist[i].gameObject.GetComponent<Enemy>().pat3, elist[i].gameObject.GetComponent<Enemy>().val3);
-                        }
                         break;
                 }
             }

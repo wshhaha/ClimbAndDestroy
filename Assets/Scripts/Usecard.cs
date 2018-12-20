@@ -18,10 +18,12 @@ public class Usecard : MonoBehaviour
     public UISprite psprite;
     public UISprite image;
     public UILabel des;
+    public GameObject mana;
     public UILabel manalabel;
-
+    Vector3 ori;
     private void Start()
     {
+
         p = GameObject.Find("Player");
         Changevertical(GetComponent<Cardstat>().cname);
         Writedes(GetComponent<Cardstat>().des1);
@@ -41,6 +43,10 @@ public class Usecard : MonoBehaviour
     }
     public void Usingcard()
     {
+        if (Application.loadedLevelName != "Battle")
+        {
+            return;
+        }
         p.GetComponent<Player>().uc = true;
         if (GetComponent<Cardstat>().target == true)
         {
@@ -54,14 +60,14 @@ public class Usecard : MonoBehaviour
     }
     public void Startread()
     {
+        if (Application.loadedLevelName != "Battle")
+        {
+            return;
+        }
         StartCoroutine(Reading());
     }
     IEnumerator Reading()
-    {   
-        if (Application.loadedLevelName != "Battle")
-        {
-            yield break;
-        }
+    {  
         if (p.GetComponent<Player>().turn == false)
         {
             yield break;
@@ -95,19 +101,19 @@ public class Usecard : MonoBehaviour
         h.GetComponent<Hand>().handlist.Remove(gameObject);
         p.GetComponent<Player>().uc = false;
     }
+    
     IEnumerator Attackmove()
     {
         if(GetComponent<Cardstat>().cname== "forked lighting")
         {
             yield break;
         }
-        Vector3 ori = psprite.transform.localPosition;
-        for (int i = 1; i < 6; i++)
-        {
-            psprite.transform.localPosition = ori + new Vector3(i * 10, 0, 0);
-            yield return new WaitForEndOfFrame();
-        }
-        psprite.transform.localPosition = ori;
+        ori = psprite.transform.localPosition;
+        p.GetComponentInChildren<TweenPosition>().ResetToBeginning();
+        p.GetComponentInChildren<TweenPosition>().to = ori + new Vector3(50, 0, 0);
+        p.GetComponentInChildren<UITweener>().delay = 0;
+        p.GetComponentInChildren<UITweener>().PlayForward();
+        yield return new WaitForEndOfFrame();
     }
     void Attack(int val)
     {
@@ -331,6 +337,7 @@ public class Usecard : MonoBehaviour
     }
     IEnumerator Gogy()
     {
+        mana.SetActive(false);
         back.enabled = true;
         transform.localScale = new Vector3(.5f, .5f, .5f);
         transform.Rotate(0, 0, -90);
@@ -484,11 +491,11 @@ public class Usecard : MonoBehaviour
         {
             if (temp[i] == " val1")
             {
-                temp[i] = " " + GetComponent<Cardstat>().val1;
+                temp[i] = " " + Settextval(GetComponent<Cardstat>().eft1, GetComponent<Cardstat>().val1);
             }
             if (temp[i] == " val2")
             {
-                temp[i] = " " + GetComponent<Cardstat>().val2;
+                temp[i] = " " + Settextval(GetComponent<Cardstat>().eft2, GetComponent<Cardstat>().val2);
             }
         }
         a = null;
@@ -497,5 +504,29 @@ public class Usecard : MonoBehaviour
             a += temp[i];
         }
         return a;
+    }
+    int Settextval(string eft,int val)
+    {
+        int v = 0;
+        switch (eft)
+        {
+            case "atk":
+                if (Datamanager.i().w == true)
+                {
+                    v = (int)((val + Datamanager.i().str)*0.75f);
+                }
+                else
+                {
+                    v = (val + Datamanager.i().str);
+                }
+                break;
+            case "def":
+                v = val + Datamanager.i().agi;
+                break;
+            default:
+                v = val;
+                break;
+        }
+        return v;
     }
 }

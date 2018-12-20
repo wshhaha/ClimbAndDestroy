@@ -17,9 +17,12 @@ public class Player : MonoBehaviour
     public UILabel manalabel;
     public GameObject readycard;
     public bool te;
-
+    Vector3 ori;
+    GameObject cha;
 	void Start () 
 	{
+        cha = GameObject.Find("Character");
+        ori = cha.transform.localPosition;
         te = false;
         uc = false;
         if (Itemmanager.instance().inven.Count != 0)
@@ -161,6 +164,13 @@ public class Player : MonoBehaviour
         Deckmanager.instance().Removedeck();
         SceneManager.LoadScene("1_Title");
         Datamanager.i().curscore = 0;
+    }
+    public void Hitmove()
+    {
+        GetComponentInChildren<TweenPosition>().ResetToBeginning();
+        GetComponentInChildren<TweenPosition>().to = ori + new Vector3(-50, 0, 0);
+        GetComponentInChildren<UITweener>().delay = 0.05f;
+        GetComponentInChildren<UITweener>().PlayForward();
     }
     private void Update()
     {

@@ -27,6 +27,7 @@ public class Builddeck : MonoBehaviour
             c.transform.parent = deckgrid.transform;
             c.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             c.GetComponent<UIPanel>().depth = 2;
+            c.GetComponent<Usecard>().mana.SetActive(false);
             c.GetComponent<Usecard>().back.enabled = true;
             deck.Add(c);
         }
@@ -40,7 +41,9 @@ public class Builddeck : MonoBehaviour
             GameObject target = deck[i];
             hand.GetComponent<Hand>().handlist.Add(target);
             deck.Remove(target);
+            target.GetComponent<Usecard>().Writedes(target.GetComponent<Cardstat>().des1);
             target.GetComponent<Usecard>().back.enabled = false;
+            target.GetComponent<Usecard>().mana.SetActive(true);
             target.GetComponent<UIPanel>().depth = hand.GetComponent<Hand>().handlist.Count + 2;
             target.GetComponentInChildren<BoxCollider>().enabled = true;
             target.transform.parent = hand.GetComponentInChildren<UIGrid>().transform;

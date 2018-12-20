@@ -22,6 +22,7 @@ public class Nextstair : MonoBehaviour
             Deckmanager.instance().orideck[i].transform.parent = cardlist.GetComponentInChildren<UIGrid>().gameObject.transform;
             Deckmanager.instance().orideck[i].transform.localPosition = Vector3.zero;
             Deckmanager.instance().orideck[i].transform.localScale = new Vector3(1, 1, 1);
+            Deckmanager.instance().orideck[i].GetComponent<Usecard>().mana.SetActive(true);
             Deckmanager.instance().orideck[i].SetActive(true);
             Deckmanager.instance().orideck.Remove(Deckmanager.instance().orideck[i]);
             cardlist.GetComponentInChildren<UIGrid>().enabled = true;
