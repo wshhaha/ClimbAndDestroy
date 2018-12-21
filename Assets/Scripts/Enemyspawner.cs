@@ -269,20 +269,29 @@ public class Enemyspawner : MonoBehaviour
     }
     IEnumerator Epatten()
     {
+        nextturn.GetComponentInChildren<UILabel>().text = "ENEMY TURN";
+        nextturn.SetActive(true);
+        yield return new WaitForSecondsRealtime(0.5f);
+        nextturn.SetActive(false);
         if (eturn1 == true)
         {
+            yield return new WaitForSecondsRealtime(0.5f);
             eturn1 = slot1.gameObject.GetComponent<Enemy>().Eaction();
             eturn2 = true;
+            yield return new WaitForSecondsRealtime(0.5f);
             eturn2 = slot2.gameObject.GetComponent<Enemy>().Eaction();
             eturn3 = true;
+            yield return new WaitForSecondsRealtime(0.5f);
             eturn3 = slot3.gameObject.GetComponent<Enemy>().Eaction();
         }
         if (eturn2 == true)
         {
+            yield return new WaitForSecondsRealtime(0.5f);
             eturn2 = slot2.gameObject.GetComponent<Enemy>().Eaction();
             eturn3 = true;
             if (slot3.gameObject.activeSelf == true)
             {
+                yield return new WaitForSecondsRealtime(0.5f);
                 eturn3 = slot3.gameObject.GetComponent<Enemy>().Eaction();
             }
         }
@@ -292,10 +301,10 @@ public class Enemyspawner : MonoBehaviour
         d.GetComponent<Builddeck>().St();
         yield return new WaitForSecondsRealtime(0.5f);
         Selepat();
+        nextturn.GetComponentInChildren<UILabel>().text = "YOUR TURN";
         nextturn.SetActive(true);
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(0.5f);
         nextturn.SetActive(false);
-        //yield return new WaitForEndOfFrame();
     }
     public void Targetlock(GameObject e)
     {

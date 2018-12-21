@@ -20,10 +20,10 @@ public class Usecard : MonoBehaviour
     public UILabel des;
     public GameObject mana;
     public UILabel manalabel;
+    public GameObject cardinfo;
     Vector3 ori;
     private void Start()
     {
-
         p = GameObject.Find("Player");
         Changevertical(GetComponent<Cardstat>().cname);
         Writedes(GetComponent<Cardstat>().des1);
@@ -40,6 +40,15 @@ public class Usecard : MonoBehaviour
                 psprite = GameObject.Find("Character").GetComponent<UISprite>();
                 break;
         }
+    }
+    public void Oninfo()
+    {
+        cardinfo.GetComponentInChildren<UILabel>().text = des.text;
+        cardinfo.SetActive(true);
+    }
+    public void Offinfo()
+    {
+        cardinfo.SetActive(false);
     }
     public void Usingcard()
     {

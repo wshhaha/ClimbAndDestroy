@@ -5,6 +5,7 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GPGSManager : MonoBehaviour 
 {
@@ -28,5 +29,20 @@ public class GPGSManager : MonoBehaviour
         PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
-    }		   
+    }
+    public void Login()
+    {
+        Social.localUser.Authenticate((bool success) =>
+        {
+            if (success)
+            {
+                SceneManager.LoadScene("1_Title");
+            }
+            else
+            {
+                print("a");
+                //GameObject.Find("Introcnt").GetComponent<Introcnt>().cube.SetActive(true);
+            }
+        });
+    }
 }
