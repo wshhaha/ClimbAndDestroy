@@ -10,7 +10,7 @@ public class Introcnt : MonoBehaviour
 	void Start () 
 	{        
         PlayerPrefs.SetInt("character", 0);
-        gpgs.GetComponent<GPGSManager>().Login();
-        //SceneManager.LoadScene("1_Title");
-	}		
+        //gpgs.GetComponent<GPGSManager>().Login();
+        SceneManager.LoadScene("1_Title");
+    }		
 }

@@ -21,11 +21,13 @@ public class GPGSManager : MonoBehaviour
         {
             _instance = this;
         }
-        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder()        
-        .RequestEmail()
-        .RequestServerAuthCode(false)
-        .RequestIdToken()
-        .Build();        
+        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration
+            .Builder()
+            .EnableSavedGames()
+            .RequestEmail()
+            .RequestServerAuthCode(false)
+            .RequestIdToken()
+            .Build();
         PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
