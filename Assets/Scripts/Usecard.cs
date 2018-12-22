@@ -20,7 +20,7 @@ public class Usecard : MonoBehaviour
     public UILabel des;
     public GameObject mana;
     public UILabel manalabel;
-    public GameObject cardinfo;
+    
     Vector3 ori;
     private void Start()
     {
@@ -43,12 +43,20 @@ public class Usecard : MonoBehaviour
     }
     public void Oninfo()
     {
-        cardinfo.GetComponentInChildren<UILabel>().text = des.text;
-        cardinfo.SetActive(true);
+        if (Application.loadedLevelName != "Battle")
+        {
+            return;
+        }
+        p.GetComponent<Player>().cardinfo.GetComponentInChildren<UILabel>().text = des.text;
+        p.GetComponent<Player>().cardinfo.SetActive(true);
     }
     public void Offinfo()
     {
-        cardinfo.SetActive(false);
+        if (Application.loadedLevelName != "Battle")
+        {
+            return;
+        }
+        p.GetComponent<Player>().cardinfo.SetActive(false);
     }
     public void Usingcard()
     {
@@ -125,9 +133,7 @@ public class Usecard : MonoBehaviour
         yield return new WaitForEndOfFrame();
     }
     void Attack(int val)
-    {
-        StartCoroutine(Attackmove());
-        Camerashake.instance().Startshake();
+    {   
         float weakf = 1.0f;
         if (Datamanager.i().w == true)
         {
@@ -215,33 +221,126 @@ public class Usecard : MonoBehaviour
         switch (eft)
         {
             case "atk":
+                StartCoroutine(Attackmove());
+                switch (GetComponent<Cardstat>().cname)
+                {
+                    case "hit":
+                        Effectmanager.i().eftpos = p;
+                        Effectmanager.i().Starteft(23);
+                        break;
+                    case "staff swing":
+                        Effectmanager.i().eftpos = p;
+                        Effectmanager.i().Starteft(23);
+                        break;
+                    case "smash":
+                        Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
+                        Effectmanager.i().Starteft(18);
+                        break;
+                    case "stab":
+                        Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
+                        Effectmanager.i().Starteft(2);
+                        break;
+                    case "bash":
+                        Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
+                        Effectmanager.i().Starteft(27);
+                        break;
+                    case "headbutt":
+                        Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
+                        Effectmanager.i().Starteft(30);
+                        break;
+                    case "weapon breaker":
+                        Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
+                        Effectmanager.i().Starteft(29);
+                        break;
+                    case "armor breaker":
+                        Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
+                        Effectmanager.i().Starteft(28);
+                        break;
+                    case "wind cutter":
+                        Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
+                        Effectmanager.i().Starteft(24);
+                        break;
+                    case "ice bolt":
+                        Effectmanager.i().eftpos = p;
+                        GameObject ice = Effectmanager.i().Starteft(6);
+                        ice.GetComponentInChildren<TweenPosition>().to = spawner.GetComponent<Enemyspawner>().target.transform.localPosition + new Vector3(100, 50, 0);
+                        ice.GetComponentInChildren<UITweener>().PlayForward();
+                        yield return new WaitForSeconds(1);
+                        break;
+                    case "lighting shock":
+                        Effectmanager.i().eftpos = p;
+                        GameObject shock = Effectmanager.i().Starteft(7);
+                        shock.GetComponentInChildren<TweenPosition>().to = spawner.GetComponent<Enemyspawner>().target.transform.localPosition + new Vector3(100, 50, 0);
+                        shock.GetComponentInChildren<UITweener>().PlayForward();
+                        yield return new WaitForSeconds(1);
+                        break;
+                    case "magic arrow":
+                        Effectmanager.i().eftpos = p;
+                        GameObject arrow = Effectmanager.i().Starteft(26);
+                        arrow.GetComponentInChildren<TweenPosition>().to = spawner.GetComponent<Enemyspawner>().target.transform.localPosition + new Vector3(100, 50, 0);
+                        arrow.GetComponentInChildren<UITweener>().PlayForward();
+                        break;
+                    case "lightnova":
+                        Effectmanager.i().eftpos = elist[1];
+                        Effectmanager.i().Starteft(15);
+                        break;
+                    case "meteor fall":
+                        Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
+                        Effectmanager.i().Starteft(3);
+                        yield return new WaitForSeconds(0.5f);
+                        Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
+                        Effectmanager.i().Starteft(16);
+                        break;
+                }
                 Attack(val);
                 break;
             case "def":
                 Deffence(val);
+                Effectmanager.i().eftpos = p;
+                Effectmanager.i().Starteft(19);
                 break;
             case "bringarmor":
                 Attack(Datamanager.i().shd);
+                Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
+                Effectmanager.i().Starteft(1);
                 break;
             case "allin":
                 for (int i = 0; i < Datamanager.i().curmana; i++)
                 {
                     Attack(val);
+                    Effectmanager.i().eftpos = p;
+                    Effectmanager.i().Starteft(23);
                 }
                 Datamanager.i().curmana = 0;
                 break;
             case "genamr":
                 Datamanager.i().genamr = true;
                 Datamanager.i().gennum = val;
+                Effectmanager.i().eftpos = p;
+                Effectmanager.i().Starteft(17);
                 break;
             case "str":
                 Datamanager.i().str += val;
+                Effectmanager.i().eftpos = p;
+                switch (PlayerPrefs.GetInt("character"))
+                {
+                    case 1:
+                        Effectmanager.i().Starteft(10);
+                        break;
+                    case 2:
+                        Effectmanager.i().Starteft(9);
+                        break;
+                }
                 break;
             case "mana":
                 Datamanager.i().curmana += val;
+                Effectmanager.i().eftpos = p;
+                Effectmanager.i().Starteft(9);
                 break;
             case "heal":
                 Datamanager.i().curhp += val;
+                Effectmanager.i().eftpos = p;
+                Effectmanager.i().Starteft(14);
                 break;
             case "lockon":
                 if (spawner.GetComponent<Enemyspawner>().target == null)
@@ -262,7 +361,7 @@ public class Usecard : MonoBehaviour
                 }
                 break;
             case "stun":
-                if(GetComponent<Cardstat>().val1==0)
+                if (GetComponent<Cardstat>().val1==0)
                 {
                     break;
                 }
@@ -274,6 +373,9 @@ public class Usecard : MonoBehaviour
                         spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().s = true;
                         spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().patstat.text = "stun";
                         spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().p = 3;
+                        Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
+                        GameObject stunstar = Effectmanager.i().Starteft(21);
+                        stunstar.transform.parent = spawner.GetComponent<Enemyspawner>().target.transform;
                         print("stun sucsses");
                     }
                     else
@@ -305,8 +407,20 @@ public class Usecard : MonoBehaviour
                 break;
             case "rebound":
                 Datamanager.i().curhp -= val;
+                Effectmanager.i().eftpos = p;
+                Effectmanager.i().Starteft(0);
                 break;
             case "bringstr":
+                Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
+                switch (GetComponent<Cardstat>().cname)
+                {
+                    case "aura blade":
+                        Effectmanager.i().Starteft(12);
+                        break;
+                    case "powerword kill":
+                        Effectmanager.i().Starteft(11);
+                        break;
+                }
                 for (int i = 0; i < val; i++)
                 {
                    Attack((Datamanager.i().str + 1) * 5);
@@ -321,6 +435,8 @@ public class Usecard : MonoBehaviour
                 break;
             case "manaup":
                 Datamanager.i().inmaxmana += val;
+                Effectmanager.i().eftpos = p;
+                Effectmanager.i().Starteft(13);
                 break;
             case "dot":
                 spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().d = true;
@@ -329,11 +445,15 @@ public class Usecard : MonoBehaviour
             case "reflect":
                 Datamanager.i().r = true;
                 Datamanager.i().rnum = val;
+                Effectmanager.i().eftpos = p;
+                Effectmanager.i().Starteft(5);
                 break;
             case "instant":
                 Datamanager.i().ins = true;
                 Datamanager.i().insnum = val;
                 Datamanager.i().str += Datamanager.i().insnum;
+                Effectmanager.i().eftpos = p;
+                Effectmanager.i().Starteft(22);
                 break;
             case null:
                 break;
@@ -385,6 +505,8 @@ public class Usecard : MonoBehaviour
             spawner.GetComponent<Enemyspawner>().target = elist[k];
         }
         Attack(num);
+        Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
+        Effectmanager.i().Starteft(8);
         spawner.GetComponent<Enemyspawner>().target = null;
     }
 

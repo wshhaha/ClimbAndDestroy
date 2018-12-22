@@ -5,8 +5,9 @@ using UnityEngine;
 public class Effectmanager : MonoBehaviour 
 {
     public List<GameObject> eftlist;
+    public List<GameObject> eeftlist;
     public List<AudioClip> sfxlist;
-    public Vector3 eftpos;
+    public GameObject eftpos;
 
     static Effectmanager _instance;
     public static Effectmanager i()
@@ -20,12 +21,17 @@ public class Effectmanager : MonoBehaviour
         {
             _instance = this;
         }
+        DontDestroyOnLoad(gameObject);
     }
 
-    public void Starteft(int num)
-    {
+    public GameObject Starteft(int num)
+    {   
         GameObject eft = Instantiate(eftlist[num]);
-
+        eft.transform.parent = eftpos.transform;
+        eft.transform.localScale = new Vector3(1, 1, 1);
+        eft.transform.localPosition = Vector3.zero;
+        eft.transform.parent = transform;
+        return eft;
     }
     public void Startsfx(int num)
     {

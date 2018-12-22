@@ -19,7 +19,8 @@ public class Player : MonoBehaviour
     public bool te;
     Vector3 ori;
     GameObject cha;
-	void Start () 
+    public GameObject cardinfo;
+    void Start () 
 	{
         cha = GameObject.Find("Character");
         ori = cha.transform.localPosition;

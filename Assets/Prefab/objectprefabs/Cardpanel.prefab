@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 114077646689575298}
   - component: {fileID: 65947479156340248}
   - component: {fileID: 114014111312771772}
+  - component: {fileID: 114214954130985478}
   m_Layer: 5
   m_Name: cardbase
   m_TagString: Untagged
@@ -420,6 +421,38 @@ MonoBehaviour:
     - obj: {fileID: 1156714620499180}
       field: 
     oneShot: 0
+--- !u!114 &114214954130985478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1898070532267348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e862f287df53bb64db191162f851a296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onHoverOver: []
+  onHoverOut: []
+  onPress:
+  - mTarget: {fileID: 114773495793839450}
+    mMethodName: Oninfo
+    mParameters: []
+    oneShot: 0
+  onRelease:
+  - mTarget: {fileID: 114773495793839450}
+    mMethodName: Offinfo
+    mParameters: []
+    oneShot: 0
+  onSelect: []
+  onDeselect: []
+  onClick: []
+  onDoubleClick: []
+  onDragStart: []
+  onDragEnd: []
+  onDragOver: []
+  onDragOut: []
+  onDrag: []
 --- !u!114 &114368517118161820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -513,11 +546,11 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 6
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  mTrueTypeFont: {fileID: 12800000, guid: 731297a8a9ae95f4194ed64394d3886a, type: 3}
   mFont: {fileID: 0}
   mText: 99
   mFontSize: 20
-  mFontStyle: 1
+  mFontStyle: 0
   mAlignment: 2
   mEncoding: 1
   mMaxLineCount: 0
@@ -580,7 +613,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3000
+  startingRenderQueue: 3022
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -763,11 +796,11 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 6
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  mTrueTypeFont: {fileID: 12800000, guid: 731297a8a9ae95f4194ed64394d3886a, type: 3}
   mFont: {fileID: 0}
   mText: 
   mFontSize: 20
-  mFontStyle: 1
+  mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
   mMaxLineCount: 0
@@ -822,20 +855,20 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0, g: 0, b: 0, a: 1}
   mPivot: 4
-  mWidth: 52
-  mHeight: 20
+  mWidth: 10
+  mHeight: 240
   mDepth: 1
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2.6
+  aspectRatio: 0.08928572
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  mTrueTypeFont: {fileID: 12800000, guid: 731297a8a9ae95f4194ed64394d3886a, type: 3}
   mFont: {fileID: 0}
-  mText: name
+  mText: "f\no\nr\nk\ne\nd\n \nl\ni\ng\nh\nt\ni\nn\ng"
   mFontSize: 20
-  mFontStyle: 1
+  mFontStyle: 0
   mAlignment: 2
   mEncoding: 1
   mMaxLineCount: 0
@@ -848,7 +881,7 @@ MonoBehaviour:
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
   mSpacingX: 0
-  mSpacingY: 0
+  mSpacingY: -4
   mUseFloatSpacing: 0
   mFloatSpacingX: 0
   mFloatSpacingY: 0
@@ -899,11 +932,11 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 4.9
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  mTrueTypeFont: {fileID: 12800000, guid: 731297a8a9ae95f4194ed64394d3886a, type: 3}
   mFont: {fileID: 0}
   mText: New Label
   mFontSize: 30
-  mFontStyle: 1
+  mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
   mMaxLineCount: 0

@@ -47,7 +47,7 @@ public class Store : MonoBehaviour
             Deckmanager.instance().Givestat(j, c);            
             c.transform.parent = cardg.gameObject.transform;
             c.transform.localScale = new Vector3(.8f, .8f, .8f);
-            c.GetComponent<Cardstat>().gold = Random.Range(40, 80);
+            c.GetComponent<Cardstat>().gold = Random.Range(70, 110);
             c.GetComponentInChildren<UILabel>().enabled = true;
             c.GetComponentInChildren<UILabel>().text = "" + c.GetComponent<Cardstat>().gold;
             cardg.enabled = true;
@@ -59,7 +59,7 @@ public class Store : MonoBehaviour
             Deckmanager.instance().Givestat(j, c);            
             c.transform.parent = cardg.gameObject.transform;
             c.transform.localScale = new Vector3(.8f, .8f, .8f);
-            c.GetComponent<Cardstat>().gold = Random.Range(60, 110);
+            c.GetComponent<Cardstat>().gold = Random.Range(130, 170);
             c.GetComponentInChildren<UILabel>().enabled = true;
             c.GetComponentInChildren<UILabel>().text = "" + c.GetComponent<Cardstat>().gold;
             cardg.enabled = true;
@@ -72,7 +72,7 @@ public class Store : MonoBehaviour
             t.GetComponent<BoxCollider>().enabled = true;
             t.transform.parent = itemg.gameObject.transform;
             t.transform.localScale = new Vector3(1, 1, 1);
-            t.GetComponent<Iteminfo>().gold = Random.Range(100, 150);
+            t.GetComponent<Iteminfo>().gold = Random.Range(150, 190);
             t.GetComponentInChildren<UILabel>().enabled = true;
             t.GetComponentInChildren<UILabel>().text = "" + t.GetComponent<Iteminfo>().gold;
             print(j);
@@ -87,7 +87,7 @@ public class Store : MonoBehaviour
             t.GetComponent<BoxCollider>().enabled = true;
             t.transform.parent = itemg.gameObject.transform;
             t.transform.localScale = new Vector3(1, 1, 1);
-            t.GetComponent<Iteminfo>().gold = Random.Range(220, 300);
+            t.GetComponent<Iteminfo>().gold = Random.Range(250, 300);
             t.GetComponentInChildren<UILabel>().enabled = true;
             t.GetComponentInChildren<UILabel>().text = "" + t.GetComponent<Iteminfo>().gold;
             print(j);

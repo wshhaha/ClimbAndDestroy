@@ -267,7 +267,7 @@
  },
  {
    "index": 15,
-   "name": "lightbomb",
+   "name": "lightnova",
    "mana": 2,
    "pmana": 2,
    "effect1": "atk",
@@ -286,7 +286,7 @@
  },
  {
    "index": 16,
-   "name": "metor fall",
+   "name": "meteor fall",
    "mana": 2,
    "pmana": 2,
    "effect1": "atk",
@@ -324,7 +324,7 @@
  },
  {
    "index": 18,
-   "name": "arcane intellect",
+   "name": "arcane int",
    "mana": 2,
    "pmana": 1,
    "effect1": "manaup",
@@ -343,7 +343,7 @@
  },
  {
    "index": 19,
-   "name": "growing Intelligence",
+   "name": "growing Int",
    "mana": 1,
    "pmana": 1,
    "effect1": "str",

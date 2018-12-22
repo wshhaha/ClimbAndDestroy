@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -113,6 +113,139 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &79230623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 79230624}
+  - component: {fileID: 79230626}
+  - component: {fileID: 79230625}
+  m_Layer: 5
+  m_Name: Effectmanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &79230624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 79230623}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1035531137}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &79230625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 79230623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a6cebc425c337442ab47239f2021986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eftlist:
+  - {fileID: 1460170273168482, guid: 87b4103a67d80814e86de14a9b62d543, type: 2}
+  - {fileID: 1330319191762434, guid: 9befb9b09f5b7694faaf42871f812766, type: 2}
+  - {fileID: 1683191041158178, guid: ab4148a9bc3af7f4dbd14c4ceddf6b53, type: 2}
+  - {fileID: 1553026922867368, guid: 885ff7f3ca097414792fa87d8024f373, type: 2}
+  - {fileID: 1114326188246694, guid: d44d63a535b02294fa35ace00c4521c9, type: 2}
+  - {fileID: 1213719259189728, guid: bd92d96b489a45d4fa75c21cd6999b37, type: 2}
+  - {fileID: 1876288608395842, guid: 656fed7400fb1ed419f912013b74509f, type: 2}
+  - {fileID: 1462643159215918, guid: 3f458b47d6704bf4fb853788271d405f, type: 2}
+  - {fileID: 1301685309553294, guid: 5a0f2c637eba3e64fbaf161b4fe61a37, type: 2}
+  - {fileID: 1769635764504780, guid: eda32074a936c064bbfd80c4686b39c7, type: 2}
+  - {fileID: 1422800729951930, guid: 0b3326f9b0ffc024aafaa2add6fb1e30, type: 2}
+  - {fileID: 1050516024187928, guid: 4366b519f3e9a0e40bb61db4e09ec375, type: 2}
+  - {fileID: 1143544662873406, guid: 6cca99eedd5d01549bb9396b50ff2ee2, type: 2}
+  - {fileID: 1775262241949736, guid: ca26548fa2d75274e89f7eaee217cac2, type: 2}
+  - {fileID: 1703945662567468, guid: 6d8f79cb42107684ebe290809a8960e0, type: 2}
+  - {fileID: 1408783354831982, guid: 11ac3df68b23dc14291790e26ee5d3a1, type: 2}
+  - {fileID: 1426117095640062, guid: 9baf005f27ef7cb4ea4bcabe81a81ba2, type: 2}
+  - {fileID: 1663019469061116, guid: 5ac8886c26c56bd4384d601126739abd, type: 2}
+  - {fileID: 1524177612445742, guid: 66863b8f53fbaee439c843d8d564656e, type: 2}
+  - {fileID: 1265045925119060, guid: e005e89a86f31564f8576398989c0316, type: 2}
+  - {fileID: 1837307865669956, guid: dd8a4107704320540ba5b663374c5925, type: 2}
+  - {fileID: 1335428411773766, guid: d6ee414db75fa534b8bfdc7cd5e90173, type: 2}
+  - {fileID: 1068233042772944, guid: ae39c94fb99112a43905390d0a606a44, type: 2}
+  - {fileID: 1309475404224122, guid: a045d60bf56acbc498d07873b65d7260, type: 2}
+  - {fileID: 1582483331936288, guid: ffb85fe6f65216e408c08760cf31a362, type: 2}
+  - {fileID: 1214912539573058, guid: ac56eb2b8dc889d4cad79d97d7927bb1, type: 2}
+  - {fileID: 1110998470990580, guid: e32bf6eb2190bee45ad3203fc929b756, type: 2}
+  - {fileID: 1915653694085120, guid: f245ac9950da9524ca28ed4255da460b, type: 2}
+  - {fileID: 1045361531855480, guid: c097c93daef47714abb635da46191436, type: 2}
+  - {fileID: 1717376880261786, guid: 0f4b5db0103808443a1522a99172f9e6, type: 2}
+  - {fileID: 1901393919394030, guid: ecc8b0e89025f224d944898205221f72, type: 2}
+  sfxlist:
+  - {fileID: 8300000, guid: b1acecdf352627048b995eca86c0f8ec, type: 3}
+  - {fileID: 8300000, guid: 92d3259b6a9732e4ba3fb95331b2c95d, type: 3}
+  - {fileID: 8300000, guid: 07532e25ab2bf0e4e9520610dfe2e0ce, type: 3}
+  - {fileID: 8300000, guid: 49fd8f26329a7d447b6232131cfd5e71, type: 3}
+  - {fileID: 8300000, guid: 074cee5e8624aa4428300be00e1d2bd2, type: 3}
+  - {fileID: 8300000, guid: 723101df17a3d4c42880d3dcb3ee2ff8, type: 3}
+  - {fileID: 8300000, guid: 97bdd47f5a1f8d04e943a2c907dac652, type: 3}
+  - {fileID: 8300000, guid: a087dc9742c44034a80ab55d40fa6dd8, type: 3}
+  - {fileID: 8300000, guid: ac05144578b70ba4d99973c30981f32d, type: 3}
+  eftpos: {fileID: 0}
+--- !u!114 &79230626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 79230623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae942c9068183dc40a9d01f648273726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  updateAnchors: 1
+  showInPanelTool: 1
+  generateNormals: 0
+  generateUV2: 0
+  shadowMode: 0
+  widgetsAreStatic: 0
+  cullWhileDragging: 1
+  alwaysOnScreen: 0
+  anchorOffset: 0
+  softBorderPadding: 1
+  renderQueue: 0
+  startingRenderQueue: 3000
+  mClipTexture: {fileID: 0}
+  mAlpha: 1
+  mClipping: 0
+  mClipRange: {x: 0, y: 0, z: 300, w: 200}
+  mClipSoftness: {x: 4, y: 4}
+  mDepth: 11
+  mSortingOrder: 0
+  mSortingLayerName: 
+  mClipOffset: {x: 0, y: 0}
+  useSortingOrder: 0
 --- !u!1 &85346738
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +484,7 @@ Transform:
   m_Children:
   - {fileID: 1291969385}
   - {fileID: 1663332296}
+  - {fileID: 79230624}
   m_Father: {fileID: 1169271664}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

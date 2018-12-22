@@ -145,7 +145,6 @@ public class Enemy : MonoBehaviour
     {
         Player p = GameObject.Find("Player").GetComponent<Player>();
         Atkmove();
-        Camerashake.instance().Startshake();
         float weakf = 1.0f;
         if (w == true)
         {
@@ -292,6 +291,7 @@ public class Enemy : MonoBehaviour
                 break;
             case "stun":
                 s = false;
+                Destroy(GetComponentInChildren<ParticleSystem>().gameObject);
                 break;
         }
         yield return new WaitForEndOfFrame();

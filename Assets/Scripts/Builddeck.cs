@@ -29,7 +29,6 @@ public class Builddeck : MonoBehaviour
             c.GetComponent<UIPanel>().depth = 2;
             c.GetComponent<Usecard>().mana.SetActive(false);
             c.GetComponent<Usecard>().back.enabled = true;
-            c.GetComponent<Usecard>().cardinfo = GameObject.Find("Cardinfo");
             deck.Add(c);
         }
         GameObject.Find("Cardinfo").SetActive(false);
