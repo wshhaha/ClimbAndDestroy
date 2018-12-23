@@ -368,6 +368,9 @@ public class Enemyspawner : MonoBehaviour
                             elist[i].gameObject.GetComponent<Enemy>().patstat.text = elist[i].gameObject.GetComponent<Enemy>().pat3 + elist[i].gameObject.GetComponent<Enemy>().Returnval(elist[i].gameObject.GetComponent<Enemy>().pat3, elist[i].gameObject.GetComponent<Enemy>().val3);
                         }
                         break;
+                    case 4:
+                        elist[i].gameObject.GetComponent<Enemy>().patstat.text = null;
+                        break;
                 }
             }
         }
@@ -392,6 +395,28 @@ public class Enemyspawner : MonoBehaviour
                             elist[i].gameObject.GetComponent<Enemy>().p = 1;
                         }
                         break;
+                    case "zealot":
+                        int carboom = Random.Range(0, 4);
+                        if (carboom == 2)
+                        {
+                            elist[i].gameObject.GetComponent<Enemy>().p = 1;
+                        }
+                        else
+                        {
+                            elist[i].gameObject.GetComponent<Enemy>().p = 0;
+                        }
+                        break;
+                    case "death knight":
+                        int death = Random.Range(0, 6);
+                        if (death == 3)
+                        {
+                            elist[i].gameObject.GetComponent<Enemy>().p = 1;
+                        }
+                        else
+                        {
+                            elist[i].gameObject.GetComponent<Enemy>().p = 0;
+                        }
+                        break;
                     case "necromancer":
                         elist[i].gameObject.GetComponent<Enemy>().p = 0;
                         for (int k = 0; k < 3; k++)
@@ -400,7 +425,7 @@ public class Enemyspawner : MonoBehaviour
                             {
                                 continue;
                             }
-                            elist[k].gameObject.GetComponent<Enemy>().p = Random.Range(0, elist[k].gameObject.GetComponent<Enemy>().patnum);
+                            elist[i].gameObject.GetComponent<Enemy>().p = Random.Range(0, elist[i].gameObject.GetComponent<Enemy>().patnum);
                         }
                         break;
                     default:

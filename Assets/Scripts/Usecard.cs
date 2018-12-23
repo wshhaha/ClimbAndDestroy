@@ -568,7 +568,7 @@ public class Usecard : MonoBehaviour
                 namelabel.color = Color.white;
                 break;
             case "u":
-                namelabel.color = Color.blue;
+                namelabel.color = Color.cyan;
                 break;
             case "l":
                 namelabel.color = Color.magenta;

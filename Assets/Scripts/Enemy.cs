@@ -30,6 +30,13 @@ public class Enemy : MonoBehaviour
     public int str;
     public int p;
     Vector3 ori;
+    Player player;
+    private void Start()
+    {
+        ori = transform.localPosition;
+        player = GameObject.Find("Player").GetComponent<Player>();
+    }
+
     public void Discount()
     {
         switch (tier)
@@ -58,10 +65,7 @@ public class Enemy : MonoBehaviour
         }
         gameObject.SetActive(false);
     }
-    private void Start()
-    {
-        ori = transform.localPosition;
-    }
+    
     public bool Eaction()
     {
         StartCoroutine(Readpat());
@@ -100,6 +104,8 @@ public class Enemy : MonoBehaviour
             case 3:
                 StartCoroutine(Pateffect("stun", 0));
                 print("stun");
+                break;
+            case 4:
                 break;
         }
         yield return new WaitForEndOfFrame();
@@ -142,8 +148,7 @@ public class Enemy : MonoBehaviour
         }
     }
     void Attack(int val)
-    {
-        Player p = GameObject.Find("Player").GetComponent<Player>();
+    {   
         Atkmove();
         float weakf = 1.0f;
         if (w == true)
@@ -165,7 +170,7 @@ public class Enemy : MonoBehaviour
         }
         int dam= (int)((val + str) * weakf * lockonf);
         Datamanager.i().shd -= dam;
-        p.Hitmove();
+        player.Hitmove();
         if (Datamanager.i().shd < 0)
         {
             Datamanager.i().curhp += Datamanager.i().shd;
@@ -173,7 +178,7 @@ public class Enemy : MonoBehaviour
         }
         if (Datamanager.i().curhp <= 0)
         {   
-            p.gameover.SetActive(true);
+            player.gameover.SetActive(true);
         }
         if (Datamanager.i().r == true)
         {
@@ -194,62 +199,79 @@ public class Enemy : MonoBehaviour
         switch (pat)
         {
             case "atk":
+                Effectmanager.i().eeftpos = gameObject;
+                Effectmanager.i().Starteeft(0);
                 Attack(val);
                 break;
             case "def":
+                Effectmanager.i().eeftpos = gameObject;
+                Effectmanager.i().Starteeft(1);
                 shd += val;
                 break;
             case "weak":
+                Effectmanager.i().eeftpos = player.gameObject;
+                Effectmanager.i().Starteeft(14);
                 Datamanager.i().w = true;
                 Datamanager.i().wnum += val;
                 break;
             case "lockon":
+                Effectmanager.i().eeftpos = player.gameObject;
+                Effectmanager.i().Starteeft(15);
                 Datamanager.i().l = true;
                 Datamanager.i().lnum += val;
                 break;
             case "burnmana":
+                Effectmanager.i().eeftpos = player.gameObject;
+                Effectmanager.i().Starteeft(2);
                 Datamanager.i().b = true;
                 Datamanager.i().bnum += val;
                 break;
             case "str":
+                Effectmanager.i().eeftpos = gameObject;
+                Effectmanager.i().Starteeft(3);
                 str += val;
                 break;
             case "carboom":
-                int c = Random.Range(0, 100);
-                if (c < 34)
-                {
-                    Attack(val);
-                    ehp = 0;
-                    Discount();
-                }
-                else
-                {
-                    StartCoroutine(Readpat());
-                    yield break;
-                }
+                Effectmanager.i().eeftpos = player.gameObject;
+                Effectmanager.i().Starteeft(4);
+                Attack(val);
+                ehp = 0;
+                Discount();
                 break;
             case "bind":
+                Effectmanager.i().eeftpos = player.gameObject;
+                Effectmanager.i().Starteeft(5);
                 Datamanager.i().str--;
                 break;
             case "devour":
-                Datamanager.i().gold -= 10;
+                Effectmanager.i().eeftpos = player.gameObject;
+                Effectmanager.i().Starteeft(6);
+                Datamanager.i().gold -= Random.Range(8,13);
                 if (Datamanager.i().gold < 0)
                 {
                     Datamanager.i().gold = 0;
                 }                
                 break;
             case "dot":
+                Effectmanager.i().eeftpos = player.gameObject;
+                Effectmanager.i().Starteeft(13);
                 Datamanager.i().d = true;
                 Datamanager.i().dnum += val;
                 break;
             case "heal":
+                Effectmanager.i().eeftpos = gameObject;
+                Effectmanager.i().Starteeft(7);
                 ehp += val;
                 break;
             case "charm":
+                Effectmanager.i().eeftpos = player.gameObject;
+                Effectmanager.i().Starteeft(8);
                 Datamanager.i().str--;
                 Datamanager.i().agi--;
                 break;
             case "lifedrain":
+                Effectmanager.i().eeftpos = gameObject;
+                Effectmanager.i().Starteeft(9);
                 Attack(val);
                 ehp += 3;
                 break;
@@ -262,31 +284,31 @@ public class Enemy : MonoBehaviour
                 {
                     if (elist[i].gameObject.activeSelf == false)
                     {
+                        Effectmanager.i().eeftpos = elist[i].gameObject;
+                        Effectmanager.i().Starteeft(10);
                         spawner.GetComponent<Enemyspawner>().Givemstat(elist[i].gameObject, 4);
+                        elist[i].GetComponent<TweenPosition>().to = elist[i].gameObject.transform.localPosition;
+                        elist[i].GetComponent<Enemy>().p = 4;
+                        elist[i].gameObject.SetActive(true);
+                        spawner.GetComponent<Enemyspawner>().e++;
                         break;
                     }
                 }
                 break;
             case "deathblade":
-                int ran = Random.Range(0, 100);
-                print(ran + "     !@#");
-                if (ran < 34)
-                {
-                    Attack(val);
-                    Datamanager.i().d = true;
-                    Datamanager.i().dnum += 2;
-                    Datamanager.i().w = true;
-                    Datamanager.i().wnum += 2;
-                    Datamanager.i().l = true;
-                    Datamanager.i().lnum += 2;
-                }
-                else
-                {
-                    StartCoroutine(Readpat());
-                    yield break;
-                }
+                Effectmanager.i().eeftpos = player.gameObject;
+                Effectmanager.i().Starteeft(11);
+                Attack(val);
+                Datamanager.i().d = true;
+                Datamanager.i().dnum += 2;
+                Datamanager.i().w = true;
+                Datamanager.i().wnum += 2;
+                Datamanager.i().l = true;
+                Datamanager.i().lnum += 2;
                 break;
             case "stay":
+                Effectmanager.i().eeftpos = gameObject;
+                Effectmanager.i().Starteeft(12);
                 print("stay");
                 break;
             case "stun":

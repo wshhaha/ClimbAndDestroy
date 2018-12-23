@@ -186,6 +186,23 @@ MonoBehaviour:
   - {fileID: 1045361531855480, guid: c097c93daef47714abb635da46191436, type: 2}
   - {fileID: 1717376880261786, guid: 0f4b5db0103808443a1522a99172f9e6, type: 2}
   - {fileID: 1901393919394030, guid: ecc8b0e89025f224d944898205221f72, type: 2}
+  eeftlist:
+  - {fileID: 1629986517515094, guid: 297e6ae4dd2b61c4a998dc84844f8d0a, type: 2}
+  - {fileID: 1477698962103698, guid: 8024869b8b83a9c4ebfd7f350654f517, type: 2}
+  - {fileID: 1746747214703632, guid: 891e2513f5cbb0243a98b1f8706e3e3b, type: 2}
+  - {fileID: 1605285503605172, guid: 57b17508e6c73444ebf55c0ec72678f1, type: 2}
+  - {fileID: 1863857689531202, guid: 24d79baa183808c4298fbfc5d77c58f1, type: 2}
+  - {fileID: 1089912855971634, guid: 0cf07b6729c0afa43b364969fdee7ac6, type: 2}
+  - {fileID: 1909643269810064, guid: 04eaf9234113a264998cc32890b1be6d, type: 2}
+  - {fileID: 1237956366114124, guid: ff7f82241ad248e43825c8b06ce3d2da, type: 2}
+  - {fileID: 1573667308849164, guid: ca4753ed1de025343a791564421da9a4, type: 2}
+  - {fileID: 1024337261554692, guid: 083b9b57cb8d39f4b8241973c8541aa6, type: 2}
+  - {fileID: 1510712876851392, guid: 087c1b2a0404b7d4dbf038c967b6d662, type: 2}
+  - {fileID: 1768814429736632, guid: 680392b7183493048bbabe1b00c1af0d, type: 2}
+  - {fileID: 1924496931579758, guid: 0dc177669e321e44788c7cc2dc4e4315, type: 2}
+  - {fileID: 1488234585843970, guid: f29ebfcef3d42a64a85593e6ce47e24b, type: 2}
+  - {fileID: 1922351368014846, guid: d4264f8f9f0f667418b3ceb6218ee660, type: 2}
+  - {fileID: 1188864581543878, guid: 12172daa0671873498ce9a18f243d333, type: 2}
   sfxlist:
   - {fileID: 8300000, guid: b1acecdf352627048b995eca86c0f8ec, type: 3}
   - {fileID: 8300000, guid: 92d3259b6a9732e4ba3fb95331b2c95d, type: 3}
@@ -197,6 +214,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a087dc9742c44034a80ab55d40fa6dd8, type: 3}
   - {fileID: 8300000, guid: ac05144578b70ba4d99973c30981f32d, type: 3}
   eftpos: {fileID: 0}
+  eeftpos: {fileID: 0}
 --- !u!114 &79230626
 MonoBehaviour:
   m_ObjectHideFlags: 0

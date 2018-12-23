@@ -8,6 +8,7 @@ public class Effectmanager : MonoBehaviour
     public List<GameObject> eeftlist;
     public List<AudioClip> sfxlist;
     public GameObject eftpos;
+    public GameObject eeftpos;
 
     static Effectmanager _instance;
     public static Effectmanager i()
@@ -25,9 +26,18 @@ public class Effectmanager : MonoBehaviour
     }
 
     public GameObject Starteft(int num)
-    {   
+    {
         GameObject eft = Instantiate(eftlist[num]);
         eft.transform.parent = eftpos.transform;
+        eft.transform.localScale = new Vector3(1, 1, 1);
+        eft.transform.localPosition = Vector3.zero;
+        eft.transform.parent = transform;
+        return eft;
+    }
+    public GameObject Starteeft(int num)
+    {
+        GameObject eft = Instantiate(eeftlist[num]);
+        eft.transform.parent = eeftpos.transform;
         eft.transform.localScale = new Vector3(1, 1, 1);
         eft.transform.localPosition = Vector3.zero;
         eft.transform.parent = transform;
