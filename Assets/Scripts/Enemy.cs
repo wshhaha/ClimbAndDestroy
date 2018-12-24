@@ -244,7 +244,7 @@ public class Enemy : MonoBehaviour
                 Datamanager.i().str--;
                 break;
             case "devour":
-                Effectmanager.i().eeftpos = player.gameObject;
+                Effectmanager.i().eeftpos = gameObject;
                 Effectmanager.i().Starteeft(6);
                 Effectmanager.i().Startsfx(30);
                 Effectmanager.i().Startsfx(35);
