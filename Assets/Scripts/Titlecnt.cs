@@ -15,6 +15,8 @@ public class Titlecnt : MonoBehaviour
 
     void Start()
     {
+        Effectsound.instance().bgm.clip = Effectsound.instance().bgmlist[0];
+        Effectsound.instance().bgm.Play();
         character.spriteName = null;
         charwindow.SetActive(false);
         blind.SetActive(false);

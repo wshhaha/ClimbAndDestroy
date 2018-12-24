@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -980,9 +980,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8308652b8695914197db60fe4a47b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btn: {fileID: 1718883109823800, guid: adc005ce42977f74e8fca16facf2bcd3, type: 2}
+  btn: {fileID: 1718883109823800, guid: 61485ac659cac474fbcdb4e4e033b36d, type: 2}
   rewardlist: []
-  trea: {fileID: 1674924107868598, guid: 673b88b10853ebb4685f22b7b0e9f066, type: 2}
+  trea: {fileID: 1674924107868598, guid: 72eb35e6533511045be09bb379b9394a, type: 2}
 --- !u!1 &73268762
 GameObject:
   m_ObjectHideFlags: 0
@@ -3982,7 +3982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1710391f6aa90fe489ae8b7f8ebd18e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 1156714620499180, guid: 9f414891c2d6ed446aac5b1be7357a55, type: 2}
+  card: {fileID: 1156714620499180, guid: f78bab877ffe903499be30ff3202c5d7, type: 2}
   deck: []
   deckgrid: {fileID: 679781645}
   hand: {fileID: 714379871}

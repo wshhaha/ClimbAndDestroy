@@ -7,6 +7,8 @@ public class Treasure : MonoBehaviour
     public GameObject rewards;
     private void Start()
     {
+        Effectsound.instance().bgm.clip = Effectsound.instance().bgmlist[5];
+        Effectsound.instance().bgm.Play();
         rewards.SetActive(false);
     }
     public void Openbox()

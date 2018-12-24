@@ -11,6 +11,8 @@ public class Nextstair : MonoBehaviour
 
     void Start()
     {
+        Effectsound.instance().bgm.clip = Effectsound.instance().bgmlist[1];
+        Effectsound.instance().bgm.Play();
         Copydeck();
         Closelist();
     }

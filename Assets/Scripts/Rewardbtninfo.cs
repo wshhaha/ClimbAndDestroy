@@ -12,6 +12,7 @@ public class Rewardbtninfo : MonoBehaviour
         {
             case "gold":
                 Datamanager.i().gold += val;
+                Effectmanager.i().Startsfx(35);
                 break;
             case "card":
                 Deckmanager.instance().Createcard(val);

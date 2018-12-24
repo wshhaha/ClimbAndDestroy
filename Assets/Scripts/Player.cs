@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     public GameObject cardinfo;
     void Start () 
 	{
+        Effectsound.instance().bgm.clip = Effectsound.instance().bgmlist[2];
+        Effectsound.instance().bgm.Play();
         cha = GameObject.Find("Character");
         ori = cha.transform.localPosition;
         te = false;

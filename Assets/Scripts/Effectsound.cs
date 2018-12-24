@@ -7,6 +7,7 @@ public class Effectsound : MonoBehaviour
     static Effectsound _instance;
     public AudioSource bgm;
     public AudioSource sound;
+    public List<AudioClip> bgmlist;
 
     public static Effectsound instance()
     {

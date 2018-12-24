@@ -12,7 +12,9 @@ public class Store : MonoBehaviour
     public UIGrid itemg;
 
     private void Start()
-    {        
+    {
+        Effectsound.instance().bgm.clip = Effectsound.instance().bgmlist[4];
+        Effectsound.instance().bgm.Play();
         Closestore();
         Createshop();
     }

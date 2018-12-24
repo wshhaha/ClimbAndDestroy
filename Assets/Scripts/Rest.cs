@@ -12,6 +12,8 @@ public class Rest : MonoBehaviour
 
     private void Start()
     {
+        Effectsound.instance().bgm.clip = Effectsound.instance().bgmlist[0];
+        Effectsound.instance().bgm.Play();
         cardlist.SetActive(false);
         yesno.SetActive(false);
         gotomap.SetActive(false); 
@@ -54,7 +56,8 @@ public class Rest : MonoBehaviour
         }
     }   
     public void Acceptbtn()
-    {   
+    {
+        Effectmanager.i().Startsfx(36);
         target.GetComponent<Cardstat>().up = true;
         target.GetComponent<Cardstat>().mana = target.GetComponent<Cardstat>().pmana;
         target.GetComponent<Cardstat>().val1 = target.GetComponent<Cardstat>().pval1;

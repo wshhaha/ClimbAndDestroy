@@ -246,6 +246,8 @@ public class Enemy : MonoBehaviour
             case "devour":
                 Effectmanager.i().eeftpos = player.gameObject;
                 Effectmanager.i().Starteeft(6);
+                Effectmanager.i().Startsfx(30);
+                Effectmanager.i().Startsfx(35);
                 Datamanager.i().gold -= Random.Range(8,13);
                 if (Datamanager.i().gold < 0)
                 {

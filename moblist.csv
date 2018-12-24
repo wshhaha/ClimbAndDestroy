@@ -2,20 +2,20 @@ index,name,hpmin,hpmax,pat1,val1,pat2,val2,pat3,val3,patnum,tier
 1,slime,13,16,atk,6,weak,1,,,2,1
 2,goblin,15,18,atk,7,def,5,,,2,1
 3,wolf,20,22,atk,7,,,,,1,1
-4,beholder,10,15,def,8,weak,2,friend,5,3,1
+4,beholder,10,15,atk,8,weak,2,burnmana,1,3,1
 5,skeleton,17,21,atk,5,def,5,,,2,1
 6,zombie,20,21,atk,6,lockon,1,,,2,1
 7,orc,16,22,atk,6,def,6,str,1,3,1
 8,zealot,8,11,atk,10,carboom,15,,,2,1
 9,mummy,15,20,atk,5,bind,1,,,2,1
-10,mimic,,,,,,,,,,1
-11,golem,,,,,,,,,,2
-12,demon,,,,,,,,,,2
-13,dullahan,,,,,,,,,,2
-14,gargoyle,,,,,,,,,,2
-15,succubus,,,,,,,,,,2
-16,vampire,,,,,,,,,,2
-17,minotaur,,,,,,,,,,3
-18,necromancer,,,,,,,,,,3
-19,death knight,,,,,,,,,,3
-20,ogre,,,,,,,,,,3
+10,mimic,12,17,atk,10,devour,1,lockon,2,3,1
+11,golem,30,36,atk,6,def,10,def,10,3,2
+12,demon,30,33,atk,10,dot,2,,,2,2
+13,dullahan,35,36,atk,11,lockon,3,def,10,3,2
+14,gargoyle,38,45,atk,13,def,15,heal,5,3,2
+15,succubus,30,35,atk,11,charm,1,,,2,2
+16,vampire,28,33,lifedrain,8,,,,,1,2
+17,minotaur,72,80,atk,20,str,2,atk,16,3,3
+18,necromancer,50,55,atk,13,atk,13,summon,1,3,3
+19,death knight,60,66,atk,20,deathblade,15,,,2,3
+20,ogre,97,105,atk,36,stay,1,,,2,3
