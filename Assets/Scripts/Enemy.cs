@@ -201,39 +201,46 @@ public class Enemy : MonoBehaviour
             case "atk":
                 Effectmanager.i().eeftpos = gameObject;
                 Effectmanager.i().Starteeft(0);
+                Effectmanager.i().Startsfx(2);
                 Attack(val);
                 break;
             case "def":
                 Effectmanager.i().eeftpos = gameObject;
                 Effectmanager.i().Starteeft(1);
+                Effectmanager.i().Startsfx(22);
                 shd += val;
                 break;
             case "weak":
                 Effectmanager.i().eeftpos = player.gameObject;
                 Effectmanager.i().Starteeft(14);
+                Effectmanager.i().Startsfx(23);
                 Datamanager.i().w = true;
                 Datamanager.i().wnum += val;
                 break;
             case "lockon":
                 Effectmanager.i().eeftpos = player.gameObject;
                 Effectmanager.i().Starteeft(15);
+                Effectmanager.i().Startsfx(24);
                 Datamanager.i().l = true;
                 Datamanager.i().lnum += val;
                 break;
             case "burnmana":
                 Effectmanager.i().eeftpos = player.gameObject;
                 Effectmanager.i().Starteeft(2);
+                Effectmanager.i().Startsfx(27);
                 Datamanager.i().b = true;
                 Datamanager.i().bnum += val;
                 break;
             case "str":
                 Effectmanager.i().eeftpos = gameObject;
                 Effectmanager.i().Starteeft(3);
+                Effectmanager.i().Startsfx(21);
                 str += val;
                 break;
             case "carboom":
                 Effectmanager.i().eeftpos = player.gameObject;
                 Effectmanager.i().Starteeft(4);
+                Effectmanager.i().Startsfx(28);
                 Attack(val);
                 ehp = 0;
                 Discount();
@@ -241,6 +248,7 @@ public class Enemy : MonoBehaviour
             case "bind":
                 Effectmanager.i().eeftpos = player.gameObject;
                 Effectmanager.i().Starteeft(5);
+                Effectmanager.i().Startsfx(26);
                 Datamanager.i().str--;
                 break;
             case "devour":
@@ -257,23 +265,27 @@ public class Enemy : MonoBehaviour
             case "dot":
                 Effectmanager.i().eeftpos = player.gameObject;
                 Effectmanager.i().Starteeft(13);
+                Effectmanager.i().Startsfx(31);
                 Datamanager.i().d = true;
                 Datamanager.i().dnum += val;
                 break;
             case "heal":
                 Effectmanager.i().eeftpos = gameObject;
                 Effectmanager.i().Starteeft(7);
+                Effectmanager.i().Startsfx(25);
                 ehp += val;
                 break;
             case "charm":
                 Effectmanager.i().eeftpos = player.gameObject;
                 Effectmanager.i().Starteeft(8);
+                Effectmanager.i().Startsfx(29);
                 Datamanager.i().str--;
                 Datamanager.i().agi--;
                 break;
             case "lifedrain":
                 Effectmanager.i().eeftpos = gameObject;
                 Effectmanager.i().Starteeft(9);
+                Effectmanager.i().Startsfx(32);
                 Attack(val);
                 ehp += 3;
                 break;
@@ -288,6 +300,7 @@ public class Enemy : MonoBehaviour
                     {
                         Effectmanager.i().eeftpos = elist[i].gameObject;
                         Effectmanager.i().Starteeft(10);
+                        Effectmanager.i().Startsfx(33);
                         spawner.GetComponent<Enemyspawner>().Givemstat(elist[i].gameObject, 4);
                         elist[i].GetComponent<TweenPosition>().to = elist[i].gameObject.transform.localPosition;
                         elist[i].GetComponent<Enemy>().p = 4;
@@ -300,6 +313,7 @@ public class Enemy : MonoBehaviour
             case "deathblade":
                 Effectmanager.i().eeftpos = player.gameObject;
                 Effectmanager.i().Starteeft(11);
+                Effectmanager.i().Startsfx(34);
                 Attack(val);
                 Datamanager.i().d = true;
                 Datamanager.i().dnum += 2;

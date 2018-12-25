@@ -227,38 +227,47 @@ public class Usecard : MonoBehaviour
                     case "hit":
                         Effectmanager.i().eftpos = p;
                         Effectmanager.i().Starteft(23);
+                        Effectmanager.i().Startsfx(2);
                         break;
                     case "staff swing":
                         Effectmanager.i().eftpos = p;
                         Effectmanager.i().Starteft(23);
+                        Effectmanager.i().Startsfx(2);
                         break;
                     case "smash":
                         Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
                         Effectmanager.i().Starteft(18);
+                        Effectmanager.i().Startsfx(2);
                         break;
                     case "stab":
                         Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
                         Effectmanager.i().Starteft(2);
+                        Effectmanager.i().Startsfx(1);
                         break;
                     case "bash":
                         Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
                         Effectmanager.i().Starteft(27);
+                        Effectmanager.i().Startsfx(0);
                         break;
                     case "headbutt":
                         Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
                         Effectmanager.i().Starteft(30);
+                        Effectmanager.i().Startsfx(2);
                         break;
                     case "weapon breaker":
                         Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
                         Effectmanager.i().Starteft(29);
+                        Effectmanager.i().Startsfx(4);
                         break;
                     case "armor breaker":
                         Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
                         Effectmanager.i().Starteft(28);
+                        Effectmanager.i().Startsfx(4);
                         break;
                     case "wind cutter":
                         Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
                         Effectmanager.i().Starteft(24);
+                        Effectmanager.i().Startsfx(13);
                         break;
                     case "ice bolt":
                         Effectmanager.i().eftpos = p;
@@ -266,6 +275,7 @@ public class Usecard : MonoBehaviour
                         ice.GetComponentInChildren<TweenPosition>().to = spawner.GetComponent<Enemyspawner>().target.transform.localPosition + new Vector3(100, 50, 0);
                         ice.GetComponentInChildren<UITweener>().PlayForward();
                         yield return new WaitForSeconds(1);
+                        Effectmanager.i().Startsfx(10);
                         break;
                     case "lighting shock":
                         Effectmanager.i().eftpos = p;
@@ -273,16 +283,20 @@ public class Usecard : MonoBehaviour
                         shock.GetComponentInChildren<TweenPosition>().to = spawner.GetComponent<Enemyspawner>().target.transform.localPosition + new Vector3(100, 50, 0);
                         shock.GetComponentInChildren<UITweener>().PlayForward();
                         yield return new WaitForSeconds(1);
+                        Effectmanager.i().Startsfx(18);
                         break;
                     case "magic arrow":
                         Effectmanager.i().eftpos = p;
                         GameObject arrow = Effectmanager.i().Starteft(26);
                         arrow.GetComponentInChildren<TweenPosition>().to = spawner.GetComponent<Enemyspawner>().target.transform.localPosition + new Vector3(100, 50, 0);
                         arrow.GetComponentInChildren<UITweener>().PlayForward();
+                        yield return new WaitForSeconds(1);
+                        Effectmanager.i().Startsfx(11);
                         break;
                     case "lightnova":
                         Effectmanager.i().eftpos = elist[1];
                         Effectmanager.i().Starteft(15);
+                        Effectmanager.i().Startsfx(20);
                         break;
                     case "meteor fall":
                         Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
@@ -290,6 +304,7 @@ public class Usecard : MonoBehaviour
                         yield return new WaitForSeconds(0.5f);
                         Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
                         Effectmanager.i().Starteft(16);
+                        Effectmanager.i().Startsfx(19);
                         break;
                 }
                 Attack(val);
@@ -298,11 +313,13 @@ public class Usecard : MonoBehaviour
                 Deffence(val);
                 Effectmanager.i().eftpos = p;
                 Effectmanager.i().Starteft(19);
+                Effectmanager.i().Startsfx(22);
                 break;
             case "bringarmor":
                 Attack(Datamanager.i().shd);
                 Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
                 Effectmanager.i().Starteft(1);
+                Effectmanager.i().Startsfx(2);
                 break;
             case "allin":
                 for (int i = 0; i < Datamanager.i().curmana; i++)
@@ -310,6 +327,7 @@ public class Usecard : MonoBehaviour
                     Attack(val);
                     Effectmanager.i().eftpos = p;
                     Effectmanager.i().Starteft(23);
+                    Effectmanager.i().Startsfx(0);
                 }
                 Datamanager.i().curmana = 0;
                 break;
@@ -318,6 +336,7 @@ public class Usecard : MonoBehaviour
                 Datamanager.i().gennum = val;
                 Effectmanager.i().eftpos = p;
                 Effectmanager.i().Starteft(17);
+                Effectmanager.i().Startsfx(3);
                 break;
             case "str":
                 Datamanager.i().str += val;
@@ -326,9 +345,11 @@ public class Usecard : MonoBehaviour
                 {
                     case 1:
                         Effectmanager.i().Starteft(10);
+                        Effectmanager.i().Startsfx(6);
                         break;
                     case 2:
                         Effectmanager.i().Starteft(9);
+                        Effectmanager.i().Startsfx(21);
                         break;
                 }
                 break;
@@ -336,11 +357,13 @@ public class Usecard : MonoBehaviour
                 Datamanager.i().curmana += val;
                 Effectmanager.i().eftpos = p;
                 Effectmanager.i().Starteft(9);
+                Effectmanager.i().Startsfx(5);
                 break;
             case "heal":
                 Datamanager.i().curhp += val;
                 Effectmanager.i().eftpos = p;
                 Effectmanager.i().Starteft(14);
+                Effectmanager.i().Startsfx(25);
                 break;
             case "lockon":
                 if (spawner.GetComponent<Enemyspawner>().target == null)
@@ -386,6 +409,10 @@ public class Usecard : MonoBehaviour
                 }
             case "draw":
                 deck.Drawing(val);
+                if(GetComponent<Cardstat>().cname== "use scroll")
+                {
+                    Effectmanager.i().Startsfx(14);
+                }
                 break;
             case "weak":
                 if (spawner.GetComponent<Enemyspawner>().target == null)
@@ -416,14 +443,20 @@ public class Usecard : MonoBehaviour
                 {
                     case "aura blade":
                         Effectmanager.i().Starteft(12);
+                        for (int i = 0; i < val; i++)
+                        {
+                            Attack((Datamanager.i().str + 1) * 5);
+                            Effectmanager.i().Starteft(7);
+                        }
                         break;
                     case "powerword kill":
                         Effectmanager.i().Starteft(11);
+                        for (int i = 0; i < val; i++)
+                        {
+                            Attack((Datamanager.i().str + 1) * 5);
+                            Effectmanager.i().Starteft(12);
+                        }
                         break;
-                }
-                for (int i = 0; i < val; i++)
-                {
-                   Attack((Datamanager.i().str + 1) * 5);
                 }
                 break;
             case "random":
@@ -437,6 +470,7 @@ public class Usecard : MonoBehaviour
                 Datamanager.i().inmaxmana += val;
                 Effectmanager.i().eftpos = p;
                 Effectmanager.i().Starteft(13);
+                Effectmanager.i().Starteft(15);
                 break;
             case "dot":
                 spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().d = true;
@@ -447,6 +481,7 @@ public class Usecard : MonoBehaviour
                 Datamanager.i().rnum = val;
                 Effectmanager.i().eftpos = p;
                 Effectmanager.i().Starteft(5);
+                Effectmanager.i().Starteft(16);
                 break;
             case "instant":
                 Datamanager.i().ins = true;
@@ -454,6 +489,7 @@ public class Usecard : MonoBehaviour
                 Datamanager.i().str += Datamanager.i().insnum;
                 Effectmanager.i().eftpos = p;
                 Effectmanager.i().Starteft(22);
+                Effectmanager.i().Starteft(17);
                 break;
             case null:
                 break;
@@ -507,6 +543,7 @@ public class Usecard : MonoBehaviour
         Attack(num);
         Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
         Effectmanager.i().Starteft(8);
+        Effectmanager.i().Starteft(9);
         spawner.GetComponent<Enemyspawner>().target = null;
     }
 

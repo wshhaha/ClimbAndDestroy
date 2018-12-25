@@ -12,7 +12,7 @@ public class Rest : MonoBehaviour
 
     private void Start()
     {
-        Effectsound.instance().bgm.clip = Effectsound.instance().bgmlist[0];
+        Effectsound.instance().bgm.clip = Effectsound.instance().bgmlist[3];
         Effectsound.instance().bgm.Play();
         cardlist.SetActive(false);
         yesno.SetActive(false);
