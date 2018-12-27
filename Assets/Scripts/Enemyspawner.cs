@@ -262,6 +262,8 @@ public class Enemyspawner : MonoBehaviour
         slot.GetComponent<Enemy>().val2 = mob1[num]["val2"];
         slot.GetComponent<Enemy>().val3 = mob1[num]["val3"];
         slot.GetComponent<Enemy>().tier = mob1[num]["tier"];
+        slot.GetComponent<UISprite>().spriteName = mob1[num]["name"];
+        slot.GetComponent<UIButton>().normalSprite = mob1[num]["name"];
     }
     public void Enemyturn()
     {
