@@ -8,9 +8,19 @@ public class Nextstair : MonoBehaviour
     public GameObject cardlist;
     public List<GameObject> viewlist;
     public GameObject blind;
+    public UISprite back;
 
     void Start()
     {
+        switch (PlayerPrefs.GetInt("character"))
+        {
+            case 1:
+                back.GetComponent<UISprite>().spriteName = "warback";
+                break;
+            case 2:
+                back.GetComponent<UISprite>().spriteName = "wizback";
+                break;
+        }
         Effectsound.instance().bgm.clip = Effectsound.instance().bgmlist[1];
         Effectsound.instance().bgm.Play();
         Copydeck();

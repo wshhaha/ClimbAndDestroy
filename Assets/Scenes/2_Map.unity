@@ -3739,6 +3739,7 @@ MonoBehaviour:
   cardlist: {fileID: 1226443109}
   viewlist: []
   blind: {fileID: 781522647}
+  back: {fileID: 1513836552}
 --- !u!1 &1186995996
 GameObject:
   m_ObjectHideFlags: 0
@@ -4913,8 +4914,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
-  mSpriteName: Window
+  mAtlas: {fileID: 114186578029428160, guid: e7ed87c55c05f934680ff542492b8dc7, type: 2}
+  mSpriteName: warback
   mFillCenter: 1
 --- !u!1 &1599816037
 GameObject:

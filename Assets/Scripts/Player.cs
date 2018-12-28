@@ -25,6 +25,15 @@ public class Player : MonoBehaviour
         Effectsound.instance().bgm.clip = Effectsound.instance().bgmlist[2];
         Effectsound.instance().bgm.Play();
         cha = GameObject.Find("Character");
+        switch (PlayerPrefs.GetInt("character"))
+        {
+            case 1:
+                cha.GetComponent<UISprite>().spriteName = "warbattle";
+                break;
+            case 2:
+                cha.GetComponent<UISprite>().spriteName = "wizbattle";
+                break;
+        }
         ori = cha.transform.localPosition;
         te = false;
         uc = false;
@@ -144,7 +153,9 @@ public class Player : MonoBehaviour
         h.GetComponent<Hand>().handlist.RemoveRange(0, j);
     }
     public void Gototitle()
-    {   
+    {
+        GPGSManager.instance().SendBoardScore();
+        GPGSManager.instance().ShowLeaderBoard();
         Datamanager.i().stage = 0;
         Datamanager.i().shd = 0;
         Datamanager.i().str = 0;

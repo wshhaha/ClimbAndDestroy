@@ -624,7 +624,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3004
+  startingRenderQueue: 3005
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -2429,14 +2429,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 172
-  mHeight: 172
+  mWidth: 180
+  mHeight: 280
   mDepth: 10
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
+  aspectRatio: 0.64285713
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -2450,8 +2450,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 114678169896769080, guid: 12ee0cb32186e1d4baeea48820e36a54, type: 2}
-  mSpriteName: item_stick_mana
+  mAtlas: {fileID: 114186578029428160, guid: e7ed87c55c05f934680ff542492b8dc7, type: 2}
+  mSpriteName: warsel
   mFillCenter: 1
 --- !u!1 &1117307782
 GameObject:

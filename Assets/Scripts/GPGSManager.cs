@@ -47,4 +47,22 @@ public class GPGSManager : MonoBehaviour
             }
         });
     }
+    public void SendBoardScore()
+    {
+        Social.ReportScore(Datamanager.i().curscore, "CgkIqdPV8NIREAIQAg", (bool success) => 
+        {
+            if (success == true)
+            {
+
+            }
+            else
+            {
+
+            }
+        });
+    }
+    public void ShowLeaderBoard()
+    {
+        Social.ShowLeaderboardUI();
+    }
 }

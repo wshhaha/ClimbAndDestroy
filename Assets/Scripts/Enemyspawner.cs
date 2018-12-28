@@ -277,19 +277,43 @@ public class Enemyspawner : MonoBehaviour
         nextturn.SetActive(false);
         if (eturn1 == true)
         {
-            yield return new WaitForSecondsRealtime(0.5f);
-            eturn1 = slot1.gameObject.GetComponent<Enemy>().Eaction();
+            if (slot1.gameObject.activeSelf == true)
+            {
+                yield return new WaitForSecondsRealtime(0.5f);
+                eturn1 = slot1.gameObject.GetComponent<Enemy>().Eaction();
+            }
+            else
+            {
+                eturn1 = false;
+            }
             eturn2 = true;
-            yield return new WaitForSecondsRealtime(0.5f);
-            eturn2 = slot2.gameObject.GetComponent<Enemy>().Eaction();
+            if (slot2.gameObject.activeSelf == true)
+            {
+                yield return new WaitForSecondsRealtime(0.5f);
+                eturn2 = slot2.gameObject.GetComponent<Enemy>().Eaction();
+            }
+            else
+            {
+                eturn2 = false;
+            }
             eturn3 = true;
-            yield return new WaitForSecondsRealtime(0.5f);
-            eturn3 = slot3.gameObject.GetComponent<Enemy>().Eaction();
+            if (slot3.gameObject.activeSelf == true)
+            {
+                yield return new WaitForSecondsRealtime(0.5f);
+                eturn3 = slot3.gameObject.GetComponent<Enemy>().Eaction();
+            }
         }
         if (eturn2 == true)
         {
-            yield return new WaitForSecondsRealtime(0.5f);
-            eturn2 = slot2.gameObject.GetComponent<Enemy>().Eaction();
+            if (slot2.gameObject.activeSelf == true)
+            {
+                yield return new WaitForSecondsRealtime(0.5f);
+                eturn2 = slot2.gameObject.GetComponent<Enemy>().Eaction();
+            }
+            else
+            {
+                eturn2 = false;
+            }
             eturn3 = true;
             if (slot3.gameObject.activeSelf == true)
             {

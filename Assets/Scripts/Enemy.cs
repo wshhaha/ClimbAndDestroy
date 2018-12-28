@@ -65,7 +65,6 @@ public class Enemy : MonoBehaviour
         }
         gameObject.SetActive(false);
     }
-    
     public bool Eaction()
     {
         StartCoroutine(Readpat());

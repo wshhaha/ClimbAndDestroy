@@ -64,7 +64,7 @@ public class Titlecnt : MonoBehaviour
             Datamanager.i().maxhp = 120;
             Datamanager.i().gold = 90;
             Datamanager.i().maxmana = 3;
-            character.spriteName = "warrior";
+            character.spriteName = "warsel";
         }       
     }
     public void Selwizard()
@@ -78,7 +78,7 @@ public class Titlecnt : MonoBehaviour
             Datamanager.i().maxhp = 100;
             Datamanager.i().gold = 120;
             Datamanager.i().maxmana = 3;
-            character.spriteName = "wizard";
+            character.spriteName = "wizsel";
         }        
     }
     public void Decide()

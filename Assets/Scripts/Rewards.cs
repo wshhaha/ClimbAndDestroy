@@ -51,7 +51,6 @@ public class Rewards : MonoBehaviour
                 t.GetComponentInChildren<UIButton>().enabled = false;
                 t.transform.parent = b.transform;
                 t.transform.localPosition = new Vector3(-190, 5, 0);
-                print(val);
                 Seticon(t, val);
                 break;
         }
