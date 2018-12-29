@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Datamanager : MonoBehaviour 
 {
+    public bool save;
+    public int next;
     public int bestscore;
     public int curscore;
     public int curhp;

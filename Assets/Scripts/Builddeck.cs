@@ -79,7 +79,7 @@ public class Builddeck : MonoBehaviour
         while (factor > 0)
         {
             card.transform.position = new Vector3(ori.x * factor,ori.y,ori.z);
-            factor -= 0.2f;
+            factor -= 0.45f;
             yield return new WaitForEndOfFrame();
         }
         card.transform.Rotate(0, 0, 90);

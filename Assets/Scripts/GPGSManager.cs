@@ -32,28 +32,36 @@ public class GPGSManager : MonoBehaviour
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
     }
-    public void Login()
-    {
-        Social.localUser.Authenticate((bool success) =>
-        {
-            if (success)
-            {
-                SceneManager.LoadScene("1_Title");
-            }
-            else
-            {
-                print("a");
-                //GameObject.Find("Introcnt").GetComponent<Introcnt>().cube.SetActive(true);
-            }
-        });
-    }
     public void SendBoardScore()
     {
-        Social.ReportScore(Datamanager.i().curscore, "CgkIqdPV8NIREAIQAg", (bool success) => 
+        Social.Active.ReportScore(Datamanager.i().curscore, "CgkIqdPV8NIREAIQAg", (bool success) => 
         {
             if (success == true)
             {
-
+                Datamanager.i().stage = 0;
+                Datamanager.i().shd = 0;
+                Datamanager.i().str = 0;
+                Datamanager.i().agi = 0;
+                Datamanager.i().maxmana = 3;
+                Datamanager.i().insnum = 0;
+                Datamanager.i().ins = false;
+                Datamanager.i().genamr = false;
+                Datamanager.i().gennum = 0;
+                Datamanager.i().r = false;
+                Datamanager.i().rnum = 0;
+                Datamanager.i().w = false;
+                Datamanager.i().wnum = 0;
+                Datamanager.i().l = false;
+                Datamanager.i().lnum = 0;
+                Datamanager.i().d = false;
+                Datamanager.i().dnum = 0;
+                Datamanager.i().b = false;
+                Datamanager.i().bnum = 0;
+                Deckmanager.instance().Removedeck();
+                Datamanager.i().curscore = 0;
+                ShowLeaderBoard();
+                Itemmanager.instance().Removeinven();
+                SceneManager.LoadScene("1_Title");
             }
             else
             {
@@ -63,6 +71,6 @@ public class GPGSManager : MonoBehaviour
     }
     public void ShowLeaderBoard()
     {
-        Social.ShowLeaderboardUI();
+        PlayGamesPlatform.Instance.ShowLeaderboardUI();
     }
 }

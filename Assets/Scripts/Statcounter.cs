@@ -17,7 +17,7 @@ public class Statcounter : MonoBehaviour
     }
     void Update () 
 	{
-        hp.text = Datamanager.i().curhp + "/" + Datamanager.i().maxhp;
+        hp.text = Datamanager.i().curhp + " / " + Datamanager.i().maxhp;
         floor.text = "" + Datamanager.i().stage;
         gold.text = "" + Datamanager.i().gold;
         power.text = "" + Itemmanager.instance().Returnstack("Power ring");

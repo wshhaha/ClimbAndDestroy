@@ -58,19 +58,7 @@ public class Rest : MonoBehaviour
     public void Acceptbtn()
     {
         Effectmanager.i().Startsfx(36);
-        target.GetComponent<Cardstat>().up = true;
-        target.GetComponent<Cardstat>().mana = target.GetComponent<Cardstat>().pmana;
-        target.GetComponent<Cardstat>().val1 = target.GetComponent<Cardstat>().pval1;
-        target.GetComponent<Cardstat>().val2 = target.GetComponent<Cardstat>().pval2;
-        if (target.GetComponent<Cardstat>().des2 == "")
-        {
-            target.GetComponent<Usecard>().Writedes(target.GetComponent<Cardstat>().des1);
-        }
-        else
-        {
-            target.GetComponent<Cardstat>().des1 = target.GetComponent<Cardstat>().des2;
-            target.GetComponent<Usecard>().Writedes(target.GetComponent<Cardstat>().des1);
-        }
+        Deckmanager.instance().Plus(target);
         for (int i = reinlist.Count-1; i > -1; i--)
         {
             Deckmanager.instance().orideck.Add(reinlist[i]);

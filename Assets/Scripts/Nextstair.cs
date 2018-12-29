@@ -9,9 +9,10 @@ public class Nextstair : MonoBehaviour
     public List<GameObject> viewlist;
     public GameObject blind;
     public UISprite back;
-
+    int i;
+    public int j;
     void Start()
-    {
+    {   
         switch (PlayerPrefs.GetInt("character"))
         {
             case 1:
@@ -20,6 +21,28 @@ public class Nextstair : MonoBehaviour
             case 2:
                 back.GetComponent<UISprite>().spriteName = "wizback";
                 break;
+        }
+        i = Random.Range(0, 100);
+        if (i >= 0 && i < 70)
+        {
+            j = 0;
+        }
+        if (i >= 70 && i < 80)
+        {
+            j = 1;
+        }
+        if (i >= 80 && i < 95)
+        {
+            j = 2;
+        }
+        if (i >= 95 && i < 100)
+        {
+            j = 3;
+        }
+        if (Datamanager.i().save == true)
+        {
+            j = Datamanager.i().next;
+            Datamanager.i().save = false;
         }
         Effectsound.instance().bgm.clip = Effectsound.instance().bgmlist[1];
         Effectsound.instance().bgm.Play();
@@ -71,25 +94,7 @@ public class Nextstair : MonoBehaviour
         {
             SceneManager.LoadScene("Rest");
             return;
-        }
-        int i = Random.Range(0, 100);
-        int j = 0;
-        if (i >= 0 && i < 70)
-        {
-            j = 0;
-        }
-        if (i >= 70 && i < 80)
-        {
-            j = 1;
-        }
-        if (i >= 80 && i < 95)
-        {
-            j = 2;
-        }
-        if (i >= 95 && i < 100)
-        {
-            j = 3;
-        }
+        }        
         switch (j)
         {
             case 0:
@@ -115,5 +120,20 @@ public class Nextstair : MonoBehaviour
     {
         cardlist.GetComponent<UITweener>().PlayReverse();
         blind.SetActive(false);
+    }
+    public string Convertcard()
+    {
+        string decklist = null;
+        foreach (GameObject item in viewlist)
+        {
+            decklist += (item.GetComponent<Cardstat>().index - 1) + "";
+            if (item.GetComponent<Cardstat>().up == true)
+            {
+                decklist += "+";
+            }
+            decklist += " ";
+        }
+        print(decklist);
+        return decklist;
     }
 }

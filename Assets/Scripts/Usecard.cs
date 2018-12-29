@@ -118,7 +118,6 @@ public class Usecard : MonoBehaviour
         h.GetComponent<Hand>().handlist.Remove(gameObject);
         p.GetComponent<Player>().uc = false;
     }
-    
     IEnumerator Attackmove()
     {
         if(GetComponent<Cardstat>().cname== "forked lighting")
@@ -277,7 +276,7 @@ public class Usecard : MonoBehaviour
                         yield return new WaitForSeconds(1);
                         Effectmanager.i().Startsfx(10);
                         break;
-                    case "lighting shock":
+                    case "lightning shock":
                         Effectmanager.i().eftpos = p;
                         GameObject shock = Effectmanager.i().Starteft(7);
                         shock.GetComponentInChildren<TweenPosition>().to = spawner.GetComponent<Enemyspawner>().target.transform.localPosition + new Vector3(100, 50, 0);
@@ -446,7 +445,7 @@ public class Usecard : MonoBehaviour
                         for (int i = 0; i < val; i++)
                         {
                             Attack((Datamanager.i().str + 1) * 5);
-                            Effectmanager.i().Starteft(7);
+                            Effectmanager.i().Startsfx(7);
                         }
                         break;
                     case "powerword kill":
@@ -454,7 +453,7 @@ public class Usecard : MonoBehaviour
                         for (int i = 0; i < val; i++)
                         {
                             Attack((Datamanager.i().str + 1) * 5);
-                            Effectmanager.i().Starteft(12);
+                            Effectmanager.i().Startsfx(12);
                         }
                         break;
                 }
@@ -470,7 +469,7 @@ public class Usecard : MonoBehaviour
                 Datamanager.i().inmaxmana += val;
                 Effectmanager.i().eftpos = p;
                 Effectmanager.i().Starteft(13);
-                Effectmanager.i().Starteft(15);
+                Effectmanager.i().Startsfx(15);
                 break;
             case "dot":
                 spawner.GetComponent<Enemyspawner>().target.GetComponent<Enemy>().d = true;
@@ -481,7 +480,7 @@ public class Usecard : MonoBehaviour
                 Datamanager.i().rnum = val;
                 Effectmanager.i().eftpos = p;
                 Effectmanager.i().Starteft(5);
-                Effectmanager.i().Starteft(16);
+                Effectmanager.i().Startsfx(16);
                 break;
             case "instant":
                 Datamanager.i().ins = true;
@@ -489,7 +488,7 @@ public class Usecard : MonoBehaviour
                 Datamanager.i().str += Datamanager.i().insnum;
                 Effectmanager.i().eftpos = p;
                 Effectmanager.i().Starteft(22);
-                Effectmanager.i().Starteft(17);
+                Effectmanager.i().Startsfx(17);
                 break;
             case null:
                 break;
@@ -543,7 +542,7 @@ public class Usecard : MonoBehaviour
         Attack(num);
         Effectmanager.i().eftpos = spawner.GetComponent<Enemyspawner>().target;
         Effectmanager.i().Starteft(8);
-        Effectmanager.i().Starteft(9);
+        Effectmanager.i().Startsfx(9);
         spawner.GetComponent<Enemyspawner>().target = null;
     }
 
@@ -577,7 +576,7 @@ public class Usecard : MonoBehaviour
         card.SetActive(false);
     }
 
-    void Changevertical(string cardname)
+    public void Changevertical(string cardname)
     {
         string temp = null;
         string newname = null;

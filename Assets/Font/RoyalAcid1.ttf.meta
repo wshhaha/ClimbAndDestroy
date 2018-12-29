@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 68aeedc9ec81c874c9f79dc82fa4158d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Royal Acid
+  fontNames:
+  - Royal Acid
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 731297a8a9ae95f4194ed64394d3886a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

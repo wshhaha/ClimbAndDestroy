@@ -12,9 +12,16 @@ public class Titlecnt : MonoBehaviour
     public bool wizon;
     public int selchar;
     public UISprite character;
+    public UIGrid menu;
+    public GameObject loadbtn;
 
     void Start()
     {
+        if (PlayerPrefs.GetInt("job") == 0)
+        {
+            loadbtn.SetActive(false);
+            menu.enabled = true;
+        }
         Effectsound.instance().bgm.clip = Effectsound.instance().bgmlist[0];
         Effectsound.instance().bgm.Play();
         character.spriteName = null;
@@ -22,6 +29,29 @@ public class Titlecnt : MonoBehaviour
         blind.SetActive(false);
         waron = false;
         wizon = false;
+    }
+    public void Loadgame()
+    {
+        PlayerPrefs.SetInt("character", PlayerPrefs.GetInt("job"));
+        switch (PlayerPrefs.GetInt("character"))
+        {
+            case 1:
+                Datamanager.i().maxhp = 120;
+                break;
+            case 2:
+                Datamanager.i().maxhp = 100;
+                break;
+        }
+        Datamanager.i().stage = PlayerPrefs.GetInt("stage");
+        Datamanager.i().gold = PlayerPrefs.GetInt("gold");
+        Datamanager.i().curhp = PlayerPrefs.GetInt("hp");
+        Datamanager.i().curscore = PlayerPrefs.GetInt("score");
+        Datamanager.i().maxmana = 3;
+        Datamanager.i().save = true;
+        Deckmanager.instance().Loaddeck();
+        Itemmanager.instance().Loaditem();
+        PlayerPrefs.SetInt("job", 0);
+        SceneManager.LoadScene(2);
     }
     public void Selcharbtn()
     {

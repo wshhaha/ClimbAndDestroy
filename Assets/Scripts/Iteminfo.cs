@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Iteminfo : MonoBehaviour 
 {
+    public int index;
     public string itemname;
     public string eft;
     public int val;

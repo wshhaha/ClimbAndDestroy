@@ -37,6 +37,59 @@ public class Deckmanager : MonoBehaviour
         }
         Createcard(1);
     }
+    public void Loaddeck()
+    {
+        string decklist = PlayerPrefs.GetString("deck");
+        List<string> temp = new List<string>();
+        List<int> space = new List<int>();
+        List<bool> up = new List<bool>();
+        int s = 0;
+        string t = null;
+        for (int i = 0; i < decklist.Length; i++)
+        {
+            char c = decklist[i];
+            if (c == ' ')
+            {
+                space.Add(i);
+            }
+        }
+        for (int i = 0; i < space.Count; i++)
+        {
+            for (int j = s; j < space[i]; j++)
+            {
+                t += decklist[j];
+            }
+            temp.Add(t);
+            t = null;
+            s = space[i];
+        }
+        for (int i = 0; i < temp.Count; i++)
+        {   
+            char c = temp[i][temp[i].Length - 1];
+            if (c == '+')
+            {
+                temp[i] = temp[i].Replace("+", "");
+                up.Add(true);
+            }
+            else
+            {
+                up.Add(false);
+            }
+        }
+        for (int i = 0; i < temp.Count; i++)
+        {   
+            int c = 0;
+            int.TryParse(temp[i],out c);
+            Createcard(c);
+        }
+        for (int i = 0; i < temp.Count; i++)
+        {
+            if (up[i] == true)
+            {
+                Plus(orideck[i]);
+            }
+        }
+    }
     public void Createcard(int num)
     {
         GameObject c;
@@ -117,5 +170,23 @@ public class Deckmanager : MonoBehaviour
             Destroy(orideck[i]);
         }
         orideck.RemoveRange(0, orideck.Count);
+    }
+    public void Plus(GameObject card)
+    {
+        card.GetComponent<Cardstat>().up = true;
+        card.GetComponent<Cardstat>().cname += "+";
+        card.GetComponent<Usecard>().Changevertical(card.GetComponent<Cardstat>().cname);
+        card.GetComponent<Cardstat>().mana = card.GetComponent<Cardstat>().pmana;
+        card.GetComponent<Cardstat>().val1 = card.GetComponent<Cardstat>().pval1;
+        card.GetComponent<Cardstat>().val2 = card.GetComponent<Cardstat>().pval2;
+        if (card.GetComponent<Cardstat>().des2 == "")
+        {
+            card.GetComponent<Usecard>().Writedes(card.GetComponent<Cardstat>().des1);
+        }
+        else
+        {
+            card.GetComponent<Cardstat>().des1 = card.GetComponent<Cardstat>().des2;
+            card.GetComponent<Usecard>().Writedes(card.GetComponent<Cardstat>().des1);
+        }
     }
 }

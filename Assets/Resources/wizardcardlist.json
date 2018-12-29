@@ -58,7 +58,7 @@
  },
  {
    "index": 4,
-   "name": "lighting shock",
+   "name": "lightning shock",
    "mana": 2,
    "pmana": 1,
    "effect1": "atk",
@@ -129,7 +129,7 @@
    "up": false,
    "target": false,
    "sort": 3,
-   "des1": "Gain val mana and gain val2 armor\nextinction",
+   "des1": "Gain val1 mana and gain val2 armor\nextinction",
    "des2": ""
  },
  {
@@ -229,7 +229,7 @@
  },
  {
    "index": 13,
-   "name": "forked lighting",
+   "name": "forked lightning",
    "mana": null,
    "pmana": null,
    "effect1": "random",
@@ -262,7 +262,7 @@
    "up": false,
    "target": false,
    "sort": 3,
-   "des1": "Draw val card and rebound val2",
+   "des1": "Draw val1 card and rebound val2",
    "des2": ""
  },
  {
