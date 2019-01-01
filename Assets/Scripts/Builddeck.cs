@@ -23,7 +23,7 @@ public class Builddeck : MonoBehaviour
             c = Instantiate(card);
             c.GetComponentInChildren<BoxCollider>().enabled = false;
             c.GetComponent<Usecard>().gy = GameObject.Find("Graveyard");
-            Deckmanager.instance().Givestat(Deckmanager.instance().orideck[i].GetComponent<Cardstat>().index - 1, c);
+            Deckmanager.instance().Copystat(Deckmanager.instance().orideck[i], c);
             c.transform.parent = deckgrid.transform;
             c.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             c.GetComponent<UIPanel>().depth = 2;

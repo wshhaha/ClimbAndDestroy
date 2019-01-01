@@ -273,6 +273,10 @@ public class Enemy : MonoBehaviour
                 Effectmanager.i().Starteeft(7);
                 Effectmanager.i().Startsfx(25);
                 ehp += val;
+                if (ehp > maxhp)
+                {
+                    ehp = maxhp;
+                }
                 break;
             case "charm":
                 Effectmanager.i().eeftpos = player.gameObject;
@@ -287,6 +291,10 @@ public class Enemy : MonoBehaviour
                 Effectmanager.i().Startsfx(32);
                 Attack(val);
                 ehp += 3;
+                if (ehp > maxhp)
+                {
+                    ehp = maxhp;
+                }
                 break;
             case "summon":
                 List<UISprite> elist = new List<UISprite>();

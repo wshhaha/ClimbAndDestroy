@@ -63,8 +63,8 @@ public class Deckmanager : MonoBehaviour
             t = null;
             s = space[i];
         }
-        for (int i = 0; i < temp.Count; i++)
-        {   
+        for (int i = temp.Count - 1; i > -1; i--)
+        {
             char c = temp[i][temp[i].Length - 1];
             if (c == '+')
             {
@@ -76,13 +76,13 @@ public class Deckmanager : MonoBehaviour
                 up.Add(false);
             }
         }
-        for (int i = 0; i < temp.Count; i++)
+        for (int i = temp.Count - 1; i > -1; i--)
         {   
             int c = 0;
             int.TryParse(temp[i],out c);
             Createcard(c);
         }
-        for (int i = 0; i < temp.Count; i++)
+        for (int i = temp.Count - 1; i > -1; i--)
         {
             if (up[i] == true)
             {
@@ -114,6 +114,28 @@ public class Deckmanager : MonoBehaviour
             cardname = wi[num]["name"];            
         }
         return cardname;
+    }
+    public void Copystat(GameObject ori,GameObject card)
+    {
+        card.AddComponent<Cardstat>();
+        card.name = ori.name;
+        card.GetComponent<Cardstat>().index = ori.GetComponent<Cardstat>().index;
+        card.GetComponent<Cardstat>().cname = ori.GetComponent<Cardstat>().cname;
+        card.GetComponent<Cardstat>().mana = ori.GetComponent<Cardstat>().mana;
+        card.GetComponent<Cardstat>().pmana = ori.GetComponent<Cardstat>().pmana;
+        card.GetComponent<Cardstat>().eft1 = ori.GetComponent<Cardstat>().eft1;
+        card.GetComponent<Cardstat>().val1 = ori.GetComponent<Cardstat>().val1;
+        card.GetComponent<Cardstat>().pval1 = ori.GetComponent<Cardstat>().pval1;
+        card.GetComponent<Cardstat>().eft2 = ori.GetComponent<Cardstat>().eft2;
+        card.GetComponent<Cardstat>().val2 = ori.GetComponent<Cardstat>().val2;
+        card.GetComponent<Cardstat>().pval2 = ori.GetComponent<Cardstat>().pval2;
+        card.GetComponent<Cardstat>().ex = ori.GetComponent<Cardstat>().ex;
+        card.GetComponent<Cardstat>().up = ori.GetComponent<Cardstat>().up;
+        card.GetComponent<Cardstat>().target = ori.GetComponent<Cardstat>().target;
+        card.GetComponent<Cardstat>().grade = ori.GetComponent<Cardstat>().grade;
+        card.GetComponent<Cardstat>().sort = ori.GetComponent<Cardstat>().sort;
+        card.GetComponent<Cardstat>().des1 = ori.GetComponent<Cardstat>().des1;
+        card.GetComponent<Cardstat>().des2 = ori.GetComponent<Cardstat>().des2;
     }
     public void Givestat(int num,GameObject card)
     {
